@@ -24,16 +24,15 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: '文档', link: '/pages/967466/', items: [
+          { text: 'v2.7.X(当前版本)', link: '/pages/967466/'},
           { text: 'v2.6.X', link: '/pages/dfd970/'},
-          { text: 'v2.7.X', link: '/pages/967466/'},
         ]
       },
       { text: '更新记录', link: '/pages/88c2d1/' },
       { text: '关于项目', link: '/pages/8d7f1e/' },
       { text: '加入社区讨论', link: '/pages/73c2c3/' },
       { text: '用户', link: '/pages/9b9f41/' },
-      { text: '贡献准则', link: '/pages/9cc27d/' },
-      { text: '💖支持', link: '/pages/1b12ed/' },
+      { text: '💖支持', link: '/pages/fb599d/' },
       { text: 'Gitee', link: 'https://gitee.com/dromara/liteFlow' },
       { text: 'Github', link: 'https://github.com/dromara/liteflow' },
     ],
