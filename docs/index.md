@@ -36,17 +36,37 @@ postList: none
 <br/>
 
 ## 🍬特性
-* 复杂业务的解耦利器，为所有组件提供统一的实现协议。
-* 基于规则文件来编排流程，并可进行热编排。
-* 框架中支持ZooKeeper流程配置，即时推送修改内容。
-* 能自由扩展配置持久化源，提供扩展接口。
-* 支持SpringBoot的自动装配，也支持Spring的配置和非Spring的项目。
-* 提供串行和并行2种模式，提供常见常见的表达式语句。
-* 提供无级嵌套子流程模式。
-* 数据槽高并发隔离机制。
-* 组件的重试机制。
-* 多种脚本语言的支持。
-* 自带简单的监控，能够知道每个组件的运行耗时排行。
+* **组件定义统一：** 所有的逻辑都是组件，为所有的逻辑提供统一化的组件实现方式，小身材，大能量。
+* **规则轻量：** 基于规则文件来编排流程，学习规则入门只需要5分钟，一看既懂。
+* **规则多样化：** 规则支持xml、json、yml三种规则文件写法方式，喜欢哪种用哪个。
+* **任意编排：** 同步异步混编，再复杂的逻辑过程，利用LiteFlow的规则，都是很容易做到的，看规则文件就能知道逻辑是如何运转的。
+* **规则能从任意地方加载：** 框架中提供本地文件配置源和zk配置源的实现，也提供了扩展接口，您可以把规则存储在任何地方。
+* **优雅热刷新机制：** 规则变化，无需重启您的应用，即时改变应用的规则。高并发下不会因为刷新规则导致正在执行的规则有任何错乱。
+* **支持广泛：** 不管你的项目是不是基于Springboot，Spring还是任何其他java框架构建，LiteFlow都能游刃有余。
+* **JDK支持：** 从JDK8到JDK17，统统支持。无需担心JDK版本。
+* **脚本语言支持：** 可以定义脚本语言节点，支持QLExpress和Groovy两种脚本。未来还会支持更多的脚本语言。
+* **规则嵌套支持：** 只要你想的出，你可以利用简单的表达式完成多重嵌套的复杂逻辑编排。
+* **组件重试支持：** 组件可以支持重试，每个组件均可自定义重试配置和指定异常。
+* **上下文隔离机制：** 可靠的上下文隔离机制，你无需担心高并发情况下的数据串流。
+* **声明式组件支持：** 你可以让你的任意类秒变组件。
+* **详细的步骤信息：** 你的链路如何执行的，每个组件耗时多少，报了什么错，一目了然。
+* **稳定可靠：** 历时2年多的迭代，在各大公司的核心系统上稳定运行。
+* **性能卓越：** 框架本身几乎不消耗额外性能，性能取决你的组件执行效率。
+* **自带简单监控：** 框架内自带一个命令行的监控，能够知道每个组件的运行耗时排行。
+
+<br/>
+
+## 🎉致谢
+
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群800多人，Gitee上2k Stars，Github上500多Stars， 这离不开社区小伙伴的支持和意见。感谢你们。
+
+LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+
+<br/>
+
+## 🏡代码托管
+
+> [Gitee](https://gitee.com/dromara/liteFlow) | [Github](https://github.com/dromara/liteflow)
 
 <br/>
 
@@ -58,57 +78,57 @@ postList: none
 
 ## 🧲友情链接
 <span style="width: 150px;flex:1;text-align: left">
-    <a href="https://gitee.com">
+    <a href="https://gitee.com" target="_blank">
         <img :src="$withBase('/img/link/gitee-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://www.oschina.net">
+    <a href="https://www.oschina.net" target="_blank">
         <img :src="$withBase('/img/link/oschina-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dromara/TLog">
+    <a href="https://gitee.com/dromara/TLog" target="_blank">
         <img :src="$withBase('/img/link/tlog-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dromara/sa-token">
+    <a href="https://gitee.com/dromara/sa-token" target="_blank">
         <img :src="$withBase('/img/link/satoken-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dromara/sureness">
+    <a href="https://gitee.com/dromara/sureness" target="_blank">
         <img :src="$withBase('/img/link/sureness-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dromara/hutool">
+    <a href="https://gitee.com/dromara/hutool" target="_blank">
         <img :src="$withBase('/img/link/hutool-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/Apache-ShenYu/incubator-shenyu">
+    <a href="https://gitee.com/Apache-ShenYu/incubator-shenyu" target="_blank">
         <img :src="$withBase('/img/link/shenyu-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dromara/forest">
+    <a href="https://gitee.com/dromara/forest" target="_blank">
         <img :src="$withBase('/img/link/forest-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dromara/MaxKey">
+    <a href="https://gitee.com/dromara/MaxKey" target="_blank">
         <img :src="$withBase('/img/link/maxkey-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dotnetchina">
+    <a href="https://gitee.com/dotnetchina" target="_blank">
         <img :src="$withBase('/img/link/dotnet-china-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="http://www.pearadmin.com/">
+    <a href="http://www.pearadmin.com/" target="_blank">
         <img :src="$withBase('/img/link/pearAdmin-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
