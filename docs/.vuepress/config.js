@@ -28,6 +28,7 @@ module.exports = {
           { text: 'v2.6.X', link: '/pages/dfd970/'},
         ]
       },
+      { text: '问答', link: '/pages/845dff/' },
       { text: '💖支持', link: '/pages/fb599d/' },
       { text: '更新记录', link: '/pages/88c2d1/' },
       { text: '关于项目', link: '/pages/8d7f1e/' },
