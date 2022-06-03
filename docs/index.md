@@ -59,6 +59,18 @@ postList: none
 
 <br/>
 
+## ✨最新版本
+
+```xml
+<dependency>
+    <groupId>com.yomahub</groupId>
+    <artifactId>liteflow-spring-boot-starter</artifactId>
+    <version>2.7.0</version>
+</dependency>
+```
+
+<br/>
+
 ## 🎉致谢
 
 LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群800多人，Gitee上2k Stars，Github上500多Stars， 这离不开社区小伙伴的支持和意见。感谢你们。
