@@ -34,7 +34,7 @@ module.exports = {
       { text: '加入社区讨论', link: '/pages/73c2c3/' },
       { text: '用户', link: '/pages/9b9f41/' },
       { text: '推荐', items: [
-          { text: 'TLog-轻量级的分布式日志标记追踪神器', link: 'https://tlog.yomahub.com/'},
+          { text: 'TLog-轻量级的分布式日志追踪神器', link: 'https://tlog.yomahub.com/'},
         ]
       },
       { text: 'Gitee', link: 'https://gitee.com/dromara/liteFlow' },
