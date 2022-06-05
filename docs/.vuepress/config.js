@@ -12,7 +12,7 @@ module.exports = {
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
   head: [ // 注入到页面<head> 中的标签，格式[tagName, { attrName: attrValue }, innerHTML?]
     ['link', { rel: 'icon', href: '/img/logo.svg' }], //favicons，资源放在public文件夹
-    ['meta', { name: 'keywords', content: 'vuepress,theme,blog,vdoing' }],
+    ['meta', { name: 'keywords', content: 'liteflow,规则引擎,流程引擎,开源,java规则引擎' }],
     ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
 
     ['meta', { name: 'wwads-cn-verify', content: '6c4b761a28b734fe93831e3fb400ce87' }], // 广告相关，你可以去掉
