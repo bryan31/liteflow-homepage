@@ -2,7 +2,7 @@ module.exports = [
     { text: '首页', link: '/' },
     { text: '文档', link: '/pages/967466/', items: [
             { text: 'v2.7.1(当前版本)', link: '/pages/967466/'},
-            { text: 'v2.6.X迁移到v2.7.X指南', link: '/pages/59e751/'},
+            { text: 'v2.6.X迁移到v2.7.X指南', link: '/pages/4dfd41/'},
             { text: 'v2.6.X', link: '/pages/dfd970/'},
         ]
     },
