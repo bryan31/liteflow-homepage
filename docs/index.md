@@ -96,11 +96,11 @@ LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC
 
 <br/>
 
-## 💪🏻参与贡献
+## 💪🏻参与开发
 
 欢迎各路好汉一起来参与完善 LiteFlow，我们期待你的 PR！
 
-如果想贡献，请先查看[贡献准则](/pages/ae4dd5/)。
+如果想贡献，请先查看[参与开发](/pages/ae4dd5/)。
 
 <br/>
 

@@ -12,6 +12,7 @@ module.exports = [
     { text: '更新记录', link: '/pages/88c2d1/' },
     { text: '关于项目', link: '/pages/8d7f1e/' },
     { text: '加入社区讨论', link: '/pages/73c2c3/' },
+    { text: '参与开发', link: '/pages/ae4dd5/' },
     { text: '用户', link: '/pages/9b9f41/' },
     { text: '推荐', items: [
             { text: 'TLog-轻量级的分布式日志追踪神器', link: 'https://tlog.yomahub.com/'},
