@@ -106,7 +106,13 @@ LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC
 
 ## 🏡代码托管
 
-> [Gitee](https://gitee.com/dromara/liteFlow) | [Github](https://github.com/dromara/liteflow)
+<a href='https://gitee.com/dromara/liteFlow' target="_blank">
+    <img class="no-zoom" src="https://img.shields.io/badge/Gitee-red?logo=gitee&logoColor=white&style=for-the-badge"/>
+</a>
+
+<a href="https://github.com/dromara/liteflow" target="_blank">
+    <img class="no-zoom" src="https://img.shields.io/badge/Github-blue?logo=github&logoColor=white&style=for-the-badge"/>
+</a>
 
 <br/>
 
