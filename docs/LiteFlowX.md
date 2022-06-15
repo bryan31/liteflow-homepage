@@ -91,3 +91,11 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 ### Xml跳转Component
 ![Xml跳转Component](/img/liteflowx/XmlToComponent.gif)
 ![Xml跳转Component2](/img/liteflowx/XmlToManyComponent.gif)
+
+## 📕 更新日志
+::: tip [0.1.1] - 2022-06-15
+- 修复 #I5BW1N 关于java代码编辑器中的chain错误跳转问题
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5BW1N
+- 修复 #I5BPP6 修复组件多层继承而无法正确跳转问题
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5BPP6 
+:::
