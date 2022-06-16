@@ -1,12 +1,12 @@
 module.exports = [
     { text: '首页', link: '/' },
-    { text: '文档', link: '/pages/967466/', items: [
+    { text: '🍓文档', link: '/pages/967466/', items: [
             { text: 'v2.7.3(当前版本)', link: '/pages/967466/'},
             { text: 'v2.6.X迁移到v2.7.X指南', link: '/pages/4dfd41/'},
             { text: 'v2.6.X', link: '/pages/dfd970/'},
         ]
     },
-    { text: '问答', link: '/pages/845dff/' },
+    { text: '🍀问答', link: '/pages/845dff/' },
     { text: '💖支持', link: '/pages/fb599d/' },
     { text: '🚀插件', link: '/pages/liteflowx/' },
     { text: '更新记录', link: '/pages/88c2d1/' },
