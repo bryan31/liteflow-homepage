@@ -102,6 +102,8 @@ LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区�
 
 LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
+LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需要插画商业合作的可以<a href="mailto:sssenyang@qq.com" target="_blank">联系她</a>。
+
 <br/>
 
 ## 🏡代码托管
@@ -129,6 +131,20 @@ LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC
 <img :src="$withBase('/img/architecture.svg')" style="zoom: 120%">
 
 <br/>
+
+## 🎉特别赞助
+
+::: cardList
+```yaml
+- name: ERD Online
+  desc: 开箱即用的数据库建模、产品版本管理软件
+  avatar: /img/donate/erd.png
+  link: https://portal.zerocode.net.cn/
+  bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
+  textColor: '#1f2328' # 可选，默认var(--textColor)
+
+```
+:::
 
 ## 🧲友情链接
 <span style="width: 150px;flex:1;text-align: left">
@@ -159,11 +175,6 @@ LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC
 <span style="width: 150px;text-align: left">
     <a href="https://gitee.com/dromara/hutool" target="_blank">
         <img :src="$withBase('/img/link/hutool-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
-    </a>
-</span>
-<span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/Apache-ShenYu/incubator-shenyu" target="_blank">
-        <img :src="$withBase('/img/link/shenyu-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
