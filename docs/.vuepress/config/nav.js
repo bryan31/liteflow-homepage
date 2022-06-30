@@ -16,6 +16,7 @@ module.exports = [
     { text: '用户', link: '/pages/9b9f41/' },
     { text: '推荐', items: [
             { text: 'TLog-轻量级的分布式日志追踪神器', link: 'https://tlog.yomahub.com/'},
+            { text: 'ERD ONLINE-开箱即用的数据库建模、产品版本管理软件', link: 'https://portal.zerocode.net.cn/'},
         ]
     },
     { text: 'Gitee', link: 'https://gitee.com/dromara/liteFlow' },
