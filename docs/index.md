@@ -102,7 +102,7 @@ LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区�
 
 LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
-LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需要插画商业合作的可以<a href="mailto:sssenyang@qq.com" target="_blank">联系她</a>。
+LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需要插画商业合作小伙伴可以<a href="mailto:sssenyang@qq.com" target="_blank">联系她</a>。
 
 <br/>
 
@@ -145,6 +145,8 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 ```
 :::
+
+<br/>
 
 ## 🧲友情链接
 <span style="width: 150px;flex:1;text-align: left">
@@ -203,12 +205,5 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     </a>
 </span>
 
-
 <!-- AD -->
-<div class="wwads-cn wwads-horizontal page-ad" data-id="129" style="width:100%;max-height:80px;min-height:auto;"></div>
-<style>
-  .page-ad img{width:80px!important;}
-  /* .pageT .wwads-content{display:flex;align-items: center;}
-  .pageT .wwads-poweredby{display:none!important;}
-  .pageT .wwads-hide{display:none!important;} */
-</style>
+<div class="wwads-cn wwads-horizontal" data-id="129" style="padding: 5px !important;"></div>
