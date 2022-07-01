@@ -206,4 +206,25 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 </span>
 
 <!-- AD -->
-<div class="wwads-cn wwads-horizontal" data-id="129" style="padding: 5px !important;"></div>
+<div class="wwads-cn wwads-horizontal page-wwads" data-id="129"></div>
+<style>
+  .page-wwads{
+    width:100%!important;
+    min-height: 0;
+    margin: 0;
+  }
+  .page-wwads .wwads-img img{
+    width:80px!important;
+  }
+  .page-wwads .wwads-poweredby{
+    width: 40px;
+    position: absolute;
+    right: 25px;
+    bottom: 3px;
+  }
+  .wwads-content .wwads-text, .page-wwads .wwads-text{
+    height: 100%;
+    padding-top: 5px;
+    display: block;
+  }
+</style>
