@@ -3,10 +3,9 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-actionText: 开始使用 →
-actionLink: /pages/967466/ 
+actionText: 全新规则表达式上线！开始使用 →
+actionLink: /pages/5816c5/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
-
 features: # 可选的
   - title: 轻巧强大
     details: 小身躯蕴藏着大能量，简单的学习成本，几分钟就能上手。却可以完成复杂的规则编排。
@@ -65,13 +64,13 @@ postList: none
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.7.3</version>
+    <version>2.8.0</version>
 </dependency>
 ```
 
 :::tip 新版本稳定吗？
 
-我们每一次发布版本，都会补充大量的测试用例。截止到目前，LiteFlow一共有400多个测试用例，几乎覆盖到每一个已有功能的细节点。
+我们每一次发布版本，都会补充大量的测试用例。截止到目前，LiteFlow一共有650多个测试用例，几乎覆盖到每一个已有功能的细节点。
 
 并且我们会跑超大量的并发压力测试，以上所有的通过后，我们才会谨慎的提交代码覆盖主分支进行发版。
 
@@ -82,25 +81,15 @@ postList: none
 
 <br/>
 
-## ✈️不久的未来
-
-:::tip 预告
-LiteFlow 2.8.0正在开发中！
-
-2.8.0会是一个里程碑的版本，因为2.8.0里会赋予LiteFlow新的规则语法！
-
-再复杂的流程，一行规则全部搞定！让你的编排更加简易！
-
-吾辈火力全开，只为让你的业务更加优雅！敬请期待~
-:::
-
-<br/>
-
 ## 🎉致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群800多人，Gitee上2k Stars，Github上500多Stars， 这离不开社区小伙伴的支持和意见。感谢你们。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群800多人，Gitee上2.2k Stars，Github上600多Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
-LiteFlow更是在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
+
+LiteFlow在2022年获得“Gitee最有价值开源项目“奖项（GVP）。
+
+感谢OSCHINA和Gitee官方平台对LiteFlow项目的推荐和肯定。
 
 LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需要插画商业合作小伙伴可以<a href="mailto:sssenyang@qq.com" target="_blank">联系她</a>。
 

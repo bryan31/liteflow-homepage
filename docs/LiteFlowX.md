@@ -12,6 +12,10 @@ titleTag: 推荐👍
 
 LiteFlowX 是一款 IDEA 插件，它能够大幅度提高你在使用 LiteFlow 框架进行开发时的工作效率。
 
+:::warning
+**目前LiteFlowX只支持2.6.X和2.7.X版本，最新的2.8.X还不支持，正在开发中，敬请期待！**
+:::
+
 <p align="left">
 
 <a href="https://www.github.com/Coder-XiaoYi/LiteFlowX" target="_blank">
