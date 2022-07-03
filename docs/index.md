@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-actionText: 全新规则表达式上线！开始使用 →
+actionText: 🧩全新规则表达式版本发布！去了解 →
 actionLink: /pages/5816c5/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
