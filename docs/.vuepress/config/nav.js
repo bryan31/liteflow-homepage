@@ -7,7 +7,7 @@ module.exports = [
             { text: 'v2.6.14', link: '/pages/dfd970/'},
         ]
     },
-    { text: '🍀问答', link: '/pages/845dff/' },
+    { text: '🎄问答', link: '/pages/845dff/' },
     { text: '💖支持', link: '/pages/fb599d/' },
     { text: '🚀插件', link: '/pages/liteflowx/' },
     { text: '更新记录', link: '/pages/88c2d1/' },
