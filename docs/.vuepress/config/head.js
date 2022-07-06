@@ -55,5 +55,7 @@ module.exports = [
         }
       }, 3000);
     });
+    
+    console.log("%c 人不一定要逆风翻盘，但一定要向阳而生 %c", "color: #ffffff; background: #f1404b; padding:5px 0;", "background: #030307; padding:5px 0;");
   `]
 ];
