@@ -91,7 +91,9 @@ LiteFlow在2022年获得“Gitee最有价值开源项目“奖项（GVP）。
 
 感谢OSCHINA和Gitee官方平台对LiteFlow项目的推荐和肯定。
 
-LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需要插画商业合作小伙伴可以<a href="mailto:sssenyang@qq.com" target="_blank">联系她</a>。
+LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需要插画商业合作小伙伴可以联系她：
+
+> 邮件：sssenyang@qq.com | 微信：ArtSenyang
 
 <br/>
 
