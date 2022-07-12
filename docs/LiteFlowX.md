@@ -9,9 +9,11 @@ titleTag: 🎉 支持elf语法！
 ---
 
 :::warning 插件版本须知
-LiteFlowX 插件版本自 `v1.0.0` 起，将不再兼容 LiteFlow 框架 `v2.8.0` 以前的所有特性。
+- LiteFlowX 插件版本自 `v1.0.0` 起，将不再支持 LiteFlow `2.7.X` 及以下版本的特性。
 
-插件将来也会致力于LiteFlow框架的最新版本特性做出更改和完善，使用本插件前请确保您使用的是最新的LiteFlow框架。
+- 如果您使用的是旧版本的 LiteFlow 框架，请自行[下载插件jar包](https://gitee.com/liupeiqiang/LiteFlowX/releases/0.1.1)安装。
+
+- 插件将来会致力于 LiteFlow 框架的最新版本特性做出更改和完善，使用本插件前请确保您使用的是最新的 LiteFlow 框架。
 :::
 
 ![封面](/img/liteflowx/cover.png)
