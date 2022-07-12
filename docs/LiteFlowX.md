@@ -141,7 +141,7 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 ## 💖 特别鸣谢
 ::: cardList
 ```yaml
-- name: 铂塞东
+- name: 铂赛东
   desc: LiteFlow 开源作者
   avatar: https://portrait.gitee.com/uploads/avatars/user/367/1102362_bryan31_1578940308.png
   link: https://gitee.com/bryan31
