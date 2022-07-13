@@ -101,7 +101,7 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 ![智能提示ComponentChain](/img/liteflowx/chaincomponent.gif)
 
 ### 预检测Chain未命名或重复
-![预检测Chain未命名或重复](/img/liteflowx/chaincomponent.gif)
+![预检测Chain未命名或重复](/img/liteflowx/chaindep.gif)
 
 ### 自定义elf语法关键字颜色
 ![自定义elf语法关键字颜色](/img/liteflowx/changecolor.gif)
