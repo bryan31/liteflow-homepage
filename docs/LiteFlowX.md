@@ -72,9 +72,9 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 有三种方式可安装LiteFlowX插件到IDEA中
 ::: tip
 支持 LiteFlowX 插件的版本有：
-- IntelliJ IDEA Educational — 2018.3 — 2022.1.1
-- IntelliJ IDEA Ultimate — 2018.3 — 2022.1.2
-- IntelliJ IDEA Community — 2018.3 — 2022.1.2
+- IntelliJ IDEA Educational — 2020.1 — 2022.1.2
+- IntelliJ IDEA Ultimate — 2020.1 — 2022.1.3
+- IntelliJ IDEA Community — 2020.1 — 2022.1.3
 :::
 ### 方法一：点击这里安装（推荐）
 
