@@ -18,11 +18,8 @@ features: # 可选的
 postList: none
 notices: # 可选的
   - title: 🚀 LiteFlowX v1.0.0 正式版发布！
-    content: '<div><p>适配LiteFlow 2.8.x全新规则表达式语法</p><ul><li>支持elf语法高亮</li><li>支持component、chain、local variables自动提示</li><li>支持语法预检测</li><li>支持.el.xml的chain标签注入elf语法</li><li>更多功能等你挖掘...</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx">查看详情</a></p>'
+    content: '<div><p>适配LiteFlow 2.8.X全新规则表达式语法</p><ul><li>EL语法高亮</li><li>EL语法自动提示</li><li>支持EL语法预检测</li><li>更多功能等你挖掘...</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx">查看详情</a></p>'
     isHtmlContent: true
-  - title: 🎉 LiteFlow v2.8.1 发布！
-    content: '测试第二个框'
-    isHtmlContent: false
 ---
 
 <Notice :data="$frontmatter.notices"/>
