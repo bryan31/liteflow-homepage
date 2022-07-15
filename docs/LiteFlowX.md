@@ -121,6 +121,12 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 
 
 ## 📕 更新日志
+::: tip [1.0.1] - 2022-07-14
+- 修复 因旧表达式存在而导致的报错
+- 修复 因qualifiedName参数为null而导致的IllegalArgumentException
+- 优化 部分代码的对Null值得判断
+:::
+
 ::: tip [1.0.0] - 2022-07-11
 :tada: 适配 LiteFlow 2.8.x 全新规则表达式语法
 
@@ -143,19 +149,19 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 ```yaml
 - name: 铂赛东
   desc: LiteFlow 开源作者
-  avatar: https://portrait.gitee.com/uploads/avatars/user/367/1102362_bryan31_1578940308.png
+  avatar: /img/liteflowx/avator/bryan31.webp
   link: https://gitee.com/bryan31
   bgColor: '#d7d7d7'
   textColor: '#000000'
 - name: 码农小易
   desc: LiteFlowX 开源作者
-  avatar: https://portrait.gitee.com/uploads/avatars/user/635/1907773_liupeiqiang_1651224603.png
+  avatar: /img/liteflowx/avator/liupeiqiang.webp
   link: https://gitee.com/liupeiqiang
   bgColor: '#ffe3d8'
   textColor: '#444452'
 - name: chenglitao521
   desc: 贡献者
-  avatar: https://avatars.githubusercontent.com/u/27468094
+  avatar: /img/liteflowx/avator/chenglitao521.jpg
   link: https://github.com/chenglitao521
   bgColor: '#f5efbd'
   textColor: '#3d6328'
