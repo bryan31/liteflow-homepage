@@ -31,6 +31,22 @@ notices: # 可选的
   <a class="become-sponsor" href="/pages/fb599d/">支持这个项目</a>
 </p>
 
+## 🌈特别赞助
+
+::: cardList
+```yaml
+- name: ERD Online
+  desc: 开箱即用的数据库建模、产品版本管理软件
+  avatar: /img/donate/erd.png
+  link: https://portal.zerocode.net.cn/
+  bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
+  textColor: '#1f2328' # 可选，默认var(--textColor)
+
+```
+:::
+
+<br/>
+
 <style>
 .become-sponsor{
   padding: 8px 20px;
@@ -127,22 +143,6 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 ## 🍭架构图
 
 <img :src="$withBase('/img/arch.png')" style="zoom: 120%" class="no-zoom">
-
-<br/>
-
-## 🌈特别赞助
-
-::: cardList
-```yaml
-- name: ERD Online
-  desc: 开箱即用的数据库建模、产品版本管理软件
-  avatar: /img/donate/erd.png
-  link: https://portal.zerocode.net.cn/
-  bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
-  textColor: '#1f2328' # 可选，默认var(--textColor)
-
-```
-:::
 
 <br/>
 
