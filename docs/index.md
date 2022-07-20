@@ -193,8 +193,13 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dotnetchina" target="_blank">
-        <img :src="$withBase('/img/link/dotnet-china-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
+    <a href="https://gitee.com/dromara/easy-es/" target="_blank">
+        <img :src="$withBase('/img/link/ee-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
+    </a>
+</span>
+<span style="width: 150px;text-align: left">
+    <a href="http://www.layui-vue.com/zh-CN/index" target="_blank">
+        <img :src="$withBase('/img/link/layui-vue.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
@@ -203,11 +208,10 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     </a>
 </span>
 <span style="width: 150px;text-align: left">
-    <a href="https://gitee.com/dromara/easy-es/" target="_blank">
-        <img :src="$withBase('/img/link/ee-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
+    <a href="https://gitee.com/dotnetchina" target="_blank">
+        <img :src="$withBase('/img/link/dotnet-china-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
-
 
 <br/>
 
