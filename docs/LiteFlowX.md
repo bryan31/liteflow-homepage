@@ -16,7 +16,7 @@ titleTag: 🎉 支持elf语法！
 - 插件将来会致力于 LiteFlow 框架的最新版本特性做出更改和完善，使用本插件前请确保您使用的是最新的 LiteFlow 框架。
 :::
 
-![封面](/img/liteflowx/cover.png)
+![封面](/img/liteflowx/cover.jpg)
 
 LiteFlowX 是一款 IDEA 插件，它能够大幅度提高你在使用 LiteFlow 框架进行开发时的工作效率。
 
@@ -118,9 +118,33 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 ### LiteFlow 工具箱
 ![LiteFlow 工具箱](/img/liteflowx/toolbox.gif)
 
+## 💬 疑难解答
+### Q：为什么安装 LiteFlowX 插件，相关ELF表达式仍然无法高亮？
+A：首先请确保您安装的是最新版本的 LiteFlowX 插件，并且安装完成后务必重启 IDEA。若以上操作仍无法解决问题，考虑您安装的第三方主题影响了高亮，请到 `File -> Settings -> Editor -> Color Scheme -> General -> Code -> Injected language fragment` 将右侧勾选框的 `Foreground` 取消勾选，并按确认更改。
 
+![无高亮解决方法](/img/liteflowx/nohighlight.png)
+
+### Q：为什么写在表达式内的注释会报错，有时候不会？
+A：这里要特别注意，若您需要在表达式内写注释，只能在 `引用组件前` 或 `ELF关键字前` 写，如下图所示。
+
+![允许的注释](/img/liteflowx/yescomment.png)
+
+![不允许的注释](/img/liteflowx/nocomment.png)
+
+### Q：没有在疑难解答解决我的问题，怎么办？
+A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇怪怪的事，不过没有关系，您可以随时[联系作者](https://gitee.com/liupeiqiang)或在[Gitee仓库](https://gitee.com/liupeiqiang/LiteFlowX)内提出您宝贵的意见或ISSUES，我会第一时间解答您的疑问。💖
 
 ## 📕 更新日志
+::: tip [1.0.2] - 2022-07-21
+- 新增 #I5HPMC 支持EL中的注释
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5HPMC
+- 新增 #I5H8RL 新增 IDEA-222.* 的支持
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5H8RL
+- 新增 识别括号并高亮
+- 新增 自动缩进
+- 修复 抛出 java.lang.NullPointerException 异常的问题
+:::
+
 ::: tip [1.0.1] - 2022-07-14
 - 修复 因旧表达式存在而导致的报错
 - 修复 因qualifiedName参数为null而导致的IllegalArgumentException
