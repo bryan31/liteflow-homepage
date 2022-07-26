@@ -17,9 +17,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: liteflowx-1658366167721 
-    title: 🚀 LiteFlowX v1.0.2 新版本发布！
-    content: '<div><p>2022-07-21</p><ul><li>新增 <a title="Issue: 希望能支持EL中的注释"href="/liupeiqiang/LiteFlowX/issues/I5HPMC">#I5HPMC</a> 支持EL中的注释</li><li>新增 <a title="Issue: 新增 IDEA-222.* 的支持"href="/liupeiqiang/LiteFlowX/issues/I5H8RL">#I5H8RL</a> 新增IDEA-222.*的支持</li><li>新增识别括号并高亮</li><li>新增自动缩进</li><li>修复抛出java.lang.NullPointerException异常的问题</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx">查看详情</a></p>'
+  - id: liteflow-2.8.3
+    title: 🚀 LiteFlow v2.8.3 新版本发布！
+    content: '<div><p>2022-07-27</p><ul><li>[特性]提供节点包装语法+替补节点的功能</li><li>[增强]LiteFlowResponse提供errorCode的功能</li><li>[增强]支持脚本里获取requestData</li><li>[增强]重构查找解析器的代码</li></ul></div><p style="text-align: right;"><a href="/pages/88c2d1/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -86,7 +86,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.8.2</version>
+    <version>2.8.3</version>
 </dependency>
 ```
 
