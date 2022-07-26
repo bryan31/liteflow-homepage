@@ -27,10 +27,6 @@ notices: # 可选的
 
 <br/><br/>
 
-<p align="center">
-  <a class="become-sponsor" href="/pages/fb599d/">支持这个项目</a>
-</p>
-
 ## 🌈特别赞助
 
 ::: cardList
@@ -44,8 +40,11 @@ notices: # 可选的
 
 ```
 :::
-
 <br/>
+
+<p align="center">
+  <a class="become-sponsor" href="/pages/fb599d/">成为赞助者</a>
+</p>
 
 <style>
 .become-sponsor{
