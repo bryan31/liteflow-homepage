@@ -41,7 +41,12 @@ notices: # 可选的
   link: https://portal.zerocode.net.cn/
   bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
   textColor: '#1f2328' # 可选，默认var(--textColor)
-
+- name: Eoapi
+  desc: 开源 API 管理工具，接口文档、接口测试、Mock...
+  avatar: /img/donate/eoapi-logo.jpg
+  link: https://docs.eoapi.io/?utm_source=ZZ080101
+  bgColor: '#00785A'
+  textColor: '#FFFFFF'
 ```
 :::
 <br/>
