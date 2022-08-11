@@ -27,8 +27,8 @@ module.exports = [
     { text: 'Gitee', link: 'https://gitee.com/dromara/liteFlow' },
     { text: 'Github', link: 'https://github.com/dromara/liteflow' },
     { text: 'Language', items: [
-            { text: '简体中文', link: 'https://liteflow.yomahub.com/', target:'_self', rel:''},
-            { text: 'English', link: 'https://liteflow.yomahub.com/en', target:'_self', rel:''},
+            { text: '简体中文', link: 'https://liteflow.yomahub.com/'},
+            { text: 'English', link: 'https://liteflow.yomahub.com/en'},
         ]
     },
 ];
