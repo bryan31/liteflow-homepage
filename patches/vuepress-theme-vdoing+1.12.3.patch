@@ -1,0 +1,45 @@
+diff --git a/node_modules/vuepress-theme-vdoing/components/NavLink.vue b/node_modules/vuepress-theme-vdoing/components/NavLink.vue
+index 93feac7..429934b 100644
+--- a/node_modules/vuepress-theme-vdoing/components/NavLink.vue
++++ b/node_modules/vuepress-theme-vdoing/components/NavLink.vue
+@@ -11,8 +11,8 @@
+     :href="link"
+     @focusout="focusoutAction"
+     class="nav-link external"
+-    :target="isMailto(link) || isTel(link) ? null : '_blank'"
+-    :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
++    :target="target"
++    :rel="rel"
+   >
+     {{ item.text }}
+     <OutboundLink />
+@@ -39,6 +39,29 @@ export default {
+         return Object.keys(this.$site.locales).some(rootLink => rootLink === this.link)
+       }
+       return this.link === '/'
++    },
++
++    target () {
++      if (this.isNonHttpURI) {
++        return null
++      }
++      if (this.item.target) {
++        return this.item.target
++      }
++      return isExternal(this.link) ? '_blank' : ''
++    },
++    
++    rel () {
++      if (this.isNonHttpURI) {
++        return null
++      }
++      if (this.item.rel === false) {
++        return null
++      }
++      if (this.item.rel) {
++        return this.item.rel
++      }
++      return this.isBlankTarget ? 'noopener noreferrer' : null
+     }
+   },
+ 
