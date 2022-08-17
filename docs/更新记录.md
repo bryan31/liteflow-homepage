@@ -4,6 +4,30 @@ date: 2022-06-01 14:31:18
 permalink: /pages/88c2d1/
 ---
 
+:::tip v2.8.4
+
+特性 #I5M34O 支持在流程执行前就传入一个初始化好的context对象的特性
+
+https://gitee.com/dromara/liteFlow/issues/I5M34O
+
+增强 #I5LY8B 增强SwitchCondition里面的targetMap无法get到的问题
+
+https://gitee.com/dromara/liteFlow/issues/I5LY8B
+
+增强 #I5KAMF 是否可以增加自定义配置哪些异常类型日志不打印
+
+https://gitee.com/dromara/liteFlow/issues/I5KAMF
+
+增强 #I5EU86 把fastjson替换成jackson
+
+https://gitee.com/dromara/liteFlow/issues/I5EU86
+
+修复 #I5KJFP Switch组件如果被spring动态代理后，无法取到跳转到的目标节点的问题
+
+https://gitee.com/dromara/liteFlow/issues/I5KJFP
+
+:::
+
 :::tip v2.8.3
 
 特性 #I5IA5U 提供节点包装语法+替补节点的功能

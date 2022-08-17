@@ -17,9 +17,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: liteFlowX-1.0.3
-    title: ✨ LiteFlowX v1.0.3 新版本发布！
-    content: '<div><p>2022-08-02</p><ul><li>[新增]支持替补组件特性</li><li>[新增]支持node关键字的组件名包装特性</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+  - id: liteflow-2.8.4
+    title: 🚀 LiteFlow v2.8.4 新版本发布！
+    content: '<div><p>2022-08-18</p><ul><li>[特性]支持传入一个初始化好的上下文对象的特性</li><li>[增强]修复SwitchCondition里面的目标MAP无法get到</li><li>[增强]增加关闭日常日志不打印</li><li>[增强]把fastjson替换成jackson</li><li>[修复]修复Switch组件如果被动态代理后无法取到跳转目标节点的问题</li></ul></div><p style="text-align: right;"><a href="/pages/88c2d1/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -91,7 +91,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.8.3</version>
+    <version>2.8.4</version>
 </dependency>
 ```
 
