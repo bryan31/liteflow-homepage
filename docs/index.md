@@ -150,6 +150,10 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 <br/>
 
+## 🌏知识星球
+
+<img :src="$withBase('/img/zhishixingqiu.png')" style="zoom: 50%" class="no-zoom">
+
 ## 🐳Dromara组织成员
 <span style="width: 150px;text-align: left">
     <a href="https://gitee.com/dromara/TLog" target="_blank">
