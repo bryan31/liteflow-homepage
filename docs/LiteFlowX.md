@@ -72,9 +72,9 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 有三种方式可安装LiteFlowX插件到IDEA中
 ::: tip
 支持 LiteFlowX 插件的版本有：
-- IntelliJ IDEA Educational — 2020.1 — 2022.1.2
-- IntelliJ IDEA Ultimate — 2020.1 — 2022.1.3
-- IntelliJ IDEA Community — 2020.1 — 2022.1.3
+- IntelliJ IDEA Educational — 2020.2 — 2022.2
+- IntelliJ IDEA Ultimate — 2020.2 — 2022.2.1
+- IntelliJ IDEA Community — 2020.2 — 2022.2.1
 :::
 ### 方法一：点击这里安装（推荐）
 
@@ -135,6 +135,12 @@ A：这里要特别注意，若您需要在表达式内写注释，只能在 `�
 A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇怪怪的事，不过没有关系，您可以随时[联系作者](https://gitee.com/liupeiqiang)或在[Gitee仓库](https://gitee.com/liupeiqiang/LiteFlowX)内提出您宝贵的意见或ISSUES，我会第一时间解答您的疑问。💖
 
 ## 📕 更新日志
+::: tip [1.0.4] - 2022-08-25
+- 新增 #I5NWWJ 支持 LiteFlow v2.8.5 的IF关键字特性
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5NWWJ
+- 修复 SWITCH() 允许输入多个表达式的问题
+:::
+
 ::: tip [1.0.3] - 2022-08-02
 - 新增 #I5K13V 支持 liteflow v2.8.3 的替补组件特性
   - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5K13V
