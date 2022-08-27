@@ -95,13 +95,13 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.8.4</version>
+    <version>2.8.5</version>
 </dependency>
 ```
 
 :::tip 新版本稳定吗？
 
-我们每一次发布版本，都会补充大量的测试用例。截止到目前，LiteFlow一共有880多个测试用例，几乎覆盖到每一个已有功能的细节点。
+我们每一次发布版本，都会补充大量的测试用例。截止到目前，LiteFlow一共有930多个测试用例，几乎覆盖到每一个已有功能的细节点。
 
 并且我们会跑超大量的并发压力测试，以上所有的通过后，我们才会谨慎的提交代码覆盖主分支进行发版。
 
@@ -114,7 +114,7 @@ notices: # 可选的
 
 ## 🎉致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群800多人，Gitee上2.2k Stars，Github上600多Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群1000多人，Gitee上2.7k Stars，Github上900多Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 

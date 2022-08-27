@@ -4,6 +4,30 @@ date: 2022-06-01 14:31:18
 permalink: /pages/88c2d1/
 ---
 
+:::tip v2.8.5
+
+特性 #I5KTST IF三元符语法的添加以及IF ELIF ELSE语法的添加
+
+https://gitee.com/dromara/liteFlow/issues/I5KTST
+
+增强 #I5O22X 增加EL解析中的报错详细信息
+
+https://gitee.com/dromara/liteFlow/issues/I5O22X
+
+增强 #I5MZJY 解决循环调用同步的隐式流程，参数只能取一次的问题
+
+https://gitee.com/dromara/liteFlow/issues/I5MZJY
+
+修复 #I5NH56 switch组件对于cglib代理过的bean目前处理的不够全面
+
+https://gitee.com/dromara/liteFlow/issues/I5NH56
+
+修复 I5NFV3 在zk集群中多个zk地址不生效的bug
+
+https://gitee.com/dromara/liteFlow/issues/I5NFV3
+
+:::
+
 :::tip v2.8.4
 
 特性 #I5M34O 支持在流程执行前就传入一个初始化好的context对象的特性
