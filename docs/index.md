@@ -17,13 +17,13 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
+  - id: iteflow-2.8.5
+    title: 🚀 LiteFlow v2.8.5 新版本发布！
+    content: '<div><p>2022-08-28</p><ul><li>[特性]IF三元符语法的添加以及IF ELIF ELSE语法的添加</li><li>[增强]增加EL解析中的报错详细信息</li><li>[增强]解决循环调用同步的隐式流程，参数只能取一次的问题</li><li>[修复]switch组件对于cglib代理过的bean目前处理的不够全面</li><li>[修复]在zk集群中多个zk地址不生效的bug</li></ul></div><p style="text-align: right;"><a href="/pages/88c2d1/">查看详情</a></p>'
+    isHtmlContent: true
   - id: liteflowX-1.0.4
     title: 🎉 LiteFlowX v1.0.4 新版本发布！
     content: '<div><p>2022-08-25</p><ul><li>支持 LiteFlow v2.8.5 的IF关键字特性</li><li>修复 SWITCH() 允许输入多个表达式的问题</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
-    isHtmlContent: true
-  - id: liteflow-2.8.4
-    title: 🚀 LiteFlow v2.8.4 新版本发布！
-    content: '<div><p>2022-08-18</p><ul><li>[特性]支持传入一个初始化好的上下文对象的特性</li><li>[增强]修复SwitchCondition里面的目标MAP无法get到</li><li>[增强]增加关闭日常日志不打印</li><li>[增强]把fastjson替换成jackson</li><li>[修复]修复Switch组件如果被动态代理后无法取到跳转目标节点的问题</li></ul></div><p style="text-align: right;"><a href="/pages/88c2d1/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
