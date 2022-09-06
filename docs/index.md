@@ -294,6 +294,11 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     </a>
 </span>
 <span style="width: 150px;text-align: left">
+    <a href="https://github.com/opengoofy/hippo4j" target="_blank">
+        <img :src="$withBase('/img/link/hippo4j.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
+    </a>
+</span>
+<span style="width: 150px;text-align: left">
     <a href="http://www.pearadmin.com/" target="_blank">
         <img :src="$withBase('/img/link/pearAdmin-logo.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
