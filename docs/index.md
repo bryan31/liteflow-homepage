@@ -44,7 +44,7 @@ notices: # 可选的
 - name: Eoapi
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
   avatar: /img/donate/eoapi-logo.jpg
-  link: https://docs.eoapi.io/?utm_source=ZZ080101
+  link: https://datayi.cn/w/Aovrkzlo
   bgColor: '#00785A'
   textColor: '#FFFFFF'
 ```
@@ -261,17 +261,17 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 </span>
 <span style="width: 150px;text-align: left">
     <a href="https://gitee.com/dromara/x-easypdf" target="_blank">
-        <img :src="$withBase('/img/dromara/xeasypdf-logo.png')" class="no-zoom" style="height:40px;width:120px;margin: 10px;">
+        <img :src="$withBase('/img/dromara/xeasypdf-logo.png')" class="no-zoom" style="height:40px;width:170px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
     <a href="https://gitee.com/dromara/image-combiner" target="_blank">
-        <img :src="$withBase('/img/dromara/imagecombiner-logo.png')" class="no-zoom" style="height:40px;width:150px;margin: 10px;">
+        <img :src="$withBase('/img/dromara/imagecombiner-logo.png')" class="no-zoom" style="height:40px;width:170px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
     <a href="https://gitee.com/dromara/dante-cloud" target="_blank">
-        <img :src="$withBase('/img/dromara/dantecloud-logo.png')" class="no-zoom" style="height:40px;width:150px;margin: 10px;">
+        <img :src="$withBase('/img/dromara/dantecloud-logo.png')" class="no-zoom" style="height:40px;width:170px;margin: 10px;">
     </a>
 </span>
 
@@ -291,6 +291,11 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 <span style="width: 150px;text-align: left">
     <a href="http://www.layui-vue.com/zh-CN/index" target="_blank">
         <img :src="$withBase('/img/link/layui-vue.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
+    </a>
+</span>
+<span style="width: 150px;text-align: left">
+    <a href="https://github.com/opengoofy/hippo4j" target="_blank">
+        <img :src="$withBase('/img/link/hippo4j.png')" class="no-zoom" style="height:40px;max-width:150px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
