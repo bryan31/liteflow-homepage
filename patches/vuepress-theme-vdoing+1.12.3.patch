@@ -1,3 +1,67 @@
+diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
+index 7eececa..117391f 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Home.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
+@@ -6,6 +6,7 @@
+       :class="{ 'hide-banner': !showBanner }"
+       :style="bannerBgStyle"
+     >
++      <video ref="videobg" v-if="videoBackgroundSrc != null" :src="videoBackgroundSrc" class="video-background" autoPlay preload="auto" loop="loop" controlsList="nodownload" oncontextmenu="return(false);"></video>
+       <div
+         class="banner-conent"
+         :style="
+@@ -159,7 +160,6 @@
+     </MainLayout>
+   </div>
+ </template>
+-
+ <script>
+ import NavLink from "@theme/components/NavLink";
+ import BScroll from "@better-scroll/core"
+@@ -191,7 +191,25 @@ export default {
+       currentPage: 1// 当前页
+     }
+   },
++  props: {
++    themeMode: {
++      type: String,
++      required: true,
++      default: null
++    }
++  },
+   computed: {
++    videoBackgroundSrc() {
++      if (this.themeMode === 'dark'){
++        return "/video/bg-dark.mp4"
++      }else if (this.themeMode === 'light'){
++        return "/video/bg-light.mp4"
++      }else if (this.themeMode === 'read'){
++        return "/video/bg-read.mp4"
++      }else{
++        return null;
++      }
++    },
+     homeData() {
+       return {
+         ...this.$page.frontmatter
+@@ -246,6 +264,7 @@ export default {
+     this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
+   },
+   mounted() {
++
+     if (this.$route.query.p) {
+       this.currentPage = Number(this.$route.query.p)
+     }
+@@ -271,6 +290,9 @@ export default {
+     this.slide && this.slide.destroy()
+   },
+   watch: {
++    themeMode(){
++      console.log(this.themeMode)
++    },
+     '$route.query.p'() {
+       if (!this.$route.query.p) {
+         this.currentPage = 1
 diff --git a/node_modules/vuepress-theme-vdoing/components/NavLink.vue b/node_modules/vuepress-theme-vdoing/components/NavLink.vue
 index 93feac7..429934b 100644
 --- a/node_modules/vuepress-theme-vdoing/components/NavLink.vue
@@ -43,3 +107,16 @@ index 93feac7..429934b 100644
      }
    },
  
+diff --git a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
+index 62dda70..596eedd 100644
+--- a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
++++ b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
+@@ -36,7 +36,7 @@
+     </Sidebar>
+ 
+     <!-- 首页 -->
+-    <Home v-if="$page.frontmatter.home" />
++    <Home v-if="$page.frontmatter.home" :themeMode="themeMode" />
+ 
+     <!-- 分类页 -->
+     <CategoriesPage v-else-if="$page.frontmatter.categoriesPage" />
