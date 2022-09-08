@@ -1,12 +1,12 @@
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
-index 7eececa..117391f 100644
+index 7eececa..806062b 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
 @@ -6,6 +6,7 @@
        :class="{ 'hide-banner': !showBanner }"
        :style="bannerBgStyle"
      >
-+      <video ref="videobg" v-if="videoBackgroundSrc != null" :src="videoBackgroundSrc" class="video-background" autoPlay preload="auto" loop="loop" controlsList="nodownload" oncontextmenu="return(false);"></video>
++      <video ref="videobg" v-if="videoBackgroundSrc != null" :src="videoBackgroundSrc" class="video-background" autoPlay preload="auto" loop="loop" muted="muted" controlsList="nodownload" oncontextmenu="return(false);"></video>
        <div
          class="banner-conent"
          :style="
