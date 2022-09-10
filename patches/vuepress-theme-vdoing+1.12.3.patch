@@ -32,11 +32,11 @@ index 7eececa..806062b 100644
    computed: {
 +    videoBackgroundSrc() {
 +      if (this.themeMode === 'dark'){
-+        return "/video/bg-dark.mp4"
++        return "/video/bg-dark.mov"
 +      }else if (this.themeMode === 'light'){
-+        return "/video/bg-light.mp4"
++        return "/video/bg-light.mov"
 +      }else if (this.themeMode === 'read'){
-+        return "/video/bg-read.mp4"
++        return "/video/bg-read.mov"
 +      }else{
 +        return null;
 +      }
