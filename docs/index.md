@@ -161,7 +161,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 ## 🐳Dromara组织成员
 <span style="width: 150px;text-align: left">
     <a href="https://gitee.com/dromara/TLog" target="_blank">
-        <img :src="$withBase('/img/dromara/tlog-logo.png')" class="no-zoom" style="height:40px;width:120px;margin: 10px;">
+        <img :src="$withBase('/img/dromara/tlog-logo.png')" class="no-zoom" style="height:40px;width:115px;margin: 10px;">
     </a>
 </span>
 <span style="width: 150px;text-align: left">
