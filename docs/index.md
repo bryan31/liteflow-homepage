@@ -44,7 +44,7 @@ notices: # 可选的
 - name: Eoapi
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
   avatar: /img/donate/eoapi-logo.jpg
-  link: https://datayi.cn/w/Aovrkzlo
+  link: https://docs.eoapi.io/?utm_source=ZZ080102
   bgColor: '#00785A'
   textColor: '#FFFFFF'
 ```
