@@ -1,9 +1,17 @@
 module.exports = [
     { text: '💒首页', link: '/' },
     { text: '📚文档', link: '/pages/5816c5/', items: [
-            { text: 'v2.8.5(当前版本)', link: '/pages/5816c5/'},
-            { text: '升级到2.8.X说明', link: '/pages/88c2e2/'},
-            { text: 'v2.7.3', link: '/pages/967466/'},
+            { text: 'v2.9.0(当前版本)', link: '/pages/5816c5/'},
+            { text: '历史版本', items: [
+                    { text: 'v2.8.X', link: '/pages/v2.8.X/5816c5/'},
+                    { text: 'v2.7.X', link: '/pages/v2.7.X/967466/'},
+                ]
+            },
+            { text: '升级指南', items: [
+                    { text: '升级到2.9.X说明', link: '/pages/xxxxxx/'},
+                    { text: '升级到2.8.X说明', link: '/pages/88c2e2/'},
+                ]
+            },
         ]
     },
     { text: '⛑问答', link: '/pages/845dff/' },
