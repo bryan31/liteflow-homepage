@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-actionText: 🧩新版本，全新规则表达式！
+actionText: 🧩v2.9.0超多特性来袭！
 actionLink: /pages/5816c5/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
@@ -47,6 +47,12 @@ notices: # 可选的
   link: https://docs.eoapi.io/?utm_source=ZZ080102
   bgColor: '#00785A'
   textColor: '#FFFFFF'
+- name: MaxKey
+  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
+  avatar: /img/donate/maxkey.png
+  link: https://gitee.com/dromara/MaxKey
+  bgColor: '#9ed3e5'
+  textColor: '#1f2328'
 ```
 :::
 <br/>
@@ -72,8 +78,8 @@ notices: # 可选的
 * **组件定义统一：** 所有的逻辑都是组件，为所有的逻辑提供统一化的组件实现方式，小身材，大能量。
 * **规则轻量：** 基于规则文件来编排流程，学习规则入门只需要5分钟，一看既懂。
 * **规则多样化：** 规则支持xml、json、yml三种规则文件写法方式，喜欢哪种用哪个。
-* **任意编排：** 同步异步混编，再复杂的逻辑过程，利用LiteFlow的规则，都是很容易做到的，看规则文件就能知道逻辑是如何运转的。
-* **规则能从任意地方加载：** 框架中提供本地文件配置源和zk配置源的实现，也提供了扩展接口，您可以把规则存储在任何地方。
+* **任意编排：** 再复杂的逻辑过程，利用LiteFlow的规则，都是很容易做到的，看规则文件就能知道逻辑是如何运转的。
+* **规则持久化：** 框架原生支持把规则存储在标准结构化数据库，Nacos，Etcd，Zookeeper。您也可以自己扩展，把规则存储在任何地方。
 * **优雅热刷新机制：** 规则变化，无需重启您的应用，即时改变应用的规则。高并发下不会因为刷新规则导致正在执行的规则有任何错乱。
 * **支持广泛：** 不管你的项目是不是基于Springboot，Spring还是任何其他java框架构建，LiteFlow都能游刃有余。
 * **JDK支持：** 从JDK8到JDK17，统统支持。无需担心JDK版本。
@@ -95,13 +101,13 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.8.5</version>
+    <version>2.9.0</version>
 </dependency>
 ```
 
 :::tip 新版本稳定吗？
 
-我们每一次发布版本，都会补充大量的测试用例。截止到目前，LiteFlow一共有930多个测试用例，几乎覆盖到每一个已有功能的细节点。
+我们每一次发布版本，都会补充大量的测试用例。庞大的测试用例数目几乎覆盖到每一个已有功能的细节点。
 
 并且我们会跑超大量的并发压力测试，以上所有的通过后，我们才会谨慎的提交代码覆盖主分支进行发版。
 
