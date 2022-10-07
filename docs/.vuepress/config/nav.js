@@ -5,11 +5,13 @@ module.exports = [
             { text: '历史版本', items: [
                     { text: 'v2.8.X', link: '/pages/v2.8.X/5816c5/'},
                     { text: 'v2.7.X', link: '/pages/v2.7.X/967466/'},
+                    { text: 'v2.6.X', link: '/pages/v2.6.X/dfd970/'},
                 ]
             },
             { text: '升级指南', items: [
-                    { text: '升级到2.9.X说明', link: '/pages/xxxxxx/'},
+                    { text: '升级到2.9.X说明', link: '/pages/88c2f3/'},
                     { text: '升级到2.8.X说明', link: '/pages/88c2e2/'},
+                    { text: '升级到2.7.X说明', link: '/pages/4848b9/'},
                 ]
             },
         ]
