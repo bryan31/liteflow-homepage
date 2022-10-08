@@ -1,5 +1,5 @@
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
-index 7eececa..2b0e47d 100644
+index 7eececa..6de9666 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
 @@ -6,6 +6,7 @@
@@ -18,6 +18,15 @@ index 7eececa..2b0e47d 100644
  <script>
  import NavLink from "@theme/components/NavLink";
  import BScroll from "@better-scroll/core"
+@@ -179,7 +179,7 @@ BScroll.use(Slide)
+ export default {
+   data() {
+     return {
+-      isMQMobile: false,
++      isMQMobile: true,
+ 
+       slide: null,
+       currentPageIndex: 0,
 @@ -191,7 +191,28 @@ export default {
        currentPage: 1// 当前页
      }
