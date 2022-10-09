@@ -26,6 +26,7 @@ module.exports = [
     { text: '🔥PPT', link: '/pages/8d6666/' },
     { text: '关于项目', items: [
             { text: '项目介绍', link: '/pages/8d7f1e/'},
+            { text: '项目成员', link: '/pages/ae4d66/'},
             { text: '更新记录', link: '/pages/88c2d1/'},
             { text: '参与开发', link: '/pages/ae4dd5/'},
         ]

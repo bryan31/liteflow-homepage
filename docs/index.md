@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-actionText: 🧩v2.9.0超多特性来袭！
+actionText: 🧩v2.9.0超多特性汹涌而至！
 actionLink: /pages/5816c5/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
@@ -120,7 +120,7 @@ notices: # 可选的
 
 ## 🎉致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群1000多人，Gitee上2.7k Stars，Github上900多Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群1200多人，Gitee上3k Stars，Github上1.1k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 
