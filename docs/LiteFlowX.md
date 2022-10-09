@@ -5,14 +5,13 @@ permalink: /pages/liteflowx/
 author:
  name: 码农小易
  link: https://gitee.com/liupeiqiang/
-titleTag: 🎉 支持elf语法！
+titleTag: ✨ 全新视觉升级！
 ---
 
 :::warning 插件版本须知
-- LiteFlowX 插件版本自 `v1.0.0` 起，将不再支持 LiteFlow `2.7.X` 及以下版本的特性。
 
-- 如果您使用的是旧版本的 LiteFlow 框架，请自行[下载插件jar包](https://gitee.com/liupeiqiang/LiteFlowX/releases/0.1.1)安装。
-
+- LiteFlowX 插件版本自 `v1.1.0` 起，全面适配 LiteFlow `v2.9.0` 且 向下兼容 LiteFlow `v2.8.X` 的所有特性。
+- 若您仍在使用 LiteFlow `2.7.X` 及以下版本，可自行下载[ LiteFlowX v0.1.1 Jar包 ](https://gitee.com/liupeiqiang/LiteFlowX/releases/0.1.1)进行安装
 - 插件将来会致力于 LiteFlow 框架的最新版本特性做出更改和完善，使用本插件前请确保您使用的是最新的 LiteFlow 框架。
 :::
 
@@ -49,22 +48,22 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
   bgColor: '#F0DFB1'
   textColor: '#242A38'
 - name: 语法注入
-  desc: ELF 语法自动向.el.xml的chain注入
+  desc: ELF 语法自动向 .xml 的 chain 注入
   bgColor: '#718971'
   textColor: '#fff'
 - name: LiteFlow 工具箱
-  desc: 项目工程Component、Chain一目了然
+  desc: 项目工程的组件、链路一目了然
   bgColor: '#DFEEE7'
   textColor: '#2A3344'
 ```
 :::
 
-- 支持 LiteFlow 2.8.x 新的规则表达式语法（自动提示、语法高亮、语法检测）
-- 特定的文件 Svg 图标，容易识别 LiteFlow 元素
-- 能够识别Component、Chain
-- Java 代码和 Chain 的互相跳转
-- Xml 文件与 LiteFlow 元素的互相跳转
-- 提供LiteFLow工具箱，整个工程的Component、Chain，并且支持双击跳转
+- 全面适配 LiteFlow v2.9.x 的所有特性
+- 支持 ELF 规则表达式（自动提示、语法高亮、语法检测）
+- 能够识别组件、链路
+- 细分化的组件类型图标，让组件一目了然
+- 更加智能的自动提示，可细分化后的组件、链路
+- 提供LiteFlow工具箱，整个工程的组件、链路，并且支持双击跳转
 - 支持对 liteflow.ruleSource 属性的文件跳转
 - ...更多特性敬请期待
 
@@ -72,9 +71,9 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 有三种方式可安装LiteFlowX插件到IDEA中
 ::: tip
 支持 LiteFlowX 插件的版本有：
-- IntelliJ IDEA Educational — 2020.2 — 2022.2
-- IntelliJ IDEA Ultimate — 2020.2 — 2022.2.1
-- IntelliJ IDEA Community — 2020.2 — 2022.2.1
+- IntelliJ IDEA Educational — 2020.3 — 2022.2
+- IntelliJ IDEA Ultimate — 2020.3 — 2022.2.1
+- IntelliJ IDEA Community — 2020.3 — 2022.2.1
 :::
 ### 方法一：点击这里安装（推荐）
 
@@ -112,9 +111,6 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 ### 支持局部变量
 ![支持局部变量](/img/liteflowx/localvar.gif)
 
-### 支持.el.xml的chain标签自动注入elf语法
-![支持.el.xml的chain标签自动注入elf语法](/img/liteflowx/newelxml.gif)
-
 ### LiteFlow 工具箱
 ![LiteFlow 工具箱](/img/liteflowx/toolbox.gif)
 
@@ -124,17 +120,33 @@ A：首先请确保您安装的是最新版本的 LiteFlowX 插件，并且安�
 
 ![无高亮解决方法](/img/liteflowx/nohighlight.png)
 
-### Q：为什么写在表达式内的注释会报错，有时候不会？
-A：这里要特别注意，若您需要在表达式内写注释，只能在 `引用组件前` 或 `ELF关键字前` 写，如下图所示。
-
-![允许的注释](/img/liteflowx/yescomment.png)
-
-![不允许的注释](/img/liteflowx/nocomment.png)
-
 ### Q：没有在疑难解答解决我的问题，怎么办？
 A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇怪怪的事，不过没有关系，您可以随时[联系作者](https://gitee.com/liupeiqiang)或在[Gitee仓库](https://gitee.com/liupeiqiang/LiteFlowX)内提出您宝贵的意见或ISSUES，我会第一时间解答您的疑问。💖
 
-## 📕 更新日志
+## 📕 更新日志 
+::: tip [1.1.0] - 2022-10-09
+- 新增 #I5TUH1 LiteFlow 2.9.0 的 data 属性特性的适配
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5TUH1
+- 新增 #I5TU26 LiteFlow 2.9.0 循环组件语法的适配
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5TU26
+- 新增 #I5U36H LiteFlow 2.9.0 版本中EL对*.xml检测生效
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5U36H
+- 新增 #I5UA9R LiteFlow 2.9.0 重构后的声明式组件的适配
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5UA9R
+- 新增 #I5TU3E 细分化Component类型的特性
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5TU3E
+- 修复 #I5Q35D ELF语法无法正常解析注释的问题
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5Q35D
+- 修复 #I5U3QH 核心源码不应该显示组件图标的问题
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5U3QH
+- 修复 #I5O84M 不能正常识别node的XML标签的问题
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5O84M
+- 优化 插件内核源码架构
+- 优化 插件内的所有图标，简洁清爽！
+- 优化 LiteFlowTool 工具箱的副标题显示内容
+- 修复 LiteFlowTool 工具箱双击无法跳转对应Chain的问题
+:::
+
 ::: tip [1.0.4] - 2022-08-25
 - 新增 #I5NWWJ 支持 LiteFlow v2.8.5 的IF关键字特性
   - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5NWWJ
