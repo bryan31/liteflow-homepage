@@ -24,6 +24,9 @@ module.exports = {
     <a href="https://docs.eoapi.io/?utm_source=ZZ080101" target="_blank">
       <img class="no-zoom" height="60" width="224" src="/img/donate/eoapi-banner.gif">
     </a>
+    <a href="https://gitee.com/dromara/MaxKey" target="_blank">
+      <img class="no-zoom" height="60" width="224" src="/img/donate/maxkey-banner.png">
+    </a>
   `,
   // 万维广告
   pageT: `

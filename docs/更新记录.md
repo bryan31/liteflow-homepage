@@ -4,6 +4,82 @@ date: 2022-06-01 14:31:18
 permalink: /pages/88c2d1/
 ---
 
+:::tip v2.9.0
+
+特性 #I5RV5D 循环表达式特性的增加
+
+https://gitee.com/dromara/liteFlow/issues/I5RV5D
+
+特性 #I5ROOR 增加关系型数据库规则存储插件的支持
+
+https://gitee.com/dromara/liteFlow/issues/I5ROOR
+
+特性 #I4I5WZ 增加nacos存储规则插件的支持
+
+https://gitee.com/dromara/liteFlow/issues/I4I5WZ
+
+特性 #I5R005 添加Etcd存储规则插件的支持
+
+https://gitee.com/dromara/liteFlow/issues/I5R005
+
+特性 #I5QCHL 支持在method级别声明式特性
+
+https://gitee.com/dromara/liteFlow/issues/I5QCHL
+
+特性 #I5RV4W 加强脚本和java之间的互动
+
+https://gitee.com/dromara/liteFlow/issues/I5RV4W
+
+特性 #I5U3RC 支持组件级别的规则参数配置
+
+https://gitee.com/dromara/liteFlow/issues/I5U3RC
+
+特性 #I5RG4H 选择组件支持组件标签选择
+
+https://gitee.com/dromara/liteFlow/issues/I5RG4H
+
+增强 #I5SYC8 支持同一组件不同组件ID的定义
+
+https://gitee.com/dromara/liteFlow/issues/I5SYC8
+
+增强 #I5QMDZ 把Zk存储的支持拆出来作为插件解耦合
+
+https://gitee.com/dromara/liteFlow/issues/I5QMDZ
+
+增强 #I5U1FH 去除老的表达式的支持，精简代码
+
+https://gitee.com/dromara/liteFlow/issues/I5U1FH
+
+增强 #I5Q3A7 优化QLExpress的Runner初始化
+
+https://gitee.com/dromara/liteFlow/issues/I5Q3A7
+
+增强 #I5U5O6 对声明式类&方法进行了重构，提升了使用友好度
+
+https://gitee.com/dromara/liteFlow/issues/I5U5O6
+
+增强 #I5T4LS 优化 FlowParserProvider 类
+
+https://gitee.com/dromara/liteFlow/issues/I5T4LS
+
+增强 #I5Q3SS 对于el表达式里的未定义的子表达式和未注册的node进行编译时检查
+
+https://gitee.com/dromara/liteFlow/issues/I5Q3SS
+
+增强 #I5OFMU 优化 Operator 代码
+
+https://gitee.com/dromara/liteFlow/issues/I5OFMU
+
+修复 #I5PK9Q 隐式流程里的异常会导致主流程里的异常发生
+
+https://gitee.com/dromara/liteFlow/issues/I5PK9Q
+
+修复 #I5PFLG 组件统计耗时未统计后置处理
+
+https://gitee.com/dromara/liteFlow/issues/I5PFLG
+
+:::
+
 :::tip v2.8.5
 
 特性 #I5KTST IF三元符语法的添加以及IF ELIF ELSE语法的添加

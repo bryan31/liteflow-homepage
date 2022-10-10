@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-actionText: 🧩新版本，全新规则表达式！
+actionText: 🧩v2.9.0超多特性汹涌而至！
 actionLink: /pages/5816c5/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
@@ -17,13 +17,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: iteflow-2.8.5
-    title: 🚀 LiteFlow v2.8.5 新版本发布！
-    content: '<div><p>2022-08-28</p><ul><li>[特性]IF三元符语法的添加以及IF ELIF ELSE语法的添加</li><li>[增强]增加EL解析中的报错详细信息</li><li>[增强]解决循环调用同步的隐式流程，参数只能取一次的问题</li><li>[修复]switch组件对于cglib代理过的bean目前处理的不够全面</li><li>[修复]在zk集群中多个zk地址不生效的bug</li></ul></div><p style="text-align: right;"><a href="/pages/88c2d1/">查看详情</a></p>'
-    isHtmlContent: true
-  - id: liteflowX-1.0.4
-    title: 🎉 LiteFlowX v1.0.4 新版本发布！
-    content: '<div><p>2022-08-25</p><ul><li>支持 LiteFlow v2.8.5 的IF关键字特性</li><li>修复 SWITCH() 允许输入多个表达式的问题</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+  - id: Liteflow-2.9.0
+    title: 🚀 LiteFlow v2.9.0 全新发布！
+    content: '<div><p>2022-10-10</p><ul><li>发布有史以来最多的一次特性！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff001/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -47,6 +43,12 @@ notices: # 可选的
   link: https://docs.eoapi.io/?utm_source=ZZ080102
   bgColor: '#00785A'
   textColor: '#FFFFFF'
+- name: MaxKey
+  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
+  avatar: /img/donate/maxkey.png
+  link: https://gitee.com/dromara/MaxKey
+  bgColor: '#9ed3e5'
+  textColor: '#1f2328'
 ```
 :::
 <br/>
@@ -72,8 +74,8 @@ notices: # 可选的
 * **组件定义统一：** 所有的逻辑都是组件，为所有的逻辑提供统一化的组件实现方式，小身材，大能量。
 * **规则轻量：** 基于规则文件来编排流程，学习规则入门只需要5分钟，一看既懂。
 * **规则多样化：** 规则支持xml、json、yml三种规则文件写法方式，喜欢哪种用哪个。
-* **任意编排：** 同步异步混编，再复杂的逻辑过程，利用LiteFlow的规则，都是很容易做到的，看规则文件就能知道逻辑是如何运转的。
-* **规则能从任意地方加载：** 框架中提供本地文件配置源和zk配置源的实现，也提供了扩展接口，您可以把规则存储在任何地方。
+* **任意编排：** 再复杂的逻辑过程，利用LiteFlow的规则，都是很容易做到的，看规则文件就能知道逻辑是如何运转的。
+* **规则持久化：** 框架原生支持把规则存储在标准结构化数据库，Nacos，Etcd，Zookeeper。您也可以自己扩展，把规则存储在任何地方。
 * **优雅热刷新机制：** 规则变化，无需重启您的应用，即时改变应用的规则。高并发下不会因为刷新规则导致正在执行的规则有任何错乱。
 * **支持广泛：** 不管你的项目是不是基于Springboot，Spring还是任何其他java框架构建，LiteFlow都能游刃有余。
 * **JDK支持：** 从JDK8到JDK17，统统支持。无需担心JDK版本。
@@ -95,13 +97,13 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.8.5</version>
+    <version>2.9.0</version>
 </dependency>
 ```
 
 :::tip 新版本稳定吗？
 
-我们每一次发布版本，都会补充大量的测试用例。截止到目前，LiteFlow一共有930多个测试用例，几乎覆盖到每一个已有功能的细节点。
+我们每一次发布版本，都会补充大量的测试用例。庞大的测试用例数目几乎覆盖到每一个已有功能的细节点。
 
 并且我们会跑超大量的并发压力测试，以上所有的通过后，我们才会谨慎的提交代码覆盖主分支进行发版。
 
@@ -114,7 +116,7 @@ notices: # 可选的
 
 ## 🎉致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群1000多人，Gitee上2.7k Stars，Github上900多Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群1200多人，Gitee上3k Stars，Github上1.1k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 
