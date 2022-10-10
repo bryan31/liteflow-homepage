@@ -18,12 +18,8 @@ features: # 可选的
 postList: none
 notices: # 可选的
   - id: iteflow-2.8.5
-    title: 🚀 LiteFlow v2.8.5 新版本发布！
-    content: '<div><p>2022-08-28</p><ul><li>[特性]IF三元符语法的添加以及IF ELIF ELSE语法的添加</li><li>[增强]增加EL解析中的报错详细信息</li><li>[增强]解决循环调用同步的隐式流程，参数只能取一次的问题</li><li>[修复]switch组件对于cglib代理过的bean目前处理的不够全面</li><li>[修复]在zk集群中多个zk地址不生效的bug</li></ul></div><p style="text-align: right;"><a href="/pages/88c2d1/">查看详情</a></p>'
-    isHtmlContent: true
-  - id: liteflowX-1.1.0
-    title: 🌟 LiteFlowX v1.1.0 重磅发布！
-    content: '<div><p>2022-10-10</p><ul><li>全新图标，简洁清爽</li><li>适配 LiteFlow 2.9.0 的全部特性</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+    title: 🚀 LiteFlow v2.9.0 全新发布！
+    content: '<div><p>2022-10-10</p><ul><li>发布有史以来最多的一次特性！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff001/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
