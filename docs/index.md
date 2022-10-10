@@ -21,6 +21,10 @@ notices: # 可选的
     title: 🚀 LiteFlow v2.9.0 全新发布！
     content: '<div><p>2022-10-10</p><ul><li>发布有史以来最多的一次特性！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff001/">查看详情</a></p>'
     isHtmlContent: true
+  - id: liteflowX-1.1.0
+    title: 🌟 LiteFlowX v1.1.0 重磅发布！
+    content: '<div><p>2022-10-10</p><ul><li>全新图标，简洁清爽</li><li>适配 LiteFlow 2.9.0 的全部特性</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+    isHtmlContent: true
 ---
 
 <Notice :data="$frontmatter.notices"/>
@@ -49,6 +53,12 @@ notices: # 可选的
   link: https://gitee.com/dromara/MaxKey
   bgColor: '#9ed3e5'
   textColor: '#1f2328'
+- name: Snowy
+  desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
+  avatar: /img/donate/snowy.png
+  link: https://xiaonuo.vip
+  bgColor: '#1373CC'
+  textColor: '#ffffff'
 ```
 :::
 <br/>
@@ -340,6 +350,13 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     <span class="link">
         <a href="https://gitee.com/dotnetchina" target="_blank">
             <img :src="$withBase('/img/link/dotnet-china-logo.png')" class="no-zoom">
+        </a>
+    </span>
+</div>
+<div class="row">
+    <span class="link">
+        <a href="https://xiaonuo.vip" target="_blank">
+            <img :src="$withBase('/img/link/snowy-logo.png')" class="no-zoom">
         </a>
     </span>
 </div>
