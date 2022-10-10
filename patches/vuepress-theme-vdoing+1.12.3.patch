@@ -1,15 +1,24 @@
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
-index 7eececa..6de9666 100644
+index 7eececa..1c5b65a 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
 @@ -6,6 +6,7 @@
        :class="{ 'hide-banner': !showBanner }"
        :style="bannerBgStyle"
      >
-+      <video v-if="videoBackgroundSrc != null" :src="videoBackgroundSrc" class="video-background" autoPlay preload="auto" loop="loop" muted="muted" controlsList="nodownload" oncontextmenu="return(false);"></video>
++      <video v-show="videoBackgroundSrc != null" :src="videoBackgroundSrc" class="video-background" autoPlay preload="auto" loop="loop" muted="muted" controlsList="nodownload" oncontextmenu="return(false);"></video>
        <div
          class="banner-conent"
          :style="
+@@ -30,7 +31,7 @@
+         </header>
+ 
+         <!-- PC端features块 s -->
+-        <div class="features" v-if="hasFeatures && !isMQMobile">
++        <div class="features" v-if="hasFeatures" v-show="!isMQMobile">
+           <div
+             class="feature"
+             v-for="(feature, index) in homeData.features"
 @@ -159,7 +160,6 @@
      </MainLayout>
    </div>
@@ -23,7 +32,7 @@ index 7eececa..6de9666 100644
    data() {
      return {
 -      isMQMobile: false,
-+      isMQMobile: false,
++      isMQMobile: true,
  
        slide: null,
        currentPageIndex: 0,
