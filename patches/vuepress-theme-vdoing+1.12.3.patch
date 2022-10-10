@@ -23,7 +23,7 @@ index 7eececa..6de9666 100644
    data() {
      return {
 -      isMQMobile: false,
-+      isMQMobile: true,
++      isMQMobile: false,
  
        slide: null,
        currentPageIndex: 0,
