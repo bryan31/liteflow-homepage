@@ -1,6 +1,17 @@
 /**
  * to主题使用者：你可以去掉本文件的所有代码
  */
+let sidebarArray = [
+  `<a href="https://docs.eoapi.io/?utm_source=ZZ080101" target="_blank">
+    <img class="no-zoom" height="60" width="224" src="/img/donate/eoapi-banner.gif">
+  </a>`,
+  `<a href="https://gitee.com/dromara/MaxKey" target="_blank">
+    <img class="no-zoom" height="60" width="224" src="/img/donate/maxkey-banner.png">
+  </a>`,
+  `<a href="https://xiaonuo.vip" target="_blank">
+    <img class="no-zoom" height="60" width="224" src="/img/donate/snowy-banner.jpg">
+  </a>`,
+]
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
   options, // 附加到根实例的一些选项
@@ -14,12 +25,22 @@ export default ({
     router.afterEach(() => {
       //check if wwads' fire function was blocked after document is ready with 3s timeout (waiting the ad loading)
       docReady(function () {
+        
         setTimeout(function () {
           if (window._AdBlockInit === undefined) {
             ABDetected();
           }
         }, 3000);
       });
+
+      setTimeout(() => {
+        console.log(sidebarArray)
+        const sidebarTop = document.querySelector('.sidebar-slot-top')
+        if (!sidebarTop) return
+        sidebarArray.push(sidebarArray.shift())
+        let _html = sidebarArray.join('')
+        sidebarTop.innerHTML = _html
+      }, 200)
 
       // 删除事件改为隐藏事件
       setTimeout(() => {
