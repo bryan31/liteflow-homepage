@@ -40,7 +40,7 @@ export default ({
         sidebarArray.push(sidebarArray.shift())
         let _html = sidebarArray.join('')
         sidebarTop.innerHTML = _html
-      }, 200)
+      }, 200);
 
       // 删除事件改为隐藏事件
       setTimeout(() => {
