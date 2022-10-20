@@ -20,7 +20,8 @@
 
 
 module.exports = {
-  sidebarT: ``,
+  sidebarT: `
+  `,
   // 万维广告
   pageT: `
   <div class="wwads-cn wwads-horizontal page-wwads" data-id="129"></div>
