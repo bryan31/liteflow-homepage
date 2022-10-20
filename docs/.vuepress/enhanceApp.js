@@ -3,16 +3,16 @@
  */
 let sidebarArray = [
   `<a href="https://docs.eoapi.io/?utm_source=ZZ080101" target="_blank">
-    <img class="no-zoom" height="60" width="230" src="/img/donate/eoapi-banner.gif">
+    <img class="no-zoom" height="61.61" width="230" src="/img/donate/eoapi-banner.gif">
   </a>`,
   `<a href="https://gitee.com/dromara/MaxKey" target="_blank">
-    <img class="no-zoom" height="60" width="230" src="/img/donate/maxkey-banner.png">
+    <img class="no-zoom" height="61.61" width="230" src="/img/donate/maxkey-banner.png">
   </a>`,
   `<a href="https://xiaonuo.vip" target="_blank">
-    <img class="no-zoom" height="60" width="230" src="/img/donate/snowy-banner.jpg">
+    <img class="no-zoom" height="61.61" width="230" src="/img/donate/snowy-banner.jpg">
   </a>`,
   `<a href="https://apifox.cn/a103liteflow" target="_blank">
-    <img class="no-zoom" height="60" width="230" src="/img/donate/apifox-banner.png">
+    <img class="no-zoom" height="61.61" width="230" src="/img/donate/apifox-banner.png">
   </a>`,
 ]
 export default ({
