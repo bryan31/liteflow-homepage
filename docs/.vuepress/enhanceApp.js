@@ -11,6 +11,9 @@ let sidebarArray = [
   `<a href="https://xiaonuo.vip" target="_blank">
     <img class="no-zoom" height="60" width="224" src="/img/donate/snowy-banner.jpg">
   </a>`,
+  `<a href="https://apifox.cn/a103liteflow" target="_blank">
+    <img class="no-zoom" height="60" width="224" src="/img/donate/apifox-banner.png">
+  </a>`,
 ]
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
@@ -34,13 +37,28 @@ export default ({
       });
 
       setTimeout(() => {
+        function shuffle(arr){
+          var l = arr.length
+          var index, temp
+          while(l>0){
+            index = Math.floor(Math.random()*l)
+            temp = arr[l-1]
+            arr[l-1] = arr[index]
+            arr[index] = temp
+            l--
+          }
+          return arr
+        }
+
         console.log(sidebarArray)
         const sidebarTop = document.querySelector('.sidebar-slot-top')
         if (!sidebarTop) return
-        sidebarArray.push(sidebarArray.shift())
-        let _html = sidebarArray.join('')
+        sidebarArray=shuffle(sidebarArray);
+        let _html = sidebarArray[0]+sidebarArray[1]+sidebarArray[2]
         sidebarTop.innerHTML = _html
       }, 200);
+
+
 
       // 删除事件改为隐藏事件
       setTimeout(() => {

@@ -59,6 +59,12 @@ notices: # 可选的
   link: https://xiaonuo.vip
   bgColor: '#1373CC'
   textColor: '#ffffff'
+- name: Apifox
+  desc: Apifox = Postman + Swagger + Mock + JMeter
+  avatar: /img/donate/apifox.png
+  link: https://apifox.cn/a103liteflow
+  bgColor: '#F8415A'
+  textColor: '#FFFFFF'
 ```
 :::
 <br/>
