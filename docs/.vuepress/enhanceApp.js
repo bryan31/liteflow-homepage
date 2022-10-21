@@ -3,16 +3,16 @@
  */
 let sidebarArray = [
   `<a href="https://docs.eoapi.io/?utm_source=ZZ080101" target="_blank">
-    <img class="no-zoom" height="61.61" width="230" src="/img/donate/eoapi-banner.gif">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/eoapi-banner.gif">
   </a>`,
   `<a href="https://gitee.com/dromara/MaxKey" target="_blank">
-    <img class="no-zoom" height="61.61" width="230" src="/img/donate/maxkey-banner.png">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/maxkey-banner.png">
   </a>`,
   `<a href="https://xiaonuo.vip" target="_blank">
-    <img class="no-zoom" height="61.61" width="230" src="/img/donate/snowy-banner.jpg">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/snowy-banner.jpg">
   </a>`,
   `<a href="https://apifox.cn/a103liteflow" target="_blank">
-    <img class="no-zoom" height="61.61" width="230" src="/img/donate/apifox-banner.png">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/apifox-banner.png">
   </a>`,
 ]
 export default ({
@@ -53,9 +53,13 @@ export default ({
         const sidebarTop = document.querySelector('.sidebar-slot-top')
         if (!sidebarTop) return
         sidebarArray=shuffle(sidebarArray);
-        let _html = sidebarArray[0]+sidebarArray[1]+sidebarArray[2]
-            +"<br><span style='color: gray;font-size: smaller;'>广告采用随机方式显示</span>" +
-            "<span style='color: #E01E5A;font-size: smaller;font-weight: bolder;float: right'>❤️<a href='/pages/fb599d/'>成为赞助商</a></span>"
+        let _html = `<div style="width:230px;margin:0 auto"> 
+            ${sidebarArray.slice(0,3).join("")}
+            <br/> 
+            <span style='color: gray;font-size: smaller;'>广告采用随机方式显示</span>
+            <span style='color: #E01E5A;font-size: smaller;font-weight: bolder;float: right'>❤️<a href='/pages/fb599d/'>成为赞助商</a></span>
+            </div>` 
+
         sidebarTop.innerHTML = _html
       }, 200);
 
