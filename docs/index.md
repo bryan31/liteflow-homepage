@@ -19,7 +19,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.9.1
     title: 🚀 LiteFlow v2.9.1 发布！
-    content: '<div><p>2022-10-10</p><ul><li>脚本组件大大加强！</li><li>新增支持Javascript脚本语言！</li><li>增强超多的细节点！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff002/">查看详情</a></p>'
+    content: '<div><p>2022-10-24</p><ul><li>脚本组件大大加强！</li><li>新增支持Javascript脚本语言！</li><li>增强超多的细节点！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff002/">查看详情</a></p>'
     isHtmlContent: true
   - id: liteflowX-1.1.1
     title: 🌟 LiteFlowX v1.1.1 更新发布！
@@ -398,3 +398,64 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     display: block;
   }
 </style>
+
+<!-- 节日彩蛋 -->
+<style>
+  .numbers {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    margin-left: -237px;
+    bottom: 10px;
+  }
+  .numbers ul {
+    text-align: center;
+    display: flex;
+  }
+  .numbers li {
+    list-style: none;
+    margin: 20px;
+    font-size: 120px;
+    position: relative;
+    top: 0;
+    color: transparent;
+  }
+  .numbers li:nth-child(1) {
+    animation: myAnimate 1.5s ease alternate infinite;
+  }
+  .numbers li:nth-child(2) {
+    animation: myAnimate 1.5s ease 0.5s alternate infinite;
+  }
+  .numbers li:nth-child(3) {
+    animation: myAnimate 1.5s ease 1s alternate infinite;
+  }
+  .numbers li:nth-child(4) {
+    animation: myAnimate 1.5s ease 1.5s alternate infinite;
+  }
+  @keyframes myAnimate {
+    0% {
+      color: rgb(299, 255, 80);
+      top: 160px;
+      transform: rotateY(0deg) scale(1);
+    }
+    50% {
+      color: rgb(2, 150, 200);
+      top: 0;
+      transform: rotateY(180deg) scale(1.5);
+    }
+    100% {
+      color: rgb(255, 106, 198);
+      top: 160px;
+      transform: rotateY(0deg) scale(1);
+    }
+  }
+</style>
+
+<div class="numbers">
+  <ul>
+    <li>1</li>
+    <li>0</li>
+    <li>2</li>
+    <li>4</li>
+  </ul>
+</div>
