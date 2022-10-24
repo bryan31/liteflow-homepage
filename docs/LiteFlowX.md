@@ -115,15 +115,28 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 ![LiteFlow 工具箱](/img/liteflowx/toolbox.gif)
 
 ## 💬 疑难解答
+
 ### Q：为什么安装 LiteFlowX 插件，相关ELF表达式仍然无法高亮？
 A：首先请确保您安装的是最新版本的 LiteFlowX 插件，并且安装完成后务必重启 IDEA。若以上操作仍无法解决问题，考虑您安装的第三方主题影响了高亮，请到 `File -> Settings -> Editor -> Color Scheme -> General -> Code -> Injected language fragment` 将右侧勾选框的 `Foreground` 取消勾选，并按确认更改。
 
 ![无高亮解决方法](/img/liteflowx/nohighlight.png)
 
+### Q：在XML文件里面使用脚本组件，node标签的脚本语言无法高亮？
+A：需要在`<node>`标签上使用属性`language`并给定语言才可进行高亮，如:`<node id="xxx" type="script" language="groovy"></node>`
+
+![脚本语言无高亮解决方法](/img/liteflowx/scriptnohighlight.jpg)
+
 ### Q：没有在疑难解答解决我的问题，怎么办？
 A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇怪怪的事，不过没有关系，您可以随时[联系作者](https://gitee.com/liupeiqiang)或在[Gitee仓库](https://gitee.com/liupeiqiang/LiteFlowX)内提出您宝贵的意见或ISSUES，我会第一时间解答您的疑问。💖
 
 ## 📕 更新日志 
+::: tip [1.1.1] - 2022-10-24
+- 新增 #I5VMP4 在xml中新增对groovy以及javascript语法的支持
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5VMP4
+- 修复 #I5WQME 无法识别多行注释问题
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5WQME
+:::
+
 ::: tip [1.1.0] - 2022-10-09
 - 新增 #I5TUH1 LiteFlow 2.9.0 的 data 属性特性的适配
   - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5TUH1
