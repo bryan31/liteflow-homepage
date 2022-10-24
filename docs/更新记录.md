@@ -4,6 +4,42 @@ date: 2022-06-01 14:31:18
 permalink: /pages/88c2d1/
 ---
 
+:::tip v2.9.1
+
+特性 #I5WNMG 脚本组件支持javascript的语法
+
+https://gitee.com/dromara/liteFlow/issues/I5WNMG
+
+增强 #I5X7IT rule-source-ext-data支持在springboot yml配置文件中的原生配置
+
+https://gitee.com/dromara/liteFlow/issues/I5X7IT
+
+增强 #I5X1O6 提升安全性，更新不安全的第三方依赖
+
+https://gitee.com/dromara/liteFlow/issues/I5X1O6
+
+增强 #I5RV3G 规则插件的报错无法抛出来
+
+https://gitee.com/dromara/liteFlow/issues/I5RV3G
+
+增强 #I5XB03 增加dtd文件，加强xml的提示
+
+https://gitee.com/dromara/liteFlow/issues/I5XB03
+
+增强 #I5P263 脚本执行异常，出现异常的处理
+
+https://gitee.com/dromara/liteFlow/issues/I5P263
+
+修复 #I5WSG9 2.9.0版本 tag在 WHEN 下不生效
+
+https://gitee.com/dromara/liteFlow/issues/I5WSG9
+
+修复 #I5WLQW 扫描@ScriptBean修饰的类使用的hutool工具类不支持kotlin导致堆栈溢出
+
+https://gitee.com/dromara/liteFlow/issues/I5WLQW
+
+:::
+
 :::tip v2.9.0
 
 特性 #I5RV5D 循环表达式特性的增加

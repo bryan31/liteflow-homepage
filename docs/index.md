@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-actionText: 🧩v2.9.0超多特性汹涌而至！
+actionText: 🧩v2.9.1全新版本发布！
 actionLink: /pages/5816c5/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
@@ -17,9 +17,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.9.0
-    title: 🚀 LiteFlow v2.9.0 全新发布！
-    content: '<div><p>2022-10-10</p><ul><li>发布有史以来最多的一次特性！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff001/">查看详情</a></p>'
+  - id: Liteflow-2.9.1
+    title: 🚀 LiteFlow v2.9.1 发布！
+    content: '<div><p>2022-10-10</p><ul><li>脚本组件大大加强！</li><li>新增支持Javascript脚本语言！</li><li>增强超多的细节点！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff002/">查看详情</a></p>'
     isHtmlContent: true
   - id: liteflowX-1.1.1
     title: 🌟 LiteFlowX v1.1.1 更新发布！
@@ -113,7 +113,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.9.0</version>
+    <version>2.9.1</version>
 </dependency>
 ```
 
@@ -127,6 +127,12 @@ notices: # 可选的
 
 所以，请放心的使用！
 :::
+
+<br/>
+
+另外LiteFlow通过了[墨菲安全](https://www.murphysec.com)的检测，为0风险框架！
+
+<a href="https://www.murphysec.com/dr/pSdSchoCUEdpkadxPy" alt="OSCS Status"><img class="no-zoom" src="https://www.oscs1024.com/platform/badge/dromara/liteFlow.git.svg?size=large"/></a>
 
 <br/>
 
