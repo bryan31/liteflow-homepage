@@ -21,9 +21,9 @@ notices: # 可选的
     title: 🚀 LiteFlow v2.9.0 全新发布！
     content: '<div><p>2022-10-10</p><ul><li>发布有史以来最多的一次特性！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff001/">查看详情</a></p>'
     isHtmlContent: true
-  - id: liteflowX-1.1.0
-    title: 🌟 LiteFlowX v1.1.0 重磅发布！
-    content: '<div><p>2022-10-10</p><ul><li>全新图标，简洁清爽</li><li>适配 LiteFlow 2.9.0 的全部特性</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+  - id: liteflowX-1.1.1
+    title: 🌟 LiteFlowX v1.1.1 更新发布！
+    content: '<div><p>2022-10-24</p><ul><li>新增脚本组件对groovy与js的支持</li><li>修复ELF表达式无法多行注释问题</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
