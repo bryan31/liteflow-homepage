@@ -44,7 +44,7 @@ notices: # 可选的
 - name: Eoapi
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
   avatar: /img/donate/eoapi-logo.jpg
-  link: https://docs.eoapi.io/?utm_source=ZZ080102
+  link: https://www.eoapi.io/?utm_source=sponsor&utm_campaign=s-liteflow
   bgColor: '#00785A'
   textColor: '#FFFFFF'
 - name: MaxKey
@@ -399,7 +399,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
   }
 </style>
 
-<!-- 节日彩蛋 -->
+<!-- 节日彩蛋 
 <style>
   .numbers {
     position: fixed;
@@ -459,3 +459,4 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     <li>4</li>
   </ul>
 </div>
+-->
