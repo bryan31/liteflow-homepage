@@ -65,6 +65,12 @@ notices: # 可选的
   link: https://apifox.cn/a103liteflow
   bgColor: '#F8415A'
   textColor: '#FFFFFF'
+- name: 云程低代码平台
+  desc: 采用springboot+vue技术，可私有化部署，可交付源代码
+  avatar: /img/donate/yuncheng.png
+  link: http://www.yunchengxc.com/
+  bgColor: '#1C58E6'
+  textColor: '#FFFFFF'
 ```
 :::
 <br/>
