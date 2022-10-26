@@ -4,6 +4,12 @@ date: 2022-06-01 14:31:18
 permalink: /pages/88c2d1/
 ---
 
+:::tip v2.9.2
+
+修复 2.9.1在Nacos场景启动失败的bug
+
+:::
+
 :::tip v2.9.1
 
 特性 #I5WNMG 脚本组件支持javascript的语法
