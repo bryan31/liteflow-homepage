@@ -377,6 +377,11 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
             <img :src="$withBase('/img/link/snowy-logo.png')" class="no-zoom">
         </a>
     </span>
+    <span class="link">
+        <a href="http://www.yunchengxc.com/" target="_blank">
+            <img :src="$withBase('/img/link/yuncheng-logo.png')" class="no-zoom">
+        </a>
+    </span>
 </div>
 
 <br/><br/>
