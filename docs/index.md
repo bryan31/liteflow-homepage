@@ -41,24 +41,28 @@ notices: # 可选的
   link: https://portal.zerocode.net.cn/
   bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
   textColor: '#1f2328' # 可选，默认var(--textColor)
+  expired: '2023-06-30'
 - name: Eoapi
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
   avatar: /img/donate/eoapi-logo.jpg
   link: https://www.eoapi.io/?utm_source=sponsor&utm_campaign=s-liteflow
   bgColor: '#00785A'
   textColor: '#FFFFFF'
+  expired: '2023-02-09'
 - name: MaxKey
   desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
   avatar: /img/donate/maxkey.png
   link: https://gitee.com/dromara/MaxKey
   bgColor: '#9ed3e5'
   textColor: '#1f2328'
+  expired: '2023-10-07'
 - name: Snowy
   desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
   avatar: /img/donate/snowy.png
   link: https://xiaonuo.vip
   bgColor: '#1373CC'
   textColor: '#ffffff'
+  expired: '2023-10-10'
 - name: Apifox
   desc: Apifox = Postman + Swagger + Mock + JMeter
   avatar: /img/donate/apifox.png
@@ -71,6 +75,7 @@ notices: # 可选的
   link: http://www.yunchengxc.com/
   bgColor: '#1C58E6'
   textColor: '#FFFFFF'
+  expired: '2023-10-27'
 ```
 :::
 <br/>
