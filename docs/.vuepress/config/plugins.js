@@ -47,5 +47,11 @@ module.exports = [
                 return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
             },
         }
+    ],
+    [
+        "@mr-hope/sitemap",
+        {
+            hostname: 'https://liteflow.yomahub.com'
+        }
     ]
 ];
