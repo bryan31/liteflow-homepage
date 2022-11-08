@@ -78,12 +78,11 @@ notices: # 可选的
   expired: '2023-10-27'
 ```
 :::
-<br/>
 
 <style>
   .page-wwads{
     width:100%!important;
-    min-height: 0;
+    min-height: 0!important;
     margin: 0;
   }
   .page-wwads .wwads-img img{
