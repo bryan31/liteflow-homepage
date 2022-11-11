@@ -4,6 +4,42 @@ date: 2022-06-01 14:31:18
 permalink: /pages/88c2d1/
 ---
 
+:::tip v2.9.3
+
+增强 #I5XWL2 数据库插件支持脚本的存储
+
+https://gitee.com/dromara/liteFlow/issues/I5XWL2
+
+增强 #I605FA 支持etcd分离chain以及脚本的存储结构
+
+https://gitee.com/dromara/liteFlow/issues/I605FA
+
+增强 #I5ZLH6 支持zk分离chain以及脚本的存储结构
+
+https://gitee.com/dromara/liteFlow/issues/I5ZLH6
+
+增强 #I5Y92X 支持选择组件跳转同时指定组件名和标签
+
+https://gitee.com/dromara/liteFlow/issues/I5Y92X
+
+增强 #I5ULVA 修正不规范的问题，chain的name和id混用，不太严谨
+
+https://gitee.com/dromara/liteFlow/issues/I5ULVA
+
+修复 #I5ZS92 希望能直接获取组件参数的原始字符串，而不是只能获取转换后的 JSON 对象
+
+https://gitee.com/dromara/liteFlow/issues/I5ZS92
+
+修复 #I5YEHG 脚本的加载有先后顺序问题
+
+https://gitee.com/dromara/liteFlow/issues/I5YEHG
+
+修复 #I5ZS8I 修复EL中定义的tag和data中的字符串的空格和换行被过滤掉了的现象
+
+https://gitee.com/dromara/liteFlow/issues/I5ZS8I
+
+:::
+
 :::tip v2.9.2
 
 修复 2.9.1在Nacos场景启动失败的bug

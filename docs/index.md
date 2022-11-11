@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-actionText: 🧩v2.9.2全新版本发布！
+actionText: 🧩v2.9.3如约而至！
 actionLink: /pages/5816c5/
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
@@ -17,13 +17,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.9.2
-    title: 🚀 LiteFlow v2.9.2 发布！
-    content: '<div><p>2022-10-24</p><ul><li>脚本组件大大加强！</li><li>新增支持Javascript脚本语言！</li><li>增强超多的细节点！</li></ul></div><p style="text-align: right;"><a href="/pages/8ff002/">查看详情</a></p>'
-    isHtmlContent: true
-  - id: liteflowX-1.1.1
-    title: 🌟 LiteFlowX v1.1.1 更新发布！
-    content: '<div><p>2022-10-24</p><ul><li>新增脚本组件对groovy与js的支持</li><li>修复ELF表达式无法多行注释问题</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+  - id: Liteflow-2.9.3
+    title: 🚀 LiteFlow v2.9.3 发布！
+    content: '<div><p>2022-10-24</p><ul><li>脚本组件大大加强！</li><li>zk,etcd,db中间件存储结构大大增强</li><li>Bug修复和细节优化</li></ul></div><p style="text-align: right;"><a href="/pages/8ff002/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -148,7 +144,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.9.2</version>
+    <version>2.9.3</version>
 </dependency>
 ```
 
