@@ -19,7 +19,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.9.3
     title: 🚀 LiteFlow v2.9.3 发布！
-    content: '<div><p>2022-11-11</p><ul><li>脚本组件大大加强！</li><li>zk,etcd,db中间件存储结构大大增强</li><li>Bug修复和细节优化</li></ul></div><p style="text-align: right;"><a href="/pages/8ff002/">查看详情</a></p>'
+    content: '<div><p>2022-11-11</p><ul><li>zk,etcd,db中间件存储结构大大增强</li><li>Bug修复和细节优化</li></ul></div><p style="text-align: right;"><a href="/pages/8ff003/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
