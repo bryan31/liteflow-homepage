@@ -10,7 +10,8 @@ titleTag: ✨ 全新视觉升级！
 
 :::warning 插件版本须知
 
-- LiteFlowX 插件版本自 `v1.1.0` 起，全面适配 LiteFlow `v2.9.0` 且 向下兼容 LiteFlow `v2.8.X` 的所有特性。
+- LiteFlowX 插件版本自 `v1.1.0` 起，全面适配 LiteFlow `v2.9.0` 并且 部分功能不再向下兼容 LiteFlow `v2.8.X`。
+- 若您仍在使用 LiteFlow `2.8.X` 及以下版本，可自行下载[ LiteFlowX v1.0.4 Jar包 ](https://gitee.com/liupeiqiang/LiteFlowX/releases/1.0.4)进行安装
 - 若您仍在使用 LiteFlow `2.7.X` 及以下版本，可自行下载[ LiteFlowX v0.1.1 Jar包 ](https://gitee.com/liupeiqiang/LiteFlowX/releases/0.1.1)进行安装
 - 插件将来会致力于 LiteFlow 框架的最新版本特性做出更改和完善，使用本插件前请确保您使用的是最新的 LiteFlow 框架。
 :::
