@@ -4,9 +4,9 @@ heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
 actions:
-  - actionText: 🧩v2.9.3如约而至！
+  - actionText: 🚀v2.9.3如约而至！
     actionLink: /pages/5816c5/
-  - actionText: 🚀 IDEA插件
+  - actionText: 🧩IDEA插件
     actionLink: /pages/liteflowx/
     actionClass: action-button-liteflowx
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
@@ -420,15 +420,15 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     margin-left 0.5rem
     display inline-block
     font-size 1.2rem
-    background-color #38b634
+    background-color #A63939
     padding 0.8rem 1.6rem
     border-radius 4px
     transition background-color 0.1s ease
     box-sizing border-box
-    border-bottom 1px solid darken(#38b634, 10%)
-    color #fff
+    border-bottom 1px solid #A63939
+    color #E3E394
     &:hover
-        background-color lighten(#38b634, 10%)
+        background-color lighten(#A63939, 10%)
 </style>
 <!-- 节日彩蛋 
 <style>
