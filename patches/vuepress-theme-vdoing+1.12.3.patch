@@ -1,5 +1,5 @@
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
-index 7eececa..1c5b65a 100644
+index 7eececa..e920d99 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
 @@ -6,6 +6,7 @@
@@ -10,7 +10,17 @@ index 7eececa..1c5b65a 100644
        <div
          class="banner-conent"
          :style="
-@@ -30,7 +31,7 @@
+@@ -24,13 +25,15 @@
+           <p v-if="homeData.tagline" class="description">
+             {{ homeData.tagline }}
+           </p>
+-          <p class="action" v-if="homeData.actionText && homeData.actionLink">
+-            <NavLink class="action-button" :item="actionLink" />
++          <p class="action" v-if="hasActions">
++            <NavLink v-for="(action, index) in homeData.actions"  :key="index"
++              :class="action.actionClass || 'action-button'"
++              :item="{text: action.actionText, link: action.actionLink}" />
+           </p>
          </header>
  
          <!-- PC端features块 s -->
@@ -19,7 +29,7 @@ index 7eececa..1c5b65a 100644
            <div
              class="feature"
              v-for="(feature, index) in homeData.features"
-@@ -159,7 +160,6 @@
+@@ -159,7 +162,6 @@
      </MainLayout>
    </div>
  </template>
@@ -27,7 +37,7 @@ index 7eececa..1c5b65a 100644
  <script>
  import NavLink from "@theme/components/NavLink";
  import BScroll from "@better-scroll/core"
-@@ -179,7 +179,7 @@ BScroll.use(Slide)
+@@ -179,7 +181,7 @@ BScroll.use(Slide)
  export default {
    data() {
      return {
@@ -36,7 +46,7 @@ index 7eececa..1c5b65a 100644
  
        slide: null,
        currentPageIndex: 0,
-@@ -191,7 +191,28 @@ export default {
+@@ -191,8 +193,30 @@ export default {
        currentPage: 1// 当前页
      }
    },
@@ -63,9 +73,35 @@ index 7eececa..1c5b65a 100644
 +      }
 +    },
      homeData() {
++      console.log('this.$page.frontmatter', this.$page.frontmatter)
        return {
          ...this.$page.frontmatter
-@@ -246,6 +267,7 @@ export default {
+       }
+@@ -200,6 +224,10 @@ export default {
+     hasFeatures() {
+       return !!(this.homeData.features && this.homeData.features.length)
+     },
++    hasActions() {
++      console.log('hasActions', this.homeData.actions)
++      return !!(this.homeData.actions && this.homeData.actions.length)
++    },
+     homeSidebarB() {
+       const { htmlModules } = this.$themeConfig
+       return htmlModules ? htmlModules.homeSidebarB : ''
+@@ -230,12 +258,6 @@ export default {
+         return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
+       }
+ 
+-    },
+-    actionLink() {
+-      return {
+-        link: this.homeData.actionLink,
+-        text: this.homeData.actionText
+-      };
+     }
+   },
+   components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination },
+@@ -246,6 +268,7 @@ export default {
      this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
    },
    mounted() {
@@ -73,7 +109,7 @@ index 7eececa..1c5b65a 100644
      if (this.$route.query.p) {
        this.currentPage = Number(this.$route.query.p)
      }
-@@ -271,6 +293,9 @@ export default {
+@@ -271,6 +294,9 @@ export default {
      this.slide && this.slide.destroy()
    },
    watch: {
