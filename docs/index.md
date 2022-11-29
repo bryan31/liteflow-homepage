@@ -211,7 +211,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 ## 🍭架构图
 
-<img :src="$withBase('/img/arch.svg')" style="zoom: 120%" class="no-zoom">
+<img :src="$withBase('/img/arch.svg')" style="zoom: 100%" class="no-zoom">
 
 <br/>
 
