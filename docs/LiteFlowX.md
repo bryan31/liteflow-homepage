@@ -5,7 +5,7 @@ permalink: /pages/liteflowx/
 author:
  name: 码农小易
  link: https://gitee.com/liupeiqiang/
-titleTag: ✨ 全新视觉升级！
+titleTag: ✨ V1.1.3
 ---
 
 :::warning 插件版本须知
@@ -126,6 +126,12 @@ A：首先请确保您安装的是最新版本的 LiteFlowX 插件，并且安�
 A：需要在`<node>`标签上使用属性`language`并给定语言才可进行高亮，如:`<node id="xxx" type="script" language="groovy"></node>`
 
 ![脚本语言无高亮解决方法](/img/liteflowx/scriptnohighlight.jpg)
+
+### Q：为什么我使用Python语言或LUA语言进行脚本组件编写时并没有高亮显示和智能提示？
+A：原因是Python与LUA语法本身IDEA是不支持，所以当你在使用 `<node type="script" language="python">` 或 `<node type="script" language="lua">`之前，请确保你已经安装第三方的相关插件如`Python`或`EmmyLua`插件。
+
+![LUA插件安装](/img/liteflowx/EmmyLuaPlugin.png)
+![Python插件安装](/img/liteflowx/PythonPlugin.png)
 
 ### Q：没有在疑难解答解决我的问题，怎么办？
 A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇怪怪的事，不过没有关系，您可以随时[联系作者](https://gitee.com/liupeiqiang)或在[Gitee仓库](https://gitee.com/liupeiqiang/LiteFlowX)内提出您宝贵的意见或ISSUES，我会第一时间解答您的疑问。💖
