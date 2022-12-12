@@ -25,6 +25,10 @@ notices: # 可选的
     title: 🚀 LiteFlow v2.9.4 发布！
     content: '<div><p>2022-11-30</p><ul><li>提供一个新的JavaScript引擎</li><li>大量的优化和细节修补</li></ul></div><p style="text-align: right;"><a href="/pages/8ff004/">查看详情</a></p>'
     isHtmlContent: true
+  - id: LiteflowX-1.1.3
+    title: 🔥 LiteFlowX v1.1.3 发布！
+    content: '<div><p>2022-12-13</p><ul><li>新增 Python 和 Lua 组件脚本的支持</li><li>新增 DEFAULT 关键字</li><li>兼容 IDEA-2022.3 版本</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+    isHtmlContent: true
 ---
 
 <Notice :data="$frontmatter.notices"/>
