@@ -23,7 +23,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.9.5
     title: 🚀 LiteFlow v2.9.5 发布！
-    content: '<div><p>2022-11-30</p><ul><li>提供Python脚本引擎</li><li>提供Lua脚本引擎</li><li>对Apollo配置中心进行支持</li></ul></div><p style="text-align: right;"><a href="/pages/8ff004/">查看详情</a></p>'
+    content: '<div><p>2022-12-12</p><ul><li>提供Python脚本引擎</li><li>提供Lua脚本引擎</li><li>对Apollo配置中心进行支持</li></ul></div><p style="text-align: right;"><a href="/pages/8ff004/">查看详情</a></p>'
     isHtmlContent: true
   - id: LiteflowX-1.1.3
     title: 🔥 LiteFlowX v1.1.3 发布！
