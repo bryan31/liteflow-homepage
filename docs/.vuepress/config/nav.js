@@ -22,7 +22,7 @@ module.exports = [
         ]
     },
     { text: '❓问答', link: '/pages/845dff/' },
-    { text: '💖支持', link: '/pages/fb599d/' },
+    { text: '💖赞助', link: '/pages/fb599d/' },
     { text: '🧩插件', link: '/pages/liteflowx/' },
     { text: '🔥PPT', link: '/pages/8d6666/' },
     { text: '关于项目', items: [
