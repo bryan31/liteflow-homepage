@@ -11,9 +11,6 @@ let sidebarArray = [
   `<a href="https://xiaonuo.vip" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/snowy-banner.jpg">
   </a>`,
-  `<a href="https://apifox.cn/a103liteflow" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/apifox-banner.png">
-  </a>`,
   `<a href="http://www.yunchengxc.com/" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/yuncheng-banner.png">
   </a>`,
