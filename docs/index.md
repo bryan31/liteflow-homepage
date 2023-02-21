@@ -42,13 +42,13 @@ notices: # 可选的
   bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
   textColor: '#1f2328' # 可选，默认var(--textColor)
   expired: '2023-06-30'
-- name: Eoapi
+- name: Postcat
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
-  avatar: /img/donate/eoapi-logo.jpg
+  avatar: /img/donate/postcat-logo.png
   link: https://postcat.com/?utm_source=sponsor&utm_campaign=s-liteflow
-  bgColor: '#00785A'
+  bgColor: '#102863'
   textColor: '#FFFFFF'
-  expired: '2023-02-09'
+  expired: '2023-08-21'
 - name: MaxKey
   desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
   avatar: /img/donate/maxkey.png

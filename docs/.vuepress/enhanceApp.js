@@ -3,7 +3,7 @@
  */
 let sidebarArray = [
   `<a href="https://postcat.com/?utm_source=sponsor&utm_campaign=s-liteflow" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/eoapi-banner.gif">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/postcat-banner.gif">
   </a>`,
   `<a href="https://gitee.com/dromara/MaxKey" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/maxkey-banner.png">
