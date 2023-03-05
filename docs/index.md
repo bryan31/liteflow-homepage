@@ -45,7 +45,7 @@ notices: # 可选的
 - name: Postcat
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
   avatar: /img/donate/postcat-logo.png
-  link: https://postcat.com/?utm_source=sponsor&utm_campaign=s-liteflow
+  link: https://datayi.cn/w/xogk00Oo
   bgColor: '#102863'
   textColor: '#FFFFFF'
   expired: '2023-08-21'

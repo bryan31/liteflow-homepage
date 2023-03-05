@@ -2,7 +2,7 @@
  * to主题使用者：你可以去掉本文件的所有代码
  */
 let sidebarArray = [
-  `<a href="https://postcat.com/?utm_source=sponsor&utm_campaign=s-liteflow" target="_blank">
+  `<a href="https://datayi.cn/w/xogk00Oo" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/postcat-banner.gif">
   </a>`,
   `<a href="https://gitee.com/dromara/MaxKey" target="_blank">
