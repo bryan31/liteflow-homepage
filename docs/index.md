@@ -175,7 +175,7 @@ notices: # 可选的
 
 ## 🎉致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群1500多人，Gitee上3.7k Stars，Github上1.5k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群2000多人，Gitee上3.9k Stars，Github上1.6k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 
