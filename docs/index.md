@@ -4,7 +4,7 @@ heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
 actions:
-  - actionText: 🛫v2.10.0，荣耀启航！
+  - actionText: 🛫v2.10.1，荣耀启航+1！
     actionLink: /pages/5816c5/
   - actionText: ⚡️为LiteFlow发电
     actionLink: https://afdian.net/a/liteflow
@@ -21,9 +21,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.10.0
-    title: 🚀 LiteFlow v2.10.0 发布！
-    content: '<div><p>2023-03-17</p><ul><li>[新特性]支持Springboot3</li><li>[新特性]支持多种语言脚本混合编排</li><li>[新特性]CATCH语法表达式的加入</li><li>[新特性]支持本地文件监听特性</li><li>[新特性]上下文在脚本中自定义名称支持</li></ul></div><p style="text-align: right;"><a href="/pages/8ff008/">查看详情</a></p>'
+  - id: Liteflow-2.10.1
+    title: 🚀 LiteFlow v2.10.1 发布！
+    content: '<div><p>2023-03-22</p><ul><li>[新特性]支持Aviator脚本语言</li><li>[增强]支持循环表达式的嵌套运行</li><li>[增强]优化内部大量代码</li></ul></div><p style="text-align: right;"><a href="/pages/8ff009/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -131,7 +131,7 @@ notices: # 可选的
 * **支持广泛：** 不管你的项目是不是基于Springboot，Spring还是任何其他java框架构建，LiteFlow都能游刃有余。
 * **JDK支持：** 从JDK8到JDK17，统统支持。无需担心JDK版本。
 * **Springboot支持全面：** 支持Springboot 2.X到最新的Springboot 3.X。
-* **脚本语言支持：** 可以定义脚本语言节点，支持Groovy，Javascript,QLExpress，Python，Lua。未来还会支持更多的脚本语言。
+* **脚本语言支持：** 可以定义脚本语言节点，支持Groovy，Javascript，QLExpress，Python，Lua，Aviator。未来还会支持更多的脚本语言。
 * **脚本和Java全打通：** 所有脚本语言均可调用Java方法，甚至于可以引用任意的实例，在脚本中调用RPC也是支持的。
 * **规则嵌套支持：** 只要你想的出，你可以利用简单的表达式完成多重嵌套的复杂逻辑编排。
 * **组件重试支持：** 组件可以支持重试，每个组件均可自定义重试配置和指定异常。
@@ -150,7 +150,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.10.0</version>
+    <version>2.10.1</version>
 </dependency>
 ```
 
