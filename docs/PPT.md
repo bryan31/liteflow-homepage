@@ -18,8 +18,10 @@ permalink: /pages/8d6666/
 
 ## PPT部分页数动图预览
 
-![](/img/ppt/ppt_1.gif)
+PPT中含有大量的动态效果，**推荐用播放按钮观看或者进行演讲，效果最佳。**
 
-![](/img/ppt/ppt_2.gif)
+![](/img/ppt/ppt1.gif)
 
-![](/img/ppt/ppt_3.gif)
+![](/img/ppt/ppt2.gif)
+
+![](/img/ppt/ppt3.gif)
