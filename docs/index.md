@@ -422,6 +422,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 <style lang="stylus">
 .action-button-liteflowx
     margin-left 0.5rem
+    margin-top: 0.5rem;
     display inline-block
     font-size 1.2rem
     background-color #A63939
