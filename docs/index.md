@@ -49,13 +49,6 @@ notices: # 可选的
   bgColor: '#102863'
   textColor: '#FFFFFF'
   expired: '2023-08-21'
-- name: MaxKey
-  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
-  avatar: /img/donate/maxkey.png
-  link: https://gitee.com/dromara/MaxKey
-  bgColor: '#9ed3e5'
-  textColor: '#1f2328'
-  expired: '2023-10-07'
 - name: Snowy
   desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
   avatar: /img/donate/snowy.png
@@ -63,12 +56,20 @@ notices: # 可选的
   bgColor: '#1373CC'
   textColor: '#ffffff'
   expired: '2023-10-10'
-- name: Apifox
-  desc: Apifox = Postman + Swagger + Mock + JMeter
-  avatar: /img/donate/apifox.png
-  link: https://apifox.cn/a103liteflow
-  bgColor: '#F8415A'
+- name: 明道云零代码平台
+  desc: 从"业务催T"，转变为"T赋能业务"的协作模式
+  avatar: /img/donate/mdy.png
+  link: https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1
+  bgColor: '#2196F3'
   textColor: '#FFFFFF'
+  expired: '2024-04-22'
+- name: MaxKey
+  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
+  avatar: /img/donate/maxkey.png
+  link: https://gitee.com/dromara/MaxKey
+  bgColor: '#9ed3e5'
+  textColor: '#1f2328'
+  expired: '2023-10-07'
 - name: 云程低代码平台
   desc: 采用springboot+vue技术，可私有化部署，可交付源代码
   avatar: /img/donate/yuncheng.png
