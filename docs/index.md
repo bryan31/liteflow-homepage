@@ -4,7 +4,7 @@ heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
 actions:
-  - actionText: 🛫v2.10.2全新发布
+  - actionText: 🛫v2.10.3全新发布
     actionLink: /pages/5816c5/
   - actionText: ⚡️为LiteFlow发电
     actionLink: https://afdian.net/a/liteflow
@@ -23,7 +23,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.10.2
     title: 🚀 LiteFlow v2.10.2 发布！
-    content: '<div><p>2023-04-11</p><ul><li>[新特性]新增"与或非"表达式</li><li>[增强]脚本支持循环下标以及循环对象获取</li><li>[增强]表达式支持TAG标签</li></ul></div><p style="text-align: right;"><a href="/pages/8ff010/">查看详情</a></p>'
+    content: '<div><p>2023-05-04</p><ul><li>修复若干BUG</li></ul></div><p style="text-align: right;"><a href="/pages/8ff010/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -151,7 +151,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.10.2</version>
+    <version>2.10.3</version>
 </dependency>
 ```
 
