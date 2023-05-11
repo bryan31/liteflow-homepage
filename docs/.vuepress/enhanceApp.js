@@ -14,6 +14,9 @@ let sidebarArray = [
   `<a href="http://www.yunchengxc.com/" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/yuncheng-banner.png">
   </a>`,
+  `<a href="http://gpt4u.top/" target="_blank">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/gpt4u-banner.png">
+  </a>`,
 ]
 
 let mustShowArray = [
@@ -60,7 +63,7 @@ export default ({
         const sidebarTop = document.querySelector('.sidebar-slot-top')
         if (!sidebarTop) return
         let _html = `<div style="width:230px;margin:0 auto"> 
-            ${shuffle(shuffle(sidebarArray).slice(0,2).concat(mustShowArray)).join("")}
+            ${shuffle(shuffle(sidebarArray).slice(0,3).concat(mustShowArray)).join("")}
             <br/> 
             <span style='color: gray;font-size: smaller;'>广告采用随机方式显示</span>
             <span style='color: #E01E5A;font-size: smaller;font-weight: bolder;float: right'>❤️<a href='/pages/fb599d/'>成为赞助商</a></span>
