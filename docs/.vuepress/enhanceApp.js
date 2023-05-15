@@ -2,8 +2,8 @@
  * to主题使用者：你可以去掉本文件的所有代码
  */
 let sidebarArray = [
-  `<a href="https://www.eoapi.io/?utm_source=sponsor&utm_campaign=s-liteflow" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/eoapi-banner.gif">
+  `<a href="https://datayi.cn/w/xogk00Oo" target="_blank">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/postcat-banner.gif">
   </a>`,
   `<a href="https://gitee.com/dromara/MaxKey" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/maxkey-banner.png">
@@ -11,13 +11,20 @@ let sidebarArray = [
   `<a href="https://xiaonuo.vip" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/snowy-banner.jpg">
   </a>`,
-  `<a href="https://apifox.cn/a103liteflow" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/apifox-banner.png">
-  </a>`,
   `<a href="http://www.yunchengxc.com/" target="_blank">
     <img class="no-zoom" style="width:100%;" src="/img/donate/yuncheng-banner.png">
   </a>`,
+  `<a href="http://gpt4u.top/" target="_blank">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/gpt4u-banner.png">
+  </a>`,
 ]
+
+let mustShowArray = [
+  `<a href="https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1" target="_blank">
+    <img class="no-zoom" style="width:100%;" src="/img/donate/mdy-banner.png">
+  </a>`
+]
+
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
   options, // 附加到根实例的一些选项
@@ -55,9 +62,8 @@ export default ({
 
         const sidebarTop = document.querySelector('.sidebar-slot-top')
         if (!sidebarTop) return
-        sidebarArray=shuffle(sidebarArray);
         let _html = `<div style="width:230px;margin:0 auto"> 
-            ${sidebarArray.slice(0,3).join("")}
+            ${shuffle(shuffle(sidebarArray).slice(0,3).concat(mustShowArray)).join("")}
             <br/> 
             <span style='color: gray;font-size: smaller;'>广告采用随机方式显示</span>
             <span style='color: #E01E5A;font-size: smaller;font-weight: bolder;float: right'>❤️<a href='/pages/fb599d/'>成为赞助商</a></span>

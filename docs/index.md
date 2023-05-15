@@ -4,10 +4,10 @@ heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
 actions:
-  - actionText: 🚀v2.9.4，更稳更好用！
+  - actionText: 🛫v2.10.3全新发布
     actionLink: /pages/5816c5/
-  - actionText: 🧩IDEA插件
-    actionLink: /pages/liteflowx/
+  - actionText: ⚡️为LiteFlow发电
+    actionLink: https://afdian.net/a/liteflow
     actionClass: action-button-liteflowx
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
@@ -21,13 +21,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.9.4
-    title: 🚀 LiteFlow v2.9.4 发布！
-    content: '<div><p>2022-11-30</p><ul><li>提供一个新的JavaScript引擎</li><li>大量的优化和细节修补</li></ul></div><p style="text-align: right;"><a href="/pages/8ff004/">查看详情</a></p>'
-    isHtmlContent: true
-  - id: LiteflowX-1.1.3
-    title: 🔥 LiteFlowX v1.1.3 发布！
-    content: '<div><p>2022-12-13</p><ul><li>新增 Python 和 Lua 组件脚本的支持</li><li>新增 DEFAULT 关键字</li><li>兼容 IDEA-2022.3 版本</li></ul></div><p style="text-align: right;"><a href="/pages/liteflowx/">查看详情</a></p>'
+  - id: Liteflow-2.10.2
+    title: 🚀 LiteFlow v2.10.2 发布！
+    content: '<div><p>2023-05-04</p><ul><li>修复若干BUG</li></ul></div><p style="text-align: right;"><a href="/pages/8ff010/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -46,20 +42,13 @@ notices: # 可选的
   bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
   textColor: '#1f2328' # 可选，默认var(--textColor)
   expired: '2023-06-30'
-- name: Eoapi
+- name: Postcat
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
-  avatar: /img/donate/eoapi-logo.jpg
-  link: https://www.eoapi.io/?utm_source=sponsor&utm_campaign=s-liteflow
-  bgColor: '#00785A'
+  avatar: /img/donate/postcat-logo.png
+  link: https://datayi.cn/w/xogk00Oo
+  bgColor: '#102863'
   textColor: '#FFFFFF'
-  expired: '2023-02-09'
-- name: MaxKey
-  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
-  avatar: /img/donate/maxkey.png
-  link: https://gitee.com/dromara/MaxKey
-  bgColor: '#9ed3e5'
-  textColor: '#1f2328'
-  expired: '2023-10-07'
+  expired: '2023-08-21'
 - name: Snowy
   desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
   avatar: /img/donate/snowy.png
@@ -67,12 +56,20 @@ notices: # 可选的
   bgColor: '#1373CC'
   textColor: '#ffffff'
   expired: '2023-10-10'
-- name: Apifox
-  desc: Apifox = Postman + Swagger + Mock + JMeter
-  avatar: /img/donate/apifox.png
-  link: https://apifox.cn/a103liteflow
-  bgColor: '#F8415A'
+- name: 明道云零代码平台
+  desc: 快速响应业务需求，从“IT背锅侠”变成“IT英雄”
+  avatar: /img/donate/mdy.png
+  link: https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1
+  bgColor: '#2196F3'
   textColor: '#FFFFFF'
+  expired: '2024-04-22'
+- name: MaxKey
+  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
+  avatar: /img/donate/maxkey.png
+  link: https://gitee.com/dromara/MaxKey
+  bgColor: '#9ed3e5'
+  textColor: '#1f2328'
+  expired: '2023-10-07'
 - name: 云程低代码平台
   desc: 采用springboot+vue技术，可私有化部署，可交付源代码
   avatar: /img/donate/yuncheng.png
@@ -130,11 +127,13 @@ notices: # 可选的
 * **规则轻量：** 基于规则文件来编排流程，学习规则入门只需要5分钟，一看既懂。
 * **规则多样化：** 规则支持xml、json、yml三种规则文件写法方式，喜欢哪种用哪个。
 * **任意编排：** 再复杂的逻辑过程，利用LiteFlow的规则，都是很容易做到的，看规则文件就能知道逻辑是如何运转的。
-* **规则持久化：** 框架原生支持把规则存储在标准结构化数据库，Nacos，Etcd，Zookeeper。您也可以自己扩展，把规则存储在任何地方。
+* **规则持久化：** 框架原生支持把规则存储在标准结构化数据库，Nacos，Etcd，Zookeeper，Apollo。您也可以自己扩展，把规则存储在任何地方。
 * **优雅热刷新机制：** 规则变化，无需重启您的应用，即时改变应用的规则。高并发下不会因为刷新规则导致正在执行的规则有任何错乱。
 * **支持广泛：** 不管你的项目是不是基于Springboot，Spring还是任何其他java框架构建，LiteFlow都能游刃有余。
 * **JDK支持：** 从JDK8到JDK17，统统支持。无需担心JDK版本。
-* **脚本语言支持：** 可以定义脚本语言节点，支持QLExpress和Groovy两种脚本。未来还会支持更多的脚本语言。
+* **Springboot支持全面：** 支持Springboot 2.X到最新的Springboot 3.X。
+* **脚本语言支持：** 可以定义脚本语言节点，支持Groovy，Javascript，QLExpress，Python，Lua，Aviator。未来还会支持更多的脚本语言。
+* **脚本和Java全打通：** 所有脚本语言均可调用Java方法，甚至于可以引用任意的实例，在脚本中调用RPC也是支持的。
 * **规则嵌套支持：** 只要你想的出，你可以利用简单的表达式完成多重嵌套的复杂逻辑编排。
 * **组件重试支持：** 组件可以支持重试，每个组件均可自定义重试配置和指定异常。
 * **上下文隔离机制：** 可靠的上下文隔离机制，你无需担心高并发情况下的数据串流。
@@ -152,7 +151,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.9.4</version>
+    <version>2.10.3</version>
 </dependency>
 ```
 
@@ -177,7 +176,7 @@ notices: # 可选的
 
 ## 🎉致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群1500多人，Gitee上3.4k Stars，Github上1.3k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群2000多人，Gitee上3.9k Stars，Github上1.6k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 
@@ -424,6 +423,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 <style lang="stylus">
 .action-button-liteflowx
     margin-left 0.5rem
+    margin-top: 0.5rem;
     display inline-block
     font-size 1.2rem
     background-color #A63939
