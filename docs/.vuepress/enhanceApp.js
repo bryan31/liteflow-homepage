@@ -19,10 +19,7 @@ export default ({
         }, 3000);
       });
       
-      // setTimeout为一次性随机（每次刷新页面会随机显示一次排序）
-      // setInterval为轮播随机（每 n 秒可以自动轮播一次）
-      // 
-      setTimeout(() => {
+      function refreshAdv() {
 
         function pickNumbers(n, m) {
           var numbers = [];
@@ -42,11 +39,15 @@ export default ({
         }
 
         const advs = document.getElementsByName('adv');
-
+        const advs_must = document.getElementsByName('adv_must');
+        
         // 如果找不到预设广告则直接返回
-        if (advs.length <= 0) {
+        if (advs.length <= 0 && advs_must.length <= 0) {
           return;
         }
+
+        for (let index = 0; index < advs.length; index++) advs[index].style.order = getRandomInt(9998);
+        for (let index = 0; index < advs_must.length; index++) advs_must[index].style.order = getRandomInt(9998);
 
         // 如果要显示条数大于预设广告条数，直接显示全部
         if (showCount >= advs.length) {
@@ -62,7 +63,13 @@ export default ({
           advs[index].classList.remove("none");
         })
         
-      }, 500);
+      }
+
+      // 初始化广告
+      setTimeout(refreshAdv, 250);
+      
+      // 注释这个停止轮播，第二个参数为轮播间隔
+      setInterval(refreshAdv, 8000);
 
 
 
