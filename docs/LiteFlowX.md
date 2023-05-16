@@ -137,6 +137,20 @@ A：原因是Python与LUA语法本身IDEA是不支持，所以当你在使用 `<
 A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇怪怪的事，不过没有关系，您可以随时[联系作者](https://gitee.com/liupeiqiang)或在[Gitee仓库](https://gitee.com/liupeiqiang/LiteFlowX)内提出您宝贵的意见或ISSUES，我会第一时间解答您的疑问。💖
 
 ## 📕 更新日志 
+::: tip [1.1.3] - 2022-12-11
+- 新增 #I65E2V SWITCH表达式的DEFAULT用法
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I65E2V
+- 新增 #I65E31 脚本组件对Python语言以及Lua语言的支持
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I65E31
+- 兼容 IDEA-2022.3 版本
+:::
+
+::: tip [1.1.2] - 2022-11-23
+- 修复 #I5X8XV com/intellij/psi/impl/source/PsiClassImpl.isInheritor must not be null 的问题
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5X8XV
+- 修复 com.intellij.psi.impl.source.xml.XmlElementContentGroupImpl cannot be cast to class com.intellij.psi.xml.XmlTag 的问题
+:::
+
 ::: tip [1.1.1] - 2022-10-24
 - 新增 #I5VMP4 在xml中新增对groovy以及javascript语法的支持
   - https://gitee.com/liupeiqiang/LiteFlowX/issues/I5VMP4

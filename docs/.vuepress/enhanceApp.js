@@ -1,30 +1,3 @@
-/**
- * to主题使用者：你可以去掉本文件的所有代码
- */
-let sidebarArray = [
-  `<a href="https://datayi.cn/w/xogk00Oo" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/postcat-banner.gif">
-  </a>`,
-  `<a href="https://gitee.com/dromara/MaxKey" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/maxkey-banner.png">
-  </a>`,
-  `<a href="https://xiaonuo.vip" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/snowy-banner.jpg">
-  </a>`,
-  `<a href="http://www.yunchengxc.com/" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/yuncheng-banner.png">
-  </a>`,
-  `<a href="http://gpt4u.top/" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/gpt4u-banner.png">
-  </a>`,
-]
-
-let mustShowArray = [
-  `<a href="https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1" target="_blank">
-    <img class="no-zoom" style="width:100%;" src="/img/donate/mdy-banner.png">
-  </a>`
-]
-
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
   options, // 附加到根实例的一些选项
@@ -38,39 +11,58 @@ export default ({
     router.afterEach(() => {
       //check if wwads' fire function was blocked after document is ready with 3s timeout (waiting the ad loading)
       docReady(function () {
-        
+
         setTimeout(function () {
           if (window._AdBlockInit === undefined) {
             ABDetected();
           }
         }, 3000);
       });
-
+      
+      // setTimeout为一次性随机（每次刷新页面会随机显示一次排序）
+      // setInterval为轮播随机（每 n 秒可以自动轮播一次）
+      // 
       setTimeout(() => {
-        function shuffle(arr){
-          var l = arr.length
-          var index, temp
-          while(l>0){
-            index = Math.floor(Math.random()*l)
-            temp = arr[l-1]
-            arr[l-1] = arr[index]
-            arr[index] = temp
-            l--
+
+        function pickNumbers(n, m) {
+          var numbers = [];
+          for (var i = 0; i < n; i++) {
+            numbers.push(i);
           }
-          return arr
+
+          return numbers.sort(() => Math.random() - 0.5).slice(0, m);
         }
 
-        const sidebarTop = document.querySelector('.sidebar-slot-top')
-        if (!sidebarTop) return
-        let _html = `<div style="width:230px;margin:0 auto"> 
-            ${shuffle(shuffle(sidebarArray).slice(0,3).concat(mustShowArray)).join("")}
-            <br/> 
-            <span style='color: gray;font-size: smaller;'>广告采用随机方式显示</span>
-            <span style='color: #E01E5A;font-size: smaller;font-weight: bolder;float: right'>❤️<a href='/pages/fb599d/'>成为赞助商</a></span>
-            </div>` 
+        // 需要显示几个轮播广告
+        const showCount = 3;
 
-        sidebarTop.innerHTML = _html
-      }, 200);
+        // 1 - n 取随机数
+        function getRandomInt(n) {
+          return Math.floor(Math.random() * n) + 1;
+        }
+
+        const advs = document.getElementsByName('adv');
+
+        // 如果找不到预设广告则直接返回
+        if (advs.length <= 0) {
+          return;
+        }
+
+        // 如果要显示条数大于预设广告条数，直接显示全部
+        if (showCount >= advs.length) {
+          for (let index = 0; index < advs.length; index++) advs[index].classList.remove("none");
+          return;
+        }
+
+        // 首先清空广告
+        advs.forEach((item) => { item.className = 'none'; })
+
+        // 从 0 - (advs.length - 1) 中取 showCount 个数字
+        pickNumbers(advs.length, showCount).forEach((index) => {
+          advs[index].classList.remove("none");
+        })
+        
+      }, 500);
 
 
 
