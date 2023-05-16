@@ -31,7 +31,7 @@ export default ({
         }
 
         // 需要显示几个轮播广告
-        const showCount = 3;
+        const showCount = 2;
 
         // 1 - n 取随机数
         function getRandomInt(n) {
@@ -69,7 +69,7 @@ export default ({
       setTimeout(refreshAdv, 250);
       
       // 注释这个停止轮播，第二个参数为轮播间隔
-      setInterval(refreshAdv, 8000);
+      // setInterval(refreshAdv, 8000);
 
 
 
