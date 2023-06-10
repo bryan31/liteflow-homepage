@@ -31,7 +31,7 @@ export default ({
         }
 
         // 需要显示几个轮播广告
-        const showCount = 2;
+        const showCount = 1;
 
         // 1 - n 取随机数
         function getRandomInt(n) {
