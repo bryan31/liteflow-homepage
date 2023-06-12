@@ -4,7 +4,7 @@ heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
 actions:
-  - actionText: 🛫v2.10.3全新发布
+  - actionText: ⛵️v2.10.4全新发布
     actionLink: /pages/5816c5/
   - actionText: ⚡️为LiteFlow发电
     actionLink: https://afdian.net/a/liteflow
@@ -21,9 +21,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.10.2
-    title: 🚀 LiteFlow v2.10.2 发布！
-    content: '<div><p>2023-05-04</p><ul><li>修复若干BUG</li></ul></div><p style="text-align: right;"><a href="/pages/8ff010/">查看详情</a></p>'
+  - id: Liteflow-2.10.4
+    title: 🚀 LiteFlow v2.10.4 发布！
+    content: '<div><p>2023-06-12</p><ul><li>本次迭代为常规增强版本</li></ul></div>'
     isHtmlContent: true
 ---
 
@@ -151,7 +151,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.10.3</version>
+    <version>2.10.4</version>
 </dependency>
 ```
 
@@ -176,7 +176,7 @@ notices: # 可选的
 
 ## 🎉致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群2000多人，Gitee上3.9k Stars，Github上1.6k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群3500多人，Gitee上4.4k Stars，Github上2k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 
