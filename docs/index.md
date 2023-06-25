@@ -4,7 +4,7 @@ heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
 actions:
-  - actionText: ⛵️v2.10.4全新发布
+  - actionText: ⛵️v2.10.5全新发布
     actionLink: /pages/5816c5/
   - actionText: ⚡️为LiteFlow发电
     actionLink: https://afdian.net/a/liteflow
@@ -23,7 +23,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.10.4
     title: 🚀 LiteFlow v2.10.4 发布！
-    content: '<div><p>2023-06-12</p><ul><li>本次迭代为常规增强版本</li></ul></div>'
+    content: '<div><p>2023-06-26</p><ul><li>[增强]日志底层结构增强</li><li>[增强]支持自定义请求ID的传入</li><li>[修复]修复循环中下标异常问题</li><li>[修复]修复isSetEnd在某些情况下不会生效的问题</li><li>[修复]修复循环中currObj不会隔离的问题</li></ul></div><p style="text-align: right;"><a href="/pages/8ff011/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -151,7 +151,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.10.4</version>
+    <version>2.10.5</version>
 </dependency>
 ```
 

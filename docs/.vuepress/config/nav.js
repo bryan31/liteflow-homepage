@@ -1,9 +1,9 @@
 module.exports = [
     { text: '💒首页', link: '/' },
     { text: '📚文档', link: '/pages/5816c5/', items: [
-            { text: 'v2.10.4(当前版本)', link: '/pages/5816c5/'},
+            { text: 'v2.10.5(当前版本)', link: '/pages/5816c5/'},
             { text: 'What\'s New', items: [
-                    { text: 'What\' s New In LiteFlow v2.10.2?', link: '/pages/8ff010/'},
+                    { text: 'What\' s New In LiteFlow v2.10.5?', link: '/pages/8ff011/'},
                 ]
             },
             { text: '历史版本', items: [
