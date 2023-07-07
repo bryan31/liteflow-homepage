@@ -42,6 +42,13 @@ notices: # 可选的
   bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
   textColor: '#1f2328' # 可选，默认var(--textColor)
   expired: '2023-06-30'
+- name: 力软低代码平台
+  desc: 引擎式开发，适应多变业务场景，使用无限制，100%源码授权
+  avatar: /img/donate/liruan.png
+  link: https://www.learun.cn?from=liteflow
+  bgColor: '#148ce9'
+  textColor: '#FFFFFF'
+  expired: '2024-07-10'
 - name: Postcat
   desc: 开源 API 管理工具，接口文档、接口测试、Mock...
   avatar: /img/donate/postcat-logo.png
@@ -49,6 +56,13 @@ notices: # 可选的
   bgColor: '#102863'
   textColor: '#FFFFFF'
   expired: '2023-08-21'
+- name: MaxKey
+  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
+  avatar: /img/donate/maxkey.png
+  link: https://gitee.com/dromara/MaxKey
+  bgColor: '#9ed3e5'
+  textColor: '#1f2328'
+  expired: '2023-10-07'
 - name: Snowy
   desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
   avatar: /img/donate/snowy.png
@@ -63,13 +77,6 @@ notices: # 可选的
   bgColor: '#2196F3'
   textColor: '#FFFFFF'
   expired: '2024-04-22'
-- name: MaxKey
-  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
-  avatar: /img/donate/maxkey.png
-  link: https://gitee.com/dromara/MaxKey
-  bgColor: '#9ed3e5'
-  textColor: '#1f2328'
-  expired: '2023-10-07'
 - name: 云程低代码平台
   desc: 采用springboot+vue技术，可私有化部署，可交付源代码
   avatar: /img/donate/yuncheng.png
@@ -77,6 +84,7 @@ notices: # 可选的
   bgColor: '#1C58E6'
   textColor: '#FFFFFF'
   expired: '2023-10-27'
+
 ```
 :::
 
