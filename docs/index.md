@@ -203,11 +203,11 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 ## 🏡代码托管
 
 <a href='https://gitee.com/dromara/liteFlow' target="_blank">
-    <img class="no-zoom" src="https://img.shields.io/badge/Gitee-red?logo=gitee&logoColor=white&style=for-the-badge"/>
+    <img class="no-zoom" :src="$withBase('/img/Gitee-red.svg')"/>
 </a>
 
 <a href="https://github.com/dromara/liteflow" target="_blank">
-    <img class="no-zoom" src="https://img.shields.io/badge/Github-blue?logo=github&logoColor=white&style=for-the-badge"/>
+    <img class="no-zoom" :src="$withBase('/img/Github-blue.svg')"/>
 </a>
 
 <br/><br/>

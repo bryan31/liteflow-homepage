@@ -23,11 +23,11 @@ LiteFlowX 是一款 IDEA 插件，它能够大幅度提高你在使用 LiteFlow 
 <p align="left">
 
 <a href="https://www.github.com/Coder-XiaoYi/LiteFlowX" target="_blank">
-<img class="no-zoom" src="https://img.shields.io/badge/Github-blue?logo=github&logoColor=white&style=for-the-badge"/>
+<img class="no-zoom" :src="$withBase('/img/Gitee-red.svg')"/>
 </a>
 
 <a href='https://gitee.com/liupeiqiang/LiteFlowX/' target="_blank">
-<img class="no-zoom" src="https://img.shields.io/badge/Gitee-red?logo=gitee&logoColor=white&style=for-the-badge"/>
+<img class="no-zoom" :src="$withBase('/img/Github-blue.svg')"/>
 </a>
 
 </p>
