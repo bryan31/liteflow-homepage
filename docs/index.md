@@ -45,7 +45,7 @@ notices: # 可选的
 - name: 力软低代码平台
   desc: 引擎式开发，适应多变业务场景，使用无限制，100%源码授权
   avatar: /img/donate/liruan.png
-  link: https://www.learun.cn?from=liteflow
+  link: https://www.learun.cn?fuid=03
   bgColor: '#148ce9'
   textColor: '#FFFFFF'
   expired: '2024-07-10'
