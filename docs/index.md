@@ -21,9 +21,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.10.5
-    title: 🚀 LiteFlow v2.10.5 发布！
-    content: '<div><p>2023-06-26</p><ul><li>[增强]日志底层结构增强</li><li>[增强]支持自定义请求ID的传入</li><li>[修复]修复循环中下标异常问题</li><li>[修复]修复isSetEnd在某些情况下不会生效的问题</li><li>[修复]修复循环中currObj不会隔离的问题</li></ul></div><p style="text-align: right;"><a href="/pages/8ff011/">查看详情</a></p>'
+  - id: Liteflow-2.10.6
+    title: 🚀 LiteFlow v2.10.6 发布！
+    content: '<div><p>2023-07-24</p><ul><li>[增强]全面支持JDK17</li><li>[增强]SQL插件支持使用系统内的数据源</li><li>[增强]很多功能有所增强</li></ul></div><p style="text-align: right;"><a href="/pages/8ff012/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
