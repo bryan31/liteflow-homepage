@@ -4,7 +4,7 @@ heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
 actions:
-  - actionText: ⛵️v2.10.6 星夜兼程
+  - actionText: ⛵️v2.10.7 星夜兼程
     actionLink: /pages/5816c5/
   - actionText: ⚡️为LiteFlow发电
     actionLink: https://afdian.net/a/liteflow
@@ -21,9 +21,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.10.6
-    title: 🚀 LiteFlow v2.10.6 发布！
-    content: '<div><p>2023-07-24</p><ul><li>[增强]全面支持JDK17</li><li>[增强]SQL插件支持使用系统内的数据源</li><li>[增强]很多功能有所增强</li></ul></div><p style="text-align: right;"><a href="/pages/8ff012/">查看详情</a></p>'
+  - id: Liteflow-2.10.7
+    title: 🚀 LiteFlow v2.10.7 发布！
+    content: '<div><p>2023-08-04</p><ul><li>[增强]全面支持JDK17</li><li>[增强]SQL插件支持使用系统内的数据源</li><li>[增强]很多功能有所增强</li></ul></div><p style="text-align: right;"><a href="/pages/8ff012/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -159,7 +159,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.10.6</version>
+    <version>2.10.7</version>
 </dependency>
 ```
 
