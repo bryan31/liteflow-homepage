@@ -434,12 +434,12 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     margin-top: 0.5rem;
     display inline-block
     font-size 1.2rem
-    background-color #A63939
+    background-color #FF3861
     padding 0.8rem 1.6rem
     border-radius 4px
     transition background-color 0.1s ease
     box-sizing border-box
-    border-bottom 1px solid #A63939
+    border-bottom 1px solid #FF3861
     color #E3E394
     &:hover
         background-color lighten(#A63939, 10%)
