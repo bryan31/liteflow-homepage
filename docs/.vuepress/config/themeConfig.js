@@ -68,7 +68,7 @@ module.exports = {
     },
     footer: { // 页脚信息
         createYear: 2020, // 博客创建年份
-        copyrightInfo: '铂赛东 | MIT License', // 博客版权信息，支持a标签
+        copyrightInfo: '铂赛东 | MIT License <br> <a href="https://www.baidu.com">京ICP备xxxxxx号-xx</a>', // 博客版权信息，支持a标签
     },
     htmlModules,
 }

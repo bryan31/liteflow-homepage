@@ -1,3 +1,32 @@
+diff --git a/node_modules/vuepress-theme-vdoing/components/Footer.vue b/node_modules/vuepress-theme-vdoing/components/Footer.vue
+index 1b5e5c0..cb1413c 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Footer.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Footer.vue
+@@ -42,6 +42,9 @@ export default {
+ <style lang='stylus'>
+ // $mobileSidebarWidth = $sidebarWidth * 0.82
+ .footer
++  position absolute
++  width: 100%
++  z-index 999
+   padding 5rem 1.5rem 2.5rem
+   text-align center
+   color #666
+@@ -61,12 +64,12 @@ export default {
+       color $accentColor
+ @media (min-width ($MQMobile + 1px))
+   .sidebar-open .footer
+-    width auto
++    width 100%
+     padding-left: ($sidebarWidth + 1.5rem)
+ @media (min-width 1520px)
+   .have-rightmenu .footer
+     padding-right: ($rightMenuWidth + 1.5rem)
+ .no-sidebar .footer
+-  width auto
++  width 100%
+   padding-left 1.5rem
+ </style>
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
 index c22d81b..21d646e 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
