@@ -3,6 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
+slogan: '<div style="margin:auto;width: 500px;height:75px;background-color:#ff3861"></div>'
 actions:
   - actionText: ⛵️v2.11.0 逐光而行
     actionLink: /pages/5816c5/

@@ -1,18 +1,17 @@
 diff --git a/node_modules/vuepress-theme-vdoing/components/Footer.vue b/node_modules/vuepress-theme-vdoing/components/Footer.vue
-index 1b5e5c0..cb1413c 100644
+index 1b5e5c0..54e28b5 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Footer.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Footer.vue
-@@ -42,6 +42,9 @@ export default {
+@@ -42,6 +42,8 @@ export default {
  <style lang='stylus'>
  // $mobileSidebarWidth = $sidebarWidth * 0.82
  .footer
 +  position absolute
 +  width: 100%
-+  z-index 999
    padding 5rem 1.5rem 2.5rem
    text-align center
    color #666
-@@ -61,12 +64,12 @@ export default {
+@@ -61,12 +63,12 @@ export default {
        color $accentColor
  @media (min-width ($MQMobile + 1px))
    .sidebar-open .footer
@@ -28,7 +27,7 @@ index 1b5e5c0..cb1413c 100644
    padding-left 1.5rem
  </style>
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
-index c22d81b..21d646e 100644
+index c22d81b..8b25c64 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
 @@ -6,6 +6,7 @@
@@ -39,12 +38,13 @@ index c22d81b..21d646e 100644
        <div
          class="banner-conent"
          :style="
-@@ -24,13 +25,15 @@
+@@ -24,13 +25,16 @@
            <p v-if="homeData.tagline" class="description">
              {{ homeData.tagline }}
            </p>
 -          <p class="action" v-if="homeData.actionText && homeData.actionLink">
 -            <NavLink class="action-button" :item="actionLink" />
++          <div v-if="homeData.slogan" v-html="homeData.slogan"></div>
 +          <p class="action" v-if="hasActions">
 +            <NavLink v-for="(action, index) in homeData.actions"  :key="index"
 +              :class="action.actionClass || 'action-button'"
@@ -58,7 +58,7 @@ index c22d81b..21d646e 100644
            <div
              class="feature"
              v-for="(feature, index) in homeData.features"
-@@ -162,7 +165,6 @@
+@@ -162,7 +166,6 @@
      </MainLayout>
    </div>
  </template>
@@ -66,7 +66,7 @@ index c22d81b..21d646e 100644
  <script>
  import NavLink from "@theme/components/NavLink";
  import BScroll from "@better-scroll/core"
-@@ -182,7 +184,7 @@ BScroll.use(Slide)
+@@ -182,7 +185,7 @@ BScroll.use(Slide)
  export default {
    data() {
      return {
@@ -75,7 +75,7 @@ index c22d81b..21d646e 100644
  
        slide: null,
        currentPageIndex: 0,
-@@ -194,8 +196,30 @@ export default {
+@@ -194,8 +197,30 @@ export default {
        currentPage: 1// 当前页
      }
    },
@@ -106,7 +106,7 @@ index c22d81b..21d646e 100644
        return {
          ...this.$page.frontmatter
        }
-@@ -203,6 +227,10 @@ export default {
+@@ -203,6 +228,10 @@ export default {
      hasFeatures() {
        return !!(this.homeData.features && this.homeData.features.length)
      },
@@ -117,7 +117,7 @@ index c22d81b..21d646e 100644
      homeSidebarB() {
        const { htmlModules } = this.$themeConfig
        return htmlModules ? htmlModules.homeSidebarB : ''
-@@ -233,12 +261,6 @@ export default {
+@@ -233,12 +262,6 @@ export default {
          return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
        }
  
@@ -130,7 +130,7 @@ index c22d81b..21d646e 100644
      }
    },
    components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination },
-@@ -249,6 +271,7 @@ export default {
+@@ -249,6 +272,7 @@ export default {
      this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
    },
    mounted() {
@@ -138,7 +138,7 @@ index c22d81b..21d646e 100644
      if (this.$route.query.p) {
        this.currentPage = Number(this.$route.query.p)
      }
-@@ -274,6 +297,9 @@ export default {
+@@ -274,6 +298,9 @@ export default {
      this.slide && this.slide.destroy()
    },
    watch: {
@@ -238,10 +238,25 @@ index 5e5c9c0..f97615d 100644
        display block
        .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after
 diff --git a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-index 62dda70..596eedd 100644
+index 62dda70..eb723c9 100644
 --- a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
 +++ b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-@@ -36,7 +36,7 @@
+@@ -21,12 +21,14 @@
+     >
+       <template #top v-if="sidebarSlotTop">
+         <div
++          id="sidebar-slot-top"
+           class="sidebar-slot sidebar-slot-top"
+           v-html="sidebarSlotTop"
+         ></div>
+       </template>
+       <template #bottom v-if="sidebarSlotBottom">
+         <div
++          id="sidebar-slot-bottom"
+           class="sidebar-slot sidebar-slot-bottom"
+           v-html="sidebarSlotBottom"
+         ></div>
+@@ -36,7 +38,7 @@
      </Sidebar>
  
      <!-- 首页 -->
