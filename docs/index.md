@@ -455,7 +455,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     transition background-color 0.1s ease
     box-sizing border-box
     border-bottom 1px solid #FF3861
-    color #E3E394
+    color #FFFFFF
     &:hover
         background-color lighten(#A63939, 10%)
 </style>
