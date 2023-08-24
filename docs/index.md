@@ -3,9 +3,9 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
-slogan: '<div style="margin:auto;width: 500px;height:75px;background-color:#ff3861"></div>'
+slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
 actions:
-  - actionText: ⛵️v2.11.0 逐光而行
+  - actionText: ⛵️v2.11.0 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: ⚡️为LiteFlow发电
@@ -45,7 +45,6 @@ notices: # 可选的
 ---
 
 <Notice :data="$frontmatter.notices"/>
-
 
 ## 🌈特别赞助
 
@@ -521,3 +520,14 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
   </ul>
 </div>
 -->
+
+<style>
+    .slo{
+        margin:auto;
+        max-width:500px;
+        max-height:75px;
+        color: #FF3860;
+        font-size: large;
+        font-weight: bolder;
+    }
+</style>
