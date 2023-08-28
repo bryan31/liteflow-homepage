@@ -55,10 +55,5 @@ module.exports = [
                 ]
             },
         ]
-    },
-    { text: 'Language', items: [
-            { text: '简体中文', link: 'https://liteflow.yomahub.com/', target:'_self', rel:''},
-            { text: 'English', link: 'https://liteflow.yomahub.com/en', target:'_self', rel:''},
-        ]
-    },
+    }
 ];

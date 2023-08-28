@@ -3,20 +3,37 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
+slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
 actions:
-  - actionText: ⛵️v2.11.0 鲜衣怒马
+  - actionText: ⛵️v2.11.0 进入文档
     actionLink: /pages/5816c5/
+    actionClass: action-button-liteflowx
   - actionText: ⚡️为LiteFlow发电
     actionLink: https://afdian.net/a/liteflow
     actionClass: action-button-liteflowx
+  - actionText: 🌟为LiteFlow点星
+    actionLink: https://gitee.com/dromara/liteFlow
+    actionClass: action-button-liteflowx
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
-  - title: 🍀轻巧强大
-    details: 小身躯蕴藏着大能量，简单的学习成本，几分钟就能上手。却可以完成复杂的规则编排。
-  - title: 🌸优雅高效
-    details: 拥有独特的设计理念，所有逻辑皆为组件。稳定运行于各大公司的核心系统上，性能卓越。
-  - title: 🌼支持丰富
-    details: 不管你是何种架构，都能支持。任意编排，多种规则格式，平滑热刷新，多级嵌套，外部存储扩展等等。
+  - title: 🧬强大的EL
+    details: 简单低学习成本的EL，丰富的关键字，能完成任意模式的逻辑编排。小身材，大能量。
+  - title: 🧩皆为组件
+    details: 拥有独特的设计理念，所有逻辑皆为组件。上下文隔离，组件单一职责，组件可以复用且互相解耦。
+  - title: 📑脚本支持
+    details: 除了java，你还可以用多达7种脚本语言来书写你的逻辑：Java，Groovy，Js，Python，Lua，QLExpress，Aviator。
+  - title: 🛖规则存储
+    details: 支持把规则和脚本存在任何关系型数据库，并且支持大部分的注册中心，支持zk，nacos，etcd，apollo，redis。
+  - title: 🍃平滑热刷
+    details: 无论是编排规则，还是脚本组件，你都可以在不用重启应用的情况下进行即时刷新。实时替换逻辑。
+  - title: ⭐️支持度广
+    details: JDK8~JDK17，Spring 2.X ~ Spring 3.X，统统支持。非Spring也给予了支持。
+  - title: 🍱高级特性
+    details: 超多的高级特性，每一个都能贴合你的业务，利用高级特性让你的复杂场景瞬间变得简单且灵动。
+  - title: 🏤社区强大
+    details: 多达几千人的使用者社区，及时给你答疑解惑。并且在国内多家一线企业中落地运用。
+  - title: 🪁可靠性强
+    details: 对系统的额外消耗极小，性能强悍。多达1200个测试用例保障了LiteFlow的质量。
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
@@ -28,8 +45,6 @@ notices: # 可选的
 ---
 
 <Notice :data="$frontmatter.notices"/>
-
-<br/><br/>
 
 ## 🌈特别赞助
 
@@ -434,13 +449,13 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     margin-top: 0.5rem;
     display inline-block
     font-size 1.2rem
-    background-color #A63939
+    background-color #FF3861
     padding 0.8rem 1.6rem
     border-radius 4px
     transition background-color 0.1s ease
     box-sizing border-box
-    border-bottom 1px solid #A63939
-    color #E3E394
+    border-bottom 1px solid #FF3861
+    color #FFFFFF
     &:hover
         background-color lighten(#A63939, 10%)
 </style>
@@ -505,3 +520,14 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
   </ul>
 </div>
 -->
+
+<style>
+    .slo{
+        margin:auto;
+        max-width:500px;
+        max-height:75px;
+        color: #FF3860;
+        font-size: large;
+        font-weight: bolder;
+    }
+</style>
