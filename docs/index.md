@@ -2,37 +2,37 @@
 home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
-tagline: 🚀轻量，快速，稳定可编排的组件式规则引擎
+tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
 actions:
-  - actionText: ⛵️v2.11.0 进入文档
+  - actionText: ⛵️ v2.11.0 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: ⚡️为LiteFlow发电
     actionLink: https://afdian.net/a/liteflow
     actionClass: action-button-liteflowx
-  - actionText: 🌟为LiteFlow点星
+  - actionText: 🌟 为LiteFlow点星
     actionLink: https://gitee.com/dromara/liteFlow
     actionClass: action-button-liteflowx
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
-  - title: 🧬强大的EL
+  - title: 🧬 强大的EL
     details: 简单低学习成本的EL，丰富的关键字，能完成任意模式的逻辑编排。小身材，大能量。
-  - title: 🧩皆为组件
+  - title: 🧩 皆为组件
     details: 拥有独特的设计理念，所有逻辑皆为组件。上下文隔离，组件单一职责，组件可以复用且互相解耦。
-  - title: 📑脚本支持
+  - title: 📑 脚本支持
     details: 除了java，你还可以用多达7种脚本语言来书写你的逻辑：Java，Groovy，Js，Python，Lua，QLExpress，Aviator。
-  - title: 🛖规则存储
+  - title: 🛖 规则存储
     details: 支持把规则和脚本存在任何关系型数据库，并且支持大部分的注册中心，支持zk，nacos，etcd，apollo，redis。
-  - title: 🍃平滑热刷
+  - title: 🍃 平滑热刷
     details: 无论是编排规则，还是脚本组件，你都可以在不用重启应用的情况下进行即时刷新。实时替换逻辑。
-  - title: ⭐️支持度广
+  - title: ⭐️ 支持度广
     details: JDK8~JDK17，Spring 2.X ~ Spring 3.X，统统支持。非Spring也给予了支持。
-  - title: 🍱高级特性
+  - title: 🍱 高级特性
     details: 超多的高级特性，每一个都能贴合你的业务，利用高级特性让你的复杂场景瞬间变得简单且灵动。
-  - title: 🏤社区强大
+  - title: 🏤 社区强大
     details: 多达几千人的使用者社区，及时给你答疑解惑。并且在国内多家一线企业中落地运用。
-  - title: 🪁可靠性强
+  - title: 🪁 可靠性强
     details: 对系统的额外消耗极小，性能强悍。多达1200个测试用例保障了LiteFlow的质量。
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
@@ -46,7 +46,7 @@ notices: # 可选的
 
 <Notice :data="$frontmatter.notices"/>
 
-## 🌈特别赞助
+## 🌈 特别赞助
 
 ::: cardList
 ```yaml
@@ -168,7 +168,7 @@ notices: # 可选的
 
 <br/>
 
-## ✨最新版本
+## ✨ 最新版本
 
 ```xml
 <dependency>
@@ -197,7 +197,7 @@ notices: # 可选的
 
 <br/>
 
-## 🎉致谢
+## 🎉 致谢
 
 LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群3500多人，Gitee上4.4k Stars，Github上2k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
@@ -215,7 +215,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 <br/>
 
-## 🏡代码托管
+## 🏡 代码托管
 
 <a href='https://gitee.com/dromara/liteFlow' target="_blank">
     <img class="no-zoom" :src="$withBase('/img/Gitee-red.svg')"/>
@@ -227,7 +227,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 <br/><br/>
 
-## 💪🏻参与开发
+## 💪🏻 参与开发
 
 欢迎各路好汉一起来参与完善 LiteFlow，我们期待你的 PR！
 
@@ -235,13 +235,13 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 <br/>
 
-## 🍭架构图
+## 🍭 架构图
 
 <img :src="$withBase('/img/arch.svg')" style="zoom: 100%;" class="no-zoom">
 
 <br/>
 
-## 🌏知识星球
+## 🌏 知识星球
 
 <img :src="$withBase('/img/zhishixingqiu.png')" style="zoom: 50%" class="no-zoom">
 
@@ -263,7 +263,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
   }
 </style>
 
-## 🐳Dromara组织成员
+## 🐳 Dromara组织成员
 <div class="row">
     <span class="project-link">
         <a href="https://gitee.com/dromara/TLog" target="_blank">
@@ -395,7 +395,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 <br/><br/>
 
-## 🧲友情链接
+## 🧲 友情链接
 <div class="row">
     <span class="project-link">
         <a href="https://gitee.com" target="_blank">
@@ -522,12 +522,14 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 -->
 
 <style>
-    .slo{
-        margin:auto;
-        max-width:500px;
-        max-height:75px;
-        color: #FF3860;
-        font-size: large;
-        font-weight: bolder;
-    }
+  .slo{
+      margin:auto;
+      max-width:500px;
+      max-height:75px;
+      background-image:-webkit-linear-gradient(left,#ff5c36,#ff494d,#FF3860); 
+      -webkit-background-clip:text; 
+      -webkit-text-fill-color:transparent;
+      font-size: large;
+      font-weight: bolder;
+  }
 </style>
