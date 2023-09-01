@@ -10,7 +10,7 @@ module.exports = [
     [
         'vuepress-plugin-baidu-tongji', // 百度统计
         {
-            hm: 'f0770f1d975c50a091d76f04a1dd2df5'
+            hm: '3404a5635d185ca6dda4ccbaaeaf73d3'
         }
     ],
 
@@ -51,7 +51,7 @@ module.exports = [
     [
         "@mr-hope/sitemap",
         {
-            hostname: 'https://liteflow.yomahub.com'
+            hostname: 'https://liteflow.cc'
         }
     ]
 ];
