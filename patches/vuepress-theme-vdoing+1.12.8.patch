@@ -27,7 +27,7 @@ index 1b5e5c0..54e28b5 100644
    padding-left 1.5rem
  </style>
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
-index c22d81b..aff84a7 100644
+index c22d81b..13ca2e2 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
 @@ -6,6 +6,7 @@
@@ -42,7 +42,7 @@ index c22d81b..aff84a7 100644
        >
          <header class="hero">
            <img
-+            :class="themeMode === 'dark' ? 'hero-image' : ''"
++            :class="themeModeData === 'dark' ? 'hero-image' : ''"
              v-if="homeData.heroImage"
              :src="$withBase(homeData.heroImage)"
              :alt="homeData.heroAlt"
@@ -83,7 +83,7 @@ index c22d81b..aff84a7 100644
  
        slide: null,
        currentPageIndex: 0,
-@@ -194,8 +198,30 @@ export default {
+@@ -194,8 +198,33 @@ export default {
        currentPage: 1// 当前页
      }
    },
@@ -95,6 +95,9 @@ index c22d81b..aff84a7 100644
 +    }
 +  },
    computed: {
++    themeModeData() {
++      return this.themeMode;
++    },
 +    videoBackgroundSrc() {
 +      if (this.isMQMobile){
 +        return null;
@@ -114,7 +117,7 @@ index c22d81b..aff84a7 100644
        return {
          ...this.$page.frontmatter
        }
-@@ -203,6 +229,10 @@ export default {
+@@ -203,6 +232,10 @@ export default {
      hasFeatures() {
        return !!(this.homeData.features && this.homeData.features.length)
      },
@@ -125,7 +128,7 @@ index c22d81b..aff84a7 100644
      homeSidebarB() {
        const { htmlModules } = this.$themeConfig
        return htmlModules ? htmlModules.homeSidebarB : ''
-@@ -233,12 +263,6 @@ export default {
+@@ -233,12 +266,6 @@ export default {
          return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
        }
  
@@ -138,7 +141,7 @@ index c22d81b..aff84a7 100644
      }
    },
    components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination },
-@@ -249,6 +273,7 @@ export default {
+@@ -249,6 +276,7 @@ export default {
      this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
    },
    mounted() {
@@ -146,7 +149,7 @@ index c22d81b..aff84a7 100644
      if (this.$route.query.p) {
        this.currentPage = Number(this.$route.query.p)
      }
-@@ -274,6 +299,9 @@ export default {
+@@ -274,6 +302,9 @@ export default {
      this.slide && this.slide.destroy()
    },
    watch: {
