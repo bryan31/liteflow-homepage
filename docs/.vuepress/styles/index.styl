@@ -165,30 +165,54 @@ body .vuepress-plugin-demo-block__wrapper
   min-height: 1200px!important
 }
 
-.theme-mode-dark .hero .hero-image{
-  filter:drop-shadow(0px 0px 20px #ff4851)
-  animation:heroImage 15s ease-in-out infinite alternate;
+.hero-image{
+  padding-top: 30px;
 }
 
-@keyframes heroImage{
+.theme-mode-dark .hero .hero-image{
+  filter:drop-shadow(0px 0px 0px #ff4851)
+  animation:logoFadeIn 2s ease forwards alternate, logoLight 15s ease-in-out 2s infinite alternate, logoFloat 10s ease-in-out 2s infinite alternate;
+}
+
+@keyframes logoFadeIn{
   0%{
-      transform:scale(1);
-      opacity: 1;
+      transform:scale(0) translate(0%, -30%);
+      opacity:0;
       filter:drop-shadow(0px 0px 0px #ff4851)
   }
-  25%{
+  100%{
       transform:scale(1);
-      opacity: 1;
-      filter:drop-shadow(0px 0px 50px #ff4851)
+      opacity:1;
+      filter:drop-shadow(0px 0px 20px #ff4851)
+  }
+}
+
+@keyframes logoFloat{
+  0%{
+    transform:translate(0%, 0% scale(1));
+  }
+  25%{
+    transform:translate(0%, -5%) scale(1);
   }
   50%{
-      transform:scale(1);
-      opacity: 1;
-      filter:drop-shadow(0px 0px 30px #ff4851)
+    transform:translate(0%, 0%) scale(1);
   }
   75%{
-      transform:scale(1);
-      opacity: 1;
-      filter:drop-shadow(0px 0px 50px #ff4851)
+    transform:translate(0%, -5%) scale(1);
+  }
+}
+
+@keyframes logoLight{
+  0%{
+    filter:drop-shadow(0px 0px 20px #ff4851);
+  }
+  25%{
+    filter:drop-shadow(0px 0px 50px #ff4851);
+  }
+  50%{
+    filter:drop-shadow(0px 0px 20px #ff4851);
+  }
+  75%{
+    filter:drop-shadow(0px 0px 50px #ff4851);
   }
 }
