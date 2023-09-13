@@ -8,7 +8,7 @@ actions:
   - actionText: ⛵️ v2.11.0 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
-  - actionText: ⚡️为LiteFlow发电
+  - actionText: 👕LF新版本限定T恤
     actionLink: https://afdian.net/a/liteflow
     actionClass: action-button-liteflowx
   - actionText: 🌟 为LiteFlow点星
@@ -50,13 +50,6 @@ notices: # 可选的
 
 ::: cardList
 ```yaml
-- name: ERD Online
-  desc: 开箱即用的数据库建模、产品版本管理软件
-  avatar: /img/donate/erd.png
-  link: https://portal.zerocode.net.cn/
-  bgColor: '#f8c567' # 可选，默认var(--bodyBg)。颜色值有#号时请添加单引号
-  textColor: '#1f2328' # 可选，默认var(--textColor)
-  expired: '2023-06-30'
 - name: 力软低代码平台
   desc: 引擎式开发，适应多变业务场景，使用无限制，100%源码授权
   avatar: /img/donate/liruan.png
@@ -64,13 +57,6 @@ notices: # 可选的
   bgColor: '#148ce9'
   textColor: '#FFFFFF'
   expired: '2024-07-10'
-- name: Postcat
-  desc: 开源 API 管理工具，接口文档、接口测试、Mock...
-  avatar: /img/donate/postcat-logo.png
-  link: https://datayi.cn/w/xogk00Oo
-  bgColor: '#102863'
-  textColor: '#FFFFFF'
-  expired: '2023-08-21'
 - name: MaxKey
   desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
   avatar: /img/donate/maxkey.png
