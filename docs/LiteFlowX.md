@@ -3,9 +3,9 @@ title: LiteFlowX快速开发插件
 date: 2022-07-12 00:57:00
 permalink: /pages/liteflowx/
 author:
- name: 码农小易
+ name: Timothy Leo
  link: https://gitee.com/liupeiqiang/
-titleTag: ✨ V1.1.3
+titleTag: ✨ V1.2.3
 ---
 
 :::warning 插件版本须知
@@ -72,9 +72,9 @@ LiteFlowX 插件完全免费并开源，为了让各位小伙伴能使用到更�
 有三种方式可安装LiteFlowX插件到IDEA中
 ::: tip
 支持 LiteFlowX 插件的版本有：
-- IntelliJ IDEA Educational — 2020.3 — 2022.2
-- IntelliJ IDEA Ultimate — 2020.3 — 2022.2.1
-- IntelliJ IDEA Community — 2020.3 — 2022.2.1
+- IntelliJ IDEA Educational — 2021.1 — 2022.2.2
+- IntelliJ IDEA Community — 2021.1 — 2023.2.2
+- IntelliJ IDEA Ultimate — 2021.1 — 2023.2.2
 :::
 ### 方法一：点击这里安装（推荐）
 
@@ -137,6 +137,42 @@ A：原因是Python与LUA语法本身IDEA是不支持，所以当你在使用 `<
 A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇怪怪的事，不过没有关系，您可以随时[联系作者](https://gitee.com/liupeiqiang)或在[Gitee仓库](https://gitee.com/liupeiqiang/LiteFlowX)内提出您宝贵的意见或ISSUES，我会第一时间解答您的疑问。💖
 
 ## 📕 更新日志 
+
+::: tip [1.2.3] - 2023-08-30
+- 新增对 xml 文件的自动注入 JAVA 语言
+:::
+
+::: tip [1.2.2] - 2023-08-08
+- 新增 支持.parallel() 关键词
+- 新增 支持.maxWaitSeconds() 关键词
+- 修复 ToolBox 会被关闭问题
+- 兼容 IDEA-2023.2.* 版本
+:::
+
+::: tip [1.2.1] - 2023-04-11
+- 新增 支持表达式结尾键入.tag()和.id()
+- 兼容 WHILE() 括号表达式内使用AND、OR、NOT逻辑表达式
+:::
+
+::: tip [1.2.0] - 2023-04-01
+- 新增 支持AND()、OR()、NOT()逻辑表达式
+- 兼容 IDEA-2023.* 版本
+:::
+
+::: tip [1.1.6] - 2023-03-16
+- 新增 CATCH().DO() 表达式
+:::
+
+::: tip [1.1.5] - 2023-02-01
+- 修复 ITERATOR 关键字组件图标无法正常显示问题
+- 修复 .el.xml 文件中 domChain 标签无法识别 id 属性问题
+:::
+
+::: tip [1.1.4] - 2023-01-18
+- 新增 #I6AY1G 对 ITERATOR 关键字的支持
+  - https://gitee.com/liupeiqiang/LiteFlowX/issues/I6AY1G
+:::
+
 ::: tip [1.1.3] - 2022-12-11
 - 新增 #I65E2V SWITCH表达式的DEFAULT用法
   - https://gitee.com/liupeiqiang/LiteFlowX/issues/I65E2V
@@ -236,7 +272,7 @@ A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇
   link: https://gitee.com/bryan31
   bgColor: '#d7d7d7'
   textColor: '#000000'
-- name: 码农小易
+- name: Timothy Leo
   desc: LiteFlowX 开源作者
   avatar: /img/liteflowx/avator/liupeiqiang.webp
   link: https://gitee.com/liupeiqiang
