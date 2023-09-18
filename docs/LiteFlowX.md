@@ -3,7 +3,7 @@ title: LiteFlowX快速开发插件
 date: 2022-07-12 00:57:00
 permalink: /pages/liteflowx/
 author:
- name: Timothy Leo
+ name: Timothy Lau
  link: https://gitee.com/liupeiqiang/
 titleTag: ✨ V1.2.3
 ---
@@ -272,7 +272,7 @@ A：LiteFlowX 插件仍在茁壮成长中，使用过程中难免会遇见奇奇
   link: https://gitee.com/bryan31
   bgColor: '#d7d7d7'
   textColor: '#000000'
-- name: Timothy Leo
+- name: Timothy Lau
   desc: LiteFlowX 开源作者
   avatar: /img/liteflowx/avator/liupeiqiang.webp
   link: https://gitee.com/liupeiqiang
