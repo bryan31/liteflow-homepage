@@ -8,9 +8,6 @@ actions:
   - actionText: ⛵️ v2.11.0 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
-  - actionText: 👕LF新版本限定T恤
-    actionLink: https://afdian.net/a/liteflow
-    actionClass: action-button-liteflowx
   - actionText: 🌟 为LiteFlow点星
     actionLink: https://gitee.com/dromara/liteFlow
     actionClass: action-button-liteflowx
