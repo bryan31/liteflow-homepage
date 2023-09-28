@@ -68,10 +68,10 @@ notices: # 可选的
   bgColor: '#1373CC'
   textColor: '#ffffff'
   expired: '2023-10-10'
-- name: 明道云零代码平台
-  desc: 快速响应业务需求，从“IT背锅侠”变成“IT英雄”
+- name: 2023年明道云伙伴大会
+  desc: 千人同聚，48位行业大咖解析零代码实践经验和技术前沿。30个席位限时免费，速抢码：bnlf
   avatar: /img/donate/mdy.png
-  link: https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1
+  link: https://www.mingdao.com/event/mpc/2023
   bgColor: '#2196F3'
   textColor: '#FFFFFF'
   expired: '2024-04-22'
