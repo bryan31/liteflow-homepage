@@ -4,9 +4,6 @@ module.exports = function advHtml() {
    * 广告列表
    */
   let sidebarArray = [
-    `<a name="adv" class="none" href="https://gitee.com/dromara/MaxKey" target="_blank">
-      <img class="no-zoom" style="width:100%;" src="/img/donate/maxkey-banner.png">
-    </a>`,
     `<a name="adv" class="none" href="https://xiaonuo.vip" target="_blank">
       <img class="no-zoom" style="width:100%;" src="/img/donate/snowy-banner.jpg">
     </a>`,

@@ -54,20 +54,13 @@ notices: # 可选的
   bgColor: '#148ce9'
   textColor: '#FFFFFF'
   expired: '2024-07-10'
-- name: MaxKey
-  desc: 业界领先的IAM身份管理和认证产品，国内开源IAM第一品牌
-  avatar: /img/donate/maxkey.png
-  link: https://gitee.com/dromara/MaxKey
-  bgColor: '#9ed3e5'
-  textColor: '#1f2328'
-  expired: '2023-10-07'
 - name: Snowy
   desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
   avatar: /img/donate/snowy.png
   link: https://xiaonuo.vip
   bgColor: '#1373CC'
   textColor: '#ffffff'
-  expired: '2023-10-10'
+  expired: '2024-10-10'
 - name: 2023年明道云伙伴大会
   desc: 千人同聚，48位行业大咖解析零代码实践经验和技术前沿。30个席位限时免费，速抢码：bnlf
   avatar: /img/donate/mdy.png
