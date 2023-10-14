@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
 actions:
-  - actionText: ⛵️ v2.11.0 进入文档
+  - actionText: ⛵️ v2.11.1 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 🌟 为LiteFlow点星
@@ -35,7 +35,7 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.11.0
+  - id: Liteflow-2.11.1
     title: 🚀 LiteFlow v2.11.0 发布！
     content: '<div><p>2023-09-01</p><ul><li>[新特性]脚本支持原生Java语法</li><li>[新特性]支持Redis存储</li><li>[新特性]任意超时控制</li><li>[新特性]异步循环模式的支持</li><li>[新特性]组件回滚的支持</li></ul></div><p style="text-align: right;"><a href="/pages/8ff013/">查看详情</a></p>'
     isHtmlContent: true
@@ -150,7 +150,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.11.0</version>
+    <version>2.11.1</version>
 </dependency>
 ```
 
