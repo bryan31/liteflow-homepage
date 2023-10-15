@@ -36,8 +36,8 @@ features: # 可选的
 postList: none
 notices: # 可选的
   - id: Liteflow-2.11.1
-    title: 🚀 LiteFlow v2.11.0 发布！
-    content: '<div><p>2023-09-01</p><ul><li>[新特性]脚本支持原生Java语法</li><li>[新特性]支持Redis存储</li><li>[新特性]任意超时控制</li><li>[新特性]异步循环模式的支持</li><li>[新特性]组件回滚的支持</li></ul></div><p style="text-align: right;"><a href="/pages/8ff013/">查看详情</a></p>'
+    title: 🚀 LiteFlow v2.11.1 发布！
+    content: '<div><p>2023-10-16</p><ul><li>[新特性]SQL插件支持轮询自动更新模式</li><li>[新特性]WHEN增加must语法</li><li>[新特性]推出EL表达式的动态组装API</li><li>[新特性]链路继承特性</li><li>[新特性]组件降级特性</li><li>[新特性]支持绝对路径模糊匹配</li><li>[新特性]WHEN线程池隔离机制</li></ul></div><p style="text-align: right;"><a href="/pages/8ff014/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
