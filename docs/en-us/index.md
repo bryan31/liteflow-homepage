@@ -7,7 +7,7 @@ slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
 actions: 
   - 
     actionText: ⛵️ Quick Start
-    actionLink: /pages/5816c5/
+    actionLink: ./pages/introduction/
     actionClass: action-button-liteflowx
   - 
     actionText: 🌟 Star it!

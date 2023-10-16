@@ -6,7 +6,7 @@ tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
 actions:
   - actionText: ⛵️ v2.11.1 进入文档
-    actionLink: /pages/5816c5/
+    actionLink: ./pages/introduction/
     actionClass: action-button-liteflowx
   - actionText: 🌟 为LiteFlow点星
     actionLink: https://gitee.com/dromara/liteFlow
