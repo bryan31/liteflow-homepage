@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "core-js": "2.x",
-    "element-ui": "^2.15.9"
+    "element-ui": "^2.15.9",
+    "vue": "2.7.14"
   }
 }
