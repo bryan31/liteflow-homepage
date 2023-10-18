@@ -1,3 +1,5 @@
+const fs = require('fs')
+const { path } = require('@vuepress/shared-utils')
 // Plugin Config
 module.exports = [
     /*[require('../plugins/love-me'), { // 鼠标点击爱心特效
@@ -5,7 +7,18 @@ module.exports = [
         excludeClassName: 'theme-vdoing-content' // 要排除元素的class, 默认空''
     }],*/
 
-    ['fulltext-search'], // 全文搜索
+    ['fulltext-search', {
+        hooks: fs.readFileSync(path.resolve(__dirname, './searchHooks.js')),
+    }],
+
+
+    // [
+    //     "@vuepress/search",
+    //     {
+    //         searchMaxSuggestions: 10,
+    //         test: `/${version.latest.pre}/`,
+    //     },
+    // ],
 
     [
         'vuepress-plugin-baidu-tongji', // 百度统计

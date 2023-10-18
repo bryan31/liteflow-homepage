@@ -1,19 +1,21 @@
+const _ver = require("./version.js");
+
 module.exports = [
     { text: '💒首页', link: '/' },
-    { text: '📚文档', link: '/pages/5816c5/', items: [
-            { text: 'v2.11.2(当前版本)', link: '/pages/5816c5/'},
-            { text: 'What\'s New', items: [
-                    { text: 'What\' s New In LiteFlow v2.11.2?', link: '/pages/8ff014/'},
-                ]
+    {
+        text: '📚文档', link: `/${_ver.latest.pre}/5816c5/`,
+        items: [
+            {
+                text: '版本', items: _ver.versions.map((version) => ({
+                    text: version.text ? version.text : version.id,
+                    link: `/${version.pre}/5816c5/`,
+                })),
             },
-            { text: '历史版本', items: [
-                    { text: 'v2.10.X', link: '/pages/v2.10.X/5816c5/'},
-                    { text: 'v2.9.X', link: '/pages/v2.9.X/5816c5/'},
-                    { text: 'v2.8.X', link: '/pages/v2.8.X/5816c5/'},
-
-                    { text: 'v2.7.X', link: '/pages/v2.7.X/967466/'},
-                    { text: 'v2.6.X', link: '/pages/v2.6.X/dfd970/'},
-                ]
+            {
+                text: 'What\'s New', items: _ver.whatsnew.map((news) => ({
+                    text: news.text,
+                    link: news.link
+                }))
             },
             { text: '升级指南', items: [
                     { text: '升级到2.9.3说明', link: '/pages/88c2f4/'},
