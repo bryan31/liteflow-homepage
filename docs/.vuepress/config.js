@@ -5,8 +5,6 @@ const plugins = require('./config/plugins.js');
 module.exports = {
 
   theme: 'vdoing', // 使用依赖包主题
-  title: "LiteFlow",
-  description: '一个轻量，快速，稳定可编排的组件式规则引擎',
   base: "/",
   head,
   themeConfig,
@@ -25,5 +23,20 @@ module.exports = {
     '.vuepress/config/nav.js',
     '.vuepress/config/plugins.js',
     '.vuepress/config/themeConfig.js',
-  ]
+  ],
+
+  locales: {
+    // 键名是该语言所属的子路径
+    // 作为特例，默认语言可以使用 '/' 作为其路径。
+    '/en-us/': {
+      lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
+      title: 'LiteFlow',
+      description: 'A lightweight, fast, stable and configurable component-based rule engine'
+    },
+    '/': {
+      lang: 'zh-CN',
+      title: "LiteFlow",
+      description: '一个轻量，快速，稳定可编排的组件式规则引擎' 
+    }
+  }
 }

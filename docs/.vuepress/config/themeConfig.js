@@ -1,9 +1,9 @@
 const nav = require("./nav.js");
+const nav_en_us = require("./en-us/nav.js");
 const htmlModules = require("./htmlModules.js");
 
 // Theme Config
 module.exports = {
-    nav,
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/img/logo.png', // 导航栏logo
     searchMaxSuggestions: 10, // 搜索结果显示最大数
@@ -71,4 +71,18 @@ module.exports = {
         copyrightInfo: '铂赛东 | MIT License <br> <a href="https://beian.miit.gov.cn/">沪ICP备18012955号-2</a>', // 博客版权信息，支持a标签
     },
     htmlModules,
+    locales: {
+        '/en-us/': {
+            nav: nav_en_us,
+            selectText: '💬 Languages',
+            label: 'English',
+            editLinkText: 'Edit this page on GitHub',
+        },
+        '/': {
+            nav,
+            selectText: '💬 Languages',
+            label: '简体中文',
+            editLinkText: '在 GitHub 上编辑此页',
+        }
+    }
 }
