@@ -36,8 +36,8 @@ features:
 postList: none
 notices: 
   - 
-    id: Liteflow-2.11.1
-    title: 🚀 LiteFlow v2.11.1 Released！
+    id: Liteflow-2.11.2
+    title: 🚀 LiteFlow v2.11.2 Released！
     content: '<div><p>2023-10-16</p><ul><li>[New Feature] Support polling automatic update mode in SQL plugin.</li><li>[New Feature] Added the "must" syntax.</li><li>[New Feature] New dynamic assembly API for EL expressions.</li><li>[New Feature] Supported chain inheritance.</li><li>[New Feature] Added the component degradation feature.</li><li>[New Feature] Supports fuzzy matching of absolute paths.</li><li>[New Feature] New thread pool isolation mechanism in WHEN expression.</li></ul></div><p style="text-align: right;"><a href="/pages/8ff014/">Details</a></p>'
     isHtmlContent: true
 title: Home
