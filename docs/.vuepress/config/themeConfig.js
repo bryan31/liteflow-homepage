@@ -1,5 +1,5 @@
 const nav = require("./nav.js");
-const nav_en_us = require("./en-us/nav.js");
+const nav_en_us = require("./en/nav.js");
 const htmlModules = require("./htmlModules.js");
 
 // Theme Config
@@ -72,7 +72,7 @@ module.exports = {
     },
     htmlModules,
     locales: {
-        '/en-us/': {
+        '/en/': {
             nav: nav_en_us,
             selectText: '💬 Languages',
             label: 'English',

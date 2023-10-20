@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀 A LIGHTWEIGHT and POWERFUL rules engine framework
-slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
+slogan: '<div class="slo">Keep on the light side.</div>'
 actions: 
   - 
     actionText: ⛵️ Quick Start
