@@ -7,7 +7,7 @@ slogan: '<div class="slo">Keep on the light side.</div>'
 actions: 
   - 
     actionText: ⛵️ Quick Start
-    actionLink: ./pages/introduction/
+    actionLink: /en/pages/introduction/
     actionClass: action-button-liteflowx
   - 
     actionText: 🌟 Star it!
@@ -38,7 +38,7 @@ notices:
   - 
     id: Liteflow-2.11.2
     title: 🚀 LiteFlow v2.11.2 Released！
-    content: '<div><p>2023-10-16</p><ul><li>[New Feature] Support polling automatic update mode in SQL plugin.</li><li>[New Feature] Added the "must" syntax.</li><li>[New Feature] New dynamic assembly API for EL expressions.</li><li>[New Feature] Supported chain inheritance.</li><li>[New Feature] Added the component degradation feature.</li><li>[New Feature] Supports fuzzy matching of absolute paths.</li><li>[New Feature] New thread pool isolation mechanism in WHEN expression.</li></ul></div><p style="text-align: right;"><a href="/pages/8ff014/">Details</a></p>'
+    content: '<div><p>2023-10-16</p><ul><li>[New Feature] Support polling automatic update mode in SQL plugin.</li><li>[New Feature] Added the "must" syntax.</li><li>[New Feature] New dynamic assembly API for EL expressions.</li><li>[New Feature] Supported chain inheritance.</li><li>[New Feature] Added the component degradation feature.</li><li>[New Feature] Supports fuzzy matching of absolute paths.</li><li>[New Feature] New thread pool isolation mechanism in WHEN expression.</li></ul></div><p style="text-align: right;"><a href="/en/pages/8ff014/">Details</a></p>'
     isHtmlContent: true
 title: Home
 date: 2023-10-16 22:24:29
@@ -154,7 +154,7 @@ permalink: /
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.11.1</version>
+    <version>2.11.2</version>
 </dependency>
 ```
 
