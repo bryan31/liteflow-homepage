@@ -72,7 +72,7 @@ notices: # 可选的
   desc: 采用springboot+vue技术，可私有化部署，可交付源代码
   avatar: /img/donate/yuncheng.png
   link: http://www.yunchengxc.com/
-  bgColor: '#1C58E6'
+  bgColor: '#A6A1F3'
   textColor: '#FFFFFF'
   expired: '2023-10-27'
 
