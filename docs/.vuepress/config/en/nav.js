@@ -1,7 +1,7 @@
 module.exports = [
     { text: '💒 Home', link: '/en/' },
-    { text: '📚 Document', link: '/en/pages/5816c5/', items: [
-            { text: 'v2.11.1(Current)', link: '/en/pages/5816c5/'},
+    { text: '📚 Document', link: '/en/pages/introduction/', items: [
+            { text: 'v2.11.1(Current)', link: '/en/pages/introduction/'},
             { text: 'What\'s New', items: [
                     { text: 'What\' s New In LiteFlow v2.11.1?', link: '/en/pages/8ff014/'},
                 ]
