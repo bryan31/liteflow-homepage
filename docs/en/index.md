@@ -209,7 +209,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 Welcome all open source enthusiasts to participate in improving LiteFlow, we look forward to your PR!
 
-How to [Become a contributor](/pages/ae4dd5/)。
+How to [Become a contributor](/en/pages/ae4dd5/)。
 
 <br/>
 
