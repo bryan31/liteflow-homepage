@@ -37,7 +37,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.11.3
     title: 🚀 LiteFlow v2.11.3 发布！
-    content: '<div><p>2023-11-01</p><ul><li>[增强]SQL插件增加enable字段的映射</li><li>[修复]修复回滚功能在重试模式下的多次回滚的问题</li><li>[修复]修复redis的订阅模式mode解析的问题</li><li>[修复]修复Validate方法不精确的问题</li><li>[修复]修复2.11.2中启动parse两次规则的问题</li><li>[修复]修复Redis配置源哨兵模式的地址检查</li></ul></div><p style="text-align: right;"><a href="/pages/8ff014/">查看详情</a></p>'
+    content: '<div><p>2023-11-01</p><ul><li>[增强]SQL插件增加enable字段的映射</li><li>[修复]修复回滚功能在重试模式下的多次回滚的问题</li><li>[修复]修复redis的订阅模式mode解析的问题</li><li>[修复]修复Validate方法不精确的问题</li><li>[修复]修复2.11.2中启动parse两次规则的问题</li><li>[修复]修复Redis配置源哨兵模式的地址检查</li></ul></div><p style="text-align: right;"><a href="/pages/8ff015/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
