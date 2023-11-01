@@ -1,18 +1,15 @@
 module.exports = [
     { text: '💒首页', link: '/' },
     { text: '📚文档', link: '/pages/5816c5/', items: [
-            { text: 'v2.11.2(当前版本)', link: '/pages/5816c5/'},
+            { text: 'v2.11.3(当前版本)', link: '/pages/5816c5/'},
             { text: 'What\'s New', items: [
-                    { text: 'What\' s New In LiteFlow v2.11.2?', link: '/pages/8ff014/'},
+                    { text: 'What\' s New In LiteFlow v2.11.3?', link: '/pages/8ff015/'},
                 ]
             },
             { text: '历史版本', items: [
                     { text: 'v2.10.X', link: '/pages/v2.10.X/5816c5/'},
                     { text: 'v2.9.X', link: '/pages/v2.9.X/5816c5/'},
                     { text: 'v2.8.X', link: '/pages/v2.8.X/5816c5/'},
-
-                    { text: 'v2.7.X', link: '/pages/v2.7.X/967466/'},
-                    { text: 'v2.6.X', link: '/pages/v2.6.X/dfd970/'},
                 ]
             },
             { text: '升级指南', items: [
@@ -51,7 +48,6 @@ module.exports = [
             { text: 'Github', link: 'https://github.com/dromara/liteflow' },
             { text: '推荐', items: [
                     { text: 'TLog-轻量级的分布式日志追踪神器', link: 'https://tlog.yomahub.com/'},
-                    { text: 'ERD ONLINE-开箱即用的数据库建模、产品版本管理软件', link: 'https://portal.zerocode.net.cn/'},
                     { text: 'Forest-更轻量、更简单实用的HTTP客户端框架', link: 'https://forest.dtflyx.com/'}
                 ]
             },
