@@ -74,7 +74,7 @@ notices: # 可选的
   link: http://www.yunchengxc.com/
   bgColor: '#A6A1F3'
   textColor: '#FFFFFF'
-  expired: '2023-10-27'
+  expired: '2024-10-27'
 
 ```
 :::
