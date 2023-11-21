@@ -48,7 +48,7 @@ notices: # 可选的
 ::: cardList
 ```yaml
 - name: MISBoot低代码开发平台
-  desc: 零代码应用快速搭建、让开发更简单
+  desc: 零代码应用快速搭建<br>让开发更简单
   avatar: /img/donate/misboot.png
   link: https://www.learun.cn?fuid=03
   bgColor: '#ba4552'
