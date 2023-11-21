@@ -47,6 +47,13 @@ notices: # 可选的
 
 ::: cardList
 ```yaml
+- name: MISBoot低代码开发平台
+  desc: 零代码应用快速搭建、让开发更简单
+  avatar: /img/donate/misboot.png
+  link: https://www.learun.cn?fuid=03
+  bgColor: '#ba4552'
+  textColor: '#FFFFFF'
+  expired: '2025-11-21'
 - name: 力软低代码平台
   desc: 引擎式开发，适应多变业务场景，使用无限制，100%源码授权
   avatar: /img/donate/liruan.png
@@ -61,10 +68,10 @@ notices: # 可选的
   bgColor: '#1373CC'
   textColor: '#ffffff'
   expired: '2024-10-10'
-- name: 2023年明道云伙伴大会
-  desc: 千人同聚，48位行业大咖解析零代码实践经验和技术前沿。30个席位限时免费，速抢码：bnlf
+- name: 明道云零代码平台
+  desc: 快速响应业务需求，从“IT背锅侠”变成“IT英雄”
   avatar: /img/donate/mdy.png
-  link: https://www.mingdao.com/event/mpc/2023
+  link: https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1
   bgColor: '#2196F3'
   textColor: '#FFFFFF'
   expired: '2024-04-22'
