@@ -50,7 +50,7 @@ notices: # 可选的
 - name: MISBoot低代码开发平台
   desc: 零代码应用快速搭建<br>让开发更简单
   avatar: /img/donate/misboot.png
-  link: https://www.learun.cn?fuid=03
+  link: https://www.misboot.com/?from=LiteFlow
   bgColor: '#ba4552'
   textColor: '#FFFFFF'
   expired: '2025-11-21'
