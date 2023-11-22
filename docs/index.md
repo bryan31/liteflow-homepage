@@ -281,8 +281,8 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 </div>
 <div class="row">
     <span class="project-link">
-        <a href="https://gitee.com/dromara/myth" target="_blank">
-            <img :src="$withBase('/img/dromara/myth-logo.png')" class="no-zoom" >
+        <a href="https://gitee.com/dromara/Akali" target="_blank">
+            <img :src="$withBase('/img/dromara/akali-logo.png')" class="no-zoom" >
         </a>
     </span>
     <span class="project-link">
