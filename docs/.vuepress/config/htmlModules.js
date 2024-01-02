@@ -24,7 +24,15 @@ module.exports = {
   // 万维广告
   pageT: `
   <div class="wwads-cn wwads-horizontal page-wwads" data-id="129"></div>
+  <div class="pin-adv"><a href="https://103.118.41.167:53000/"><img style="width:100%;border-radius: 3px;" src="/img/donate/ai4u-banner-top.png"></a></div>
   <style>
+      .pin-adv{
+        width:100%!important;
+        min-height: 0;
+        margin: 0;
+        margin-top: 5px;
+        border-radius: 3px;
+      }
       .page-wwads{
         width:100%!important;
         min-height: 0;
