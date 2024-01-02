@@ -82,6 +82,13 @@ notices: # 可选的
   bgColor: '#A6A1F3'
   textColor: '#FFFFFF'
   expired: '2024-10-27'
+- name: 驰骋工作流引擎
+  desc: 专注流程表单引擎领域研发20年，100%核心源代码开放
+  avatar: /img/donate/chicheng.png
+  link: https://ccbpm.cn/?frm=liteFlow
+  bgColor: '#2c61a9'
+  textColor: '#FFFFFF'
+  expired: '2028-01-05'
 
 ```
 :::
