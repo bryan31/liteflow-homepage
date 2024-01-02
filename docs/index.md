@@ -434,6 +434,11 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
             <img :src="$withBase('/img/link/misboot-logo.png')" class="no-zoom">
         </a>
     </span>
+    <span class="project-link">
+        <a href="https://ccbpm.cn/?frm=liteFlow" target="_blank">
+            <img :src="$withBase('/img/link/chicheng.png')" class="no-zoom">
+        </a>
+    </span>
 </div>
 
 <br/><br/>
