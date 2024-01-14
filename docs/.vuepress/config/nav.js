@@ -1,9 +1,9 @@
 module.exports = [
     { text: '💒首页', link: '/' },
     { text: '📚文档', link: '/pages/5816c5/', items: [
-            { text: 'v2.11.3(当前版本)', link: '/pages/5816c5/'},
+            { text: 'v2.11.4(当前版本)', link: '/pages/5816c5/'},
             { text: 'What\'s New', items: [
-                    { text: 'What\' s New In LiteFlow v2.11.3?', link: '/pages/8ff015/'},
+                    { text: 'What\' s New In LiteFlow v2.11.4?', link: '/pages/8ff016/'},
                 ]
             },
             { text: '历史版本', items: [
@@ -21,6 +21,7 @@ module.exports = [
             },
         ]
     },
+    { text: '👑LF CLUB付费社区', link: '/pages/8d8888/' },
     { text: '❓问答', items: [
             { text: '常见问题', link: '/pages/845dff/'},
             { text: '专题解释', items: [

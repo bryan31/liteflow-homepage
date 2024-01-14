@@ -5,8 +5,11 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
 actions:
-  - actionText: ⛵️ v2.11.3 进入文档
+  - actionText: ⛵️ v2.11.4 进入文档
     actionLink: /pages/5816c5/
+    actionClass: action-button-liteflowx
+  - actionText: 👑 LF CLUB付费社区
+    actionLink: /pages/8d8888/
     actionClass: action-button-liteflowx
   - actionText: 🌟 为LiteFlow点星
     actionLink: https://gitee.com/dromara/liteFlow
@@ -35,9 +38,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.11.3
-    title: 🚀 LiteFlow v2.11.3 发布！
-    content: '<div><p>2023-11-01</p><ul><li>[增强]SQL插件增加enable字段的映射</li><li>[修复]修复回滚功能在重试模式下的多次回滚的问题</li><li>[修复]修复redis的订阅模式mode解析的问题</li><li>[修复]修复Validate方法不精确的问题</li><li>[修复]修复2.11.2中启动parse两次规则的问题</li><li>[修复]修复Redis配置源哨兵模式的地址检查</li></ul></div><p style="text-align: right;"><a href="/pages/8ff015/">查看详情</a></p>'
+  - id: Liteflow-2.11.4
+    title: 🚀 LiteFlow v2.11.4 发布！
+    content: '<div><p>2024-01-15</p><ul><li>重写了声明式的底层，更加可靠</li><li>对于性能作了大幅度的优化</li><li>增强/修复了18个issue</li></ul></div><p style="text-align: right;"><a href="/pages/8ff016/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -164,7 +167,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.11.3</version>
+    <version>2.11.4</version>
 </dependency>
 ```
 
@@ -233,7 +236,7 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
 
 ## 🌏 知识星球
 
-<img :src="$withBase('/img/zhishixingqiu.png')" style="zoom: 50%" class="no-zoom">
+<a href="https://t.zsxq.com/16imSPf5C"><img :src="$withBase('/img/zhishixingqiu.png')" style="zoom: 50%" class="no-zoom"></a>
 
 <br/><br/>
 
