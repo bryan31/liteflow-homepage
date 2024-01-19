@@ -8,7 +8,7 @@ actions:
   - actionText: ⛵️ v2.11.4 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
-  - actionText: 👑 LF CLUB付费社区
+  - actionText: 👑 LF CLUB社区
     actionLink: /pages/8d8888/
     actionClass: action-button-liteflowx
   - actionText: 🌟 为LiteFlow点星
