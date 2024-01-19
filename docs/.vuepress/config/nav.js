@@ -21,7 +21,7 @@ module.exports = [
             },
         ]
     },
-    { text: '👑LF CLUB付费社区', link: '/pages/8d8888/' },
+    { text: '👑LF CLUB社区', link: '/pages/8d8888/' },
     { text: '❓问答', items: [
             { text: '常见问题', link: '/pages/845dff/'},
             { text: '专题解释', items: [
