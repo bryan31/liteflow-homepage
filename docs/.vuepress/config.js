@@ -25,18 +25,18 @@ module.exports = {
     '.vuepress/config/themeConfig.js',
   ],
 
-  locales: {
-    // 键名是该语言所属的子路径
-    // 作为特例，默认语言可以使用 '/' 作为其路径。
-    '/en/': {
-      lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
-      title: 'LiteFlow',
-      description: 'A lightweight, fast, stable and configurable component-based rule engine'
-    },
-    '/': {
-      lang: 'zh-CN',
-      title: "LiteFlow",
-      description: '一个轻量，快速，稳定可编排的组件式规则引擎' 
-    }
-  }
+  // locales: {
+  //   // 键名是该语言所属的子路径
+  //   // 作为特例，默认语言可以使用 '/' 作为其路径。
+  //   '/en/': {
+  //     lang: 'en-US', // 将会被设置为 <html> 的 lang 属性
+  //     title: 'LiteFlow',
+  //     description: 'A lightweight, fast, stable and configurable component-based rule engine'
+  //   },
+  //   '/': {
+  //     lang: 'zh-CN',
+  //     title: "LiteFlow",
+  //     description: '一个轻量，快速，稳定可编排的组件式规则引擎' 
+  //   }
+  // }
 }
