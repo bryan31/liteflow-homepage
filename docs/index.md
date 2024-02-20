@@ -92,6 +92,13 @@ notices: # 可选的
   bgColor: '#2c61a9'
   textColor: '#FFFFFF'
   expired: '2028-01-05'
+- name: FastBee物联网平台
+  desc: 更适合中小企业和个人使用的开源物联网平台
+  avatar: /img/donate/fb.gif
+  link: https://fastbee.cn/
+  bgColor: '#f4dec8'
+  textColor: '#000000'
+  expired: '2028-01-05'
 
 ```
 :::
