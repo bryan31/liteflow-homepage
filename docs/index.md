@@ -98,7 +98,7 @@ notices: # 可选的
   link: https://fastbee.cn/
   bgColor: '#f4dec8'
   textColor: '#000000'
-  expired: '2028-01-05'
+  expired: '2024-02-20'
 
 ```
 :::
