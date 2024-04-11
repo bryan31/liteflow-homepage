@@ -3,9 +3,9 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
-slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
+slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.11.4 进入文档
+  - actionText: ⛵️ v2.12.0 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
