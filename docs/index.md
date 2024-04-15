@@ -40,7 +40,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.12.0
     title: 🚀 LiteFlow v2.12.0 发布！
-    content: '<div><p>2024-04-15</p><ul><li>决策路由特性</li><li>允许启动不检查组件</li><li>别名获取上下文</li><li>EL中新增retry关键字</li><li>别名获取上下文</li><li>新增布尔组件</li><li>验证脚本/卸载脚本特性</li><li>其余超多更改请点击查看详情查看</li></ul></div><p style="text-align: right;"><a href="/pages/8ff016/">查看详情</a></p>'
+    content: '<div><p>2024-04-15</p><ul><li>决策路由特性</li><li>允许启动不检查组件</li><li>别名获取上下文</li><li>EL中新增retry关键字</li><li>别名获取上下文</li><li>新增布尔组件</li><li>验证脚本/卸载脚本特性</li><li>其余超多更改请点击查看详情查看</li></ul></div><p style="text-align: right;"><a href="/pages/8ff017/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
