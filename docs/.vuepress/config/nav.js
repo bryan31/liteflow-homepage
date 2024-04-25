@@ -51,7 +51,8 @@ module.exports = [
             { text: 'Github', link: 'https://github.com/dromara/liteflow' },
             { text: '推荐', items: [
                     { text: 'TLog-轻量级的分布式日志追踪神器', link: 'https://tlog.yomahub.com/'},
-                    { text: 'Forest-更轻量、更简单实用的HTTP客户端框架', link: 'https://forest.dtflyx.com/'}
+                    { text: 'Forest-更轻量、更简单实用的HTTP客户端框架', link: 'https://forest.dtflyx.com/'},
+                    { text: 'Jpom-一款原生 ops 软件', link: 'https://jpom.top/'}
                 ]
             },
         ]
