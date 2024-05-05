@@ -1,18 +1,20 @@
 module.exports = [
     { text: '💒首页', link: '/' },
     { text: '📚文档', link: '/pages/5816c5/', items: [
-            { text: 'v2.11.4(当前版本)', link: '/pages/5816c5/'},
+            { text: 'v2.12.0(当前版本)', link: '/pages/5816c5/'},
             { text: 'What\'s New', items: [
-                    { text: 'What\' s New In LiteFlow v2.11.4?', link: '/pages/8ff016/'},
+                    { text: 'What\' s New In LiteFlow v2.12.0?', link: '/pages/8ff017/'},
                 ]
             },
             { text: '历史版本', items: [
+                    { text: 'v2.11.X', link: '/pages/v2.11.X/5816c5/'},
                     { text: 'v2.10.X', link: '/pages/v2.10.X/5816c5/'},
                     { text: 'v2.9.X', link: '/pages/v2.9.X/5816c5/'},
                     { text: 'v2.8.X', link: '/pages/v2.8.X/5816c5/'},
                 ]
             },
             { text: '升级指南', items: [
+                    { text: '2.12.0升级指南', link: '/pages/88c2f2/'},
                     { text: '升级到2.9.3说明', link: '/pages/88c2f4/'},
                     { text: '升级到2.9.X说明', link: '/pages/88c2f3/'},
                     { text: '升级到2.8.X说明', link: '/pages/88c2e2/'},
@@ -49,7 +51,8 @@ module.exports = [
             { text: 'Github', link: 'https://github.com/dromara/liteflow' },
             { text: '推荐', items: [
                     { text: 'TLog-轻量级的分布式日志追踪神器', link: 'https://tlog.yomahub.com/'},
-                    { text: 'Forest-更轻量、更简单实用的HTTP客户端框架', link: 'https://forest.dtflyx.com/'}
+                    { text: 'Forest-更轻量、更简单实用的HTTP客户端框架', link: 'https://forest.dtflyx.com/'},
+                    { text: 'Jpom-一款原生 ops 软件', link: 'https://jpom.top/'}
                 ]
             },
         ]

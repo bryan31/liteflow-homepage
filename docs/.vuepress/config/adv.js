@@ -21,6 +21,9 @@ module.exports = function advHtml() {
     </a>`,
     `<a name="adv" class="none" href="https://www.misboot.com/?from=LiteFlow" target="_blank">
         <img class="no-zoom" style="width:100%;" src="/img/donate/misboot-banner.png">
+    </a>`,
+    `<a name="adv" class="none" href="https://www.jnpfsoft.com/index.html?from=liteflow" target="_blank">
+        <img class="no-zoom" style="width:100%;" src="/img/donate/yinmai-banner.png">
     </a>`
   ]
 

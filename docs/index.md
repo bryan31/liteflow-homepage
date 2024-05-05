@@ -3,9 +3,9 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
-slogan: '<div class="slo">Keep on the light side. —— 逐光而行。</div>'
+slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.11.4 进入文档
+  - actionText: ⛵️ v2.12.0 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -38,9 +38,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.11.4
-    title: 🚀 LiteFlow v2.11.4 发布！
-    content: '<div><p>2024-01-15</p><ul><li>重写了声明式的底层，更加可靠</li><li>对于性能作了大幅度的优化</li><li>增强/修复了18个issue</li></ul></div><p style="text-align: right;"><a href="/pages/8ff016/">查看详情</a></p>'
+  - id: Liteflow-2.12.0
+    title: 🚀 LiteFlow v2.12.0 发布！
+    content: '<div><p>2024-04-15</p><ul><li>决策路由特性</li><li>允许启动不检查组件</li><li>别名获取上下文</li><li>EL中新增retry关键字</li><li>别名获取上下文</li><li>新增布尔组件</li><li>验证脚本/卸载脚本特性</li><li>其余超多更改请点击查看详情查看</li></ul></div><p style="text-align: right;"><a href="/pages/8ff017/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -71,8 +71,8 @@ notices: # 可选的
   bgColor: '#1373CC'
   textColor: '#ffffff'
   expired: '2024-10-10'
-- name: 明道云零代码平台
-  desc: 快速响应业务需求，从“IT背锅侠”变成“IT英雄”
+- name: 明道云HAP超级应用平台
+  desc: 不止零代码，融合多元能力，就是能解决很多问题
   avatar: /img/donate/mdy.png
   link: https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1
   bgColor: '#2196F3'
@@ -98,7 +98,14 @@ notices: # 可选的
   link: https://fastbee.cn/
   bgColor: '#f4dec8'
   textColor: '#000000'
-  expired: '2024-02-20'
+  expired: '2025-02-20'
+- name: JNPF低代码开发平台
+  desc: 技术双引擎系统，无限制业务场景，永久使用权，全源码交付
+  avatar: /img/donate/yinmai.png
+  link: https://www.jnpfsoft.com/index.html?from=liteflow
+  bgColor: '#aaccff'
+  textColor: '#000000'
+  expired: '2025-04-12'
 
 ```
 :::
@@ -174,7 +181,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.11.4.2</version>
+    <version>2.12.0</version>
 </dependency>
 ```
 
@@ -199,7 +206,7 @@ notices: # 可选的
 
 ## 🎉 致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群3500多人，Gitee上5.1k Stars，Github上2.3k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群5000多人，Gitee上6k Stars，Github上2.8k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 
