@@ -310,11 +310,6 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
         </a>
     </span>
     <span class="project-link">
-        <a href="https://gitee.com/dromara/hertzbeat" target="_blank">
-            <img :src="$withBase('/img/dromara/hertzbeat-logo.png')" class="no-zoom" >
-        </a>
-    </span>
-    <span class="project-link">
         <a href="https://gitee.com/dromara/forest" target="_blank">
             <img :src="$withBase('/img/dromara/forest-logo.png')" class="no-zoom" >
         </a>
@@ -332,6 +327,11 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     <span class="project-link">
         <a href="https://gitee.com/dromara/easy-es" target="_blank">
             <img :src="$withBase('/img/dromara/ee-logo.png')" class="no-zoom" >
+        </a>
+    </span>
+    <span class="project-link">
+        <a href="https://gitee.com/dromara/go-view" target="_blank">
+            <img :src="$withBase('/img/dromara/goview-logo.png')" class="no-zoom" >
         </a>
     </span>
 </div>
@@ -391,11 +391,6 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     <span class="project-link">
         <a href="https://gitee.com/dromara/dante-cloud" target="_blank">
             <img :src="$withBase('/img/dromara/dantecloud-logo.png')" class="no-zoom" >
-        </a>
-    </span>
-    <span class="project-link">
-        <a href="https://gitee.com/dromara/go-view" target="_blank">
-            <img :src="$withBase('/img/dromara/goview-logo.png')" class="no-zoom" >
         </a>
     </span>
 </div>
