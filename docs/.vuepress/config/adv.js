@@ -13,9 +13,6 @@ module.exports = function advHtml() {
     `<a name="adv" class="none" href="https://ccbpm.cn/?frm=liteFlow" target="_blank">
       <img class="no-zoom" style="width:100%;" src="/img/donate/chicheng-banner.png">
     </a>`,
-    `<a name="adv" class="none" href="https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1" target="_blank">
-        <img class="no-zoom" style="width:100%;" src="/img/donate/mdy-banner.png">
-    </a>`,
     `<a name="adv" class="none" href="https://www.learun.cn?fuid=03" target="_blank">
         <img class="no-zoom" style="width:100%;" src="/img/donate/liruan-banner.jpg">
     </a>`,
