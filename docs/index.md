@@ -40,7 +40,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.12.1
     title: 🚀 LiteFlow v2.12.1 发布！
-    content: '<div><p>2024-05-31</p><ul><li>组件注入型参数特性</li><li>脚本支持Kotlin语言</li><li>数据库支持决策路由特性</li><li>决策路由可以指定Namespace</li></ul></div><p style="text-align: right;"><a href="/pages/8ff018/">查看详情</a></p>'
+    content: '<div><p>2024-06-03</p><ul><li>组件注入型参数特性</li><li>脚本支持Kotlin语言</li><li>数据库支持决策路由特性</li><li>决策路由可以指定Namespace</li></ul></div><p style="text-align: right;"><a href="/pages/8ff018/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
