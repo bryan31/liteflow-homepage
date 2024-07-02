@@ -28,7 +28,6 @@ module.exports = {
     <a href="https://t.zsxq.com/16imSPf5C"><img style="width:90.5%;border-radius: 3px;" src="/img/donate/lfClub-banner.png"></a>
   </div>
   <div class="pin-adv">
-    <a href="http://103.118.41.167:53000/"><img style="width:45%;border-radius: 3px;" src="/img/donate/ai4u-banner.png"></a>
     <a href="https://fastbee.cn/"><img style="width:45%;border-radius: 3px;" src="/img/donate/fb-banner.png"></a>
   </div>
   <style>
