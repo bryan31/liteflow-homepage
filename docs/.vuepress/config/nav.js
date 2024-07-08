@@ -44,7 +44,7 @@ module.exports = [
         ]
     },
     { text: '👥加入群聊', link: '/pages/73c2c3/' },
-    { text: '🧤用户', link: '/pages/9b9f41/' },
+    { text: '🧤谁在使用', link: '/pages/9b9f41/' },
 
     { text: '🛖仓库托管', items: [
             { text: 'Gitee', link: 'https://gitee.com/dromara/liteFlow' },
