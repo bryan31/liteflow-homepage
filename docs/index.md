@@ -405,6 +405,11 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
         </a>
     </span>
     <span class="project-link">
+        <a href="https://gitcode.com/" target="_blank">
+            <img :src="$withBase('/img/link/gitcode-logo.svg')" class="no-zoom">
+        </a>
+    </span>
+    <span class="project-link">
         <a href="https://www.oschina.net" target="_blank">
             <img :src="$withBase('/img/link/oschina-logo.png')" class="no-zoom">
         </a>
@@ -422,11 +427,6 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     <span class="project-link">
         <a href="http://www.pearadmin.com/" target="_blank">
             <img :src="$withBase('/img/link/pearAdmin-logo.png')" class="no-zoom">
-        </a>
-    </span>
-    <span class="project-link">
-        <a href="https://gitee.com/dotnetchina" target="_blank">
-            <img :src="$withBase('/img/link/dotnet-china-logo.png')" class="no-zoom">
         </a>
     </span>
 </div>
@@ -456,6 +456,13 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
             <img :src="$withBase('/img/link/flowlong-logo.png')" class="no-zoom">
         </a>
     </span>
+    <span class="project-link">
+        <a href="https://gitee.com/dotnetchina" target="_blank">
+            <img :src="$withBase('/img/link/dotnet-china-logo.png')" class="no-zoom">
+        </a>
+    </span>
+</div>
+<div class="row">
     <span class="project-link">
         <a href="https://rulego.cc" target="_blank">
             <img :src="$withBase('/img/link/rulego.png')" class="no-zoom">
