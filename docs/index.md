@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.12.1 进入文档
+  - actionText: ⛵️ v2.12.2 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -38,9 +38,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.12.1
-    title: 🚀 LiteFlow v2.12.1 发布！
-    content: '<div><p>2024-06-03</p><ul><li>组件注入型参数特性</li><li>脚本支持Kotlin语言</li><li>数据库支持决策路由特性</li><li>决策路由可以指定Namespace</li></ul></div><p style="text-align: right;"><a href="/pages/8ff018/">查看详情</a></p>'
+  - id: Liteflow-2.12.2
+    title: 🚀 LiteFlow v2.12.2 发布！
+    content: '<div><p>2024-07-24</p><ul><li>包含总共13项Issue的更新</li></ul></div><p style="text-align: right;"><a href="/pages/8ff019/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -63,7 +63,7 @@ notices: # 可选的
   link: https://www.learun.cn?fuid=03
   bgColor: '#148ce9'
   textColor: '#FFFFFF'
-  expired: '2024-07-10'
+  expired: '2025-07-10'
 - name: Snowy
   desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
   avatar: /img/donate/snowy.png
@@ -181,7 +181,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.12.1</version>
+    <version>2.12.2.1</version>
 </dependency>
 ```
 
