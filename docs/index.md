@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.12.2 进入文档
+  - actionText: ⛵️ v2.12.3 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -33,14 +33,14 @@ features: # 可选的
   - title: 🏤 社区强大
     details: 多达几千人的使用者社区，及时给你答疑解惑。并且在国内多家一线企业中落地运用。
   - title: 🪁 可靠性强
-    details: 对系统的额外消耗极小，性能强悍。多达1800个测试用例保障了LiteFlow的质量。
+    details: 对系统的额外消耗极小，性能强悍。多达2000个测试用例保障了LiteFlow的质量。
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.12.2
-    title: 🚀 LiteFlow v2.12.2 发布！
-    content: '<div><p>2024-07-24</p><ul><li>包含总共13项Issue的更新</li></ul></div><p style="text-align: right;"><a href="/pages/8ff019/">查看详情</a></p>'
+  - id: Liteflow-2.12.3
+    title: 🚀 LiteFlow v2.12.3 发布！
+    content: '<div><p>2024-09-06</p><ul><li>包含总共9项Issue的更新</li></ul></div><p style="text-align: right;"><a href="/pages/8ff020/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -181,7 +181,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.12.2.1</version>
+    <version>2.12.3</version>
 </dependency>
 ```
 
