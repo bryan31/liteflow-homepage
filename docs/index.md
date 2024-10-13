@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.12.3 进入文档
+  - actionText: ⛵️ v2.12.4 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -38,9 +38,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.12.3
-    title: 🚀 LiteFlow v2.12.3 发布！
-    content: '<div><p>2024-09-06</p><ul><li>包含总共9项Issue的更新</li></ul></div><p style="text-align: right;"><a href="/pages/8ff020/">查看详情</a></p>'
+  - id: Liteflow-2.12.4
+    title: 🚀 LiteFlow v2.12.4 发布！
+    content: '<div><p>2024-10-13</p><ul><li>全新的Java插件，支持lambda和泛型</li><li>推出LiteFlow的生命周期体系</li><li>支持SQL插件自定义语句查询</li></ul></div><p style="text-align: right;"><a href="/pages/8ff021/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -169,7 +169,7 @@ notices: # 可选的
 * **上下文隔离机制：** 可靠的上下文隔离机制，你无需担心高并发情况下的数据串流。
 * **声明式组件支持：** 你可以让你的任意类秒变组件。
 * **详细的步骤信息：** 你的链路如何执行的，每个组件耗时多少，报了什么错，一目了然。
-* **稳定可靠：** 历时2年多的迭代，在各大公司的核心系统上稳定运行。
+* **稳定可靠：** 历时多年的迭代，在各大公司的核心系统上稳定运行。
 * **性能卓越：** 框架本身几乎不消耗额外性能，性能取决你的组件执行效率。
 * **自带简单监控：** 框架内自带一个命令行的监控，能够知道每个组件的运行耗时排行。
 
@@ -181,7 +181,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.12.3</version>
+    <version>2.12.4</version>
 </dependency>
 ```
 
@@ -214,7 +214,9 @@ LiteFlow在2022年获得“Gitee最有价值开源项目“奖项（GVP）。
 
 LiteFlow在2022年成为了"中国信通院可信开源社区共同体(TWOS)成员"。
 
-感谢OSCHINA和Gitee官方平台对LiteFlow项目的推荐和肯定。
+LiteFlow于2024年获得"GitCode G-Star毕业项目"认证！
+
+感谢以上官方平台对LiteFlow项目的推荐和肯定。
 
 LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需要插画商业合作小伙伴可以联系她：
 

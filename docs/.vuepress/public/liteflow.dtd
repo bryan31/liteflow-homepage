@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ELEMENT flow  ((nodes)? , (chain)+)>
+<!ELEMENT nodes  (node)+>
+<!ELEMENT node  (#PCDATA | EMPTY)*>
+<!ELEMENT chain ((route)? | (body)? | #PCDATA)>
+<!ELEMENT route (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+
+<!ATTLIST node
+        id CDATA #REQUIRED
+        name CDATA #IMPLIED
+        type (script|boolean_script|switch_script|for_script) #IMPLIED
+        class CDATA #IMPLIED
+        file CDATA #IMPLIED
+        language (qlexpress|groovy|js|python|lua|aviator|java|kotlin) #IMPLIED
+        enable (true|false) #IMPLIED
+        >
+<!ATTLIST chain
+        id CDATA #IMPLIED
+        name CDATA #IMPLIED
+        extends CDATA #IMPLIED
+        enable (true|false) #IMPLIED
+        namespace CDATA #IMPLIED
+        >
