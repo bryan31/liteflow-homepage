@@ -181,7 +181,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.12.4</version>
+    <version>2.12.4.1</version>
 </dependency>
 ```
 
