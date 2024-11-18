@@ -70,14 +70,14 @@ notices: # 可选的
   link: https://xiaonuo.vip
   bgColor: '#1373CC'
   textColor: '#ffffff'
-  expired: '2024-10-10'
+  expired: '2025-11-04'
 - name: 云程低代码平台
   desc: 采用springboot+vue技术，可私有化部署，可交付源代码
   avatar: /img/donate/yuncheng.png
   link: http://www.yunchengxc.com/
   bgColor: '#A6A1F3'
   textColor: '#FFFFFF'
-  expired: '2024-10-27'
+  expired: '2025-10-31'
 - name: 驰骋工作流引擎
   desc: 专注流程表单引擎领域研发20年，100%核心源代码开放
   avatar: /img/donate/chicheng.png
