@@ -1,12 +1,13 @@
 module.exports = [
     { text: '💒首页', link: '/' },
     { text: '📚文档', link: '/pages/5816c5/', items: [
-            { text: 'v2.12.4(当前版本)', link: '/pages/5816c5/'},
+            { text: 'v2.13.0(当前版本)', link: '/pages/5816c5/'},
             { text: 'What\'s New', items: [
                     { text: 'What\' s New In LiteFlow v2.12.4?', link: '/pages/8ff021/'},
                 ]
             },
             { text: '历史版本', items: [
+                    { text: 'v2.12.X', link: '/pages/v2.12.X/5816c5/'},
                     { text: 'v2.11.X', link: '/pages/v2.11.X/5816c5/'},
                     { text: 'v2.10.X', link: '/pages/v2.10.X/5816c5/'},
                     { text: 'v2.9.X', link: '/pages/v2.9.X/5816c5/'},
@@ -49,13 +50,8 @@ module.exports = [
 
     { text: '🛖仓库托管', items: [
             { text: 'Gitee', link: 'https://gitee.com/dromara/liteFlow' },
-            { text: 'Github', link: 'https://github.com/dromara/liteflow' },
-            { text: '推荐', items: [
-                    { text: 'TLog-轻量级的分布式日志追踪神器', link: 'https://tlog.yomahub.com/'},
-                    { text: 'Forest-更轻量、更简单实用的HTTP客户端框架', link: 'https://forest.dtflyx.com/'},
-                    { text: 'Jpom-一款原生 ops 软件', link: 'https://jpom.top/'}
-                ]
-            },
+            { text: 'GitCode', link: 'https://gitcode.com/dromara/liteflow' },
+            { text: 'Github', link: 'https://github.com/dromara/liteflow' }
         ]
     }
 ];
