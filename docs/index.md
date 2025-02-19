@@ -108,11 +108,11 @@ notices: # 可选的
   expired: '2025-06-25'
 - name: 速众 AI 低代码开发平台
   desc: 原生基于 LiteFlow，推动软件企业在 AI 浪潮中抢占市场先机
-  avatar: /img/donate/suzhong.png
+  avatar: /img/donate/suzhong.jpg
   link: https://www.suconnect.com
-  bgColor: '#2C2C2C'
-  textColor: '#FFFFFF'
-  expired: '2025-06-25'
+  bgColor: '#302294'
+  textColor: '#FFEA5C'
+  expired: '2026-02-17'
 
 ```
 :::

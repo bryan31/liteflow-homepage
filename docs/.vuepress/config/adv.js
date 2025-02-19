@@ -26,7 +26,7 @@ module.exports = function advHtml() {
         <img class="no-zoom" style="width:100%;" src="/img/donate/mdy-banner.png">
     </a>`,
     `<a name="adv" class="none" href="https://www.suconnect.com" target="_blank">
-        <img class="no-zoom" style="width:100%;" src="/img/donate/suzhong-banner-1.png">
+        <img class="no-zoom" style="width:100%;" src="/img/donate/suzhong-banner-1.jpg">
     </a>`
   ]
 
