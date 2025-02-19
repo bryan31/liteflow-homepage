@@ -29,7 +29,7 @@ module.exports = {
   </div>
   <div class="pin-adv">
     <a href="https://fastbee.cn/"><img style="width:45%;border-radius: 3px;" src="/img/donate/fb-banner.png"></a>
-    <a href="https://www.suconnect.com"><img style="width:45%;border-radius: 3px;" src="/img/donate/suzhong-banner-2.jpg"></a>
+    <a href="https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci="><img style="width:45%;border-radius: 3px;" src="/img/donate/suzhong-banner-2.jpg"></a>
   </div>
   <style>
       .pin-adv{
