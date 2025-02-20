@@ -107,7 +107,7 @@ notices: # 可选的
   textColor: '#FFFFFF'
   expired: '2025-06-25'
 - name: 速众 AI 低代码开发平台
-  desc: 原生基于 LiteFlow，推动软件企业在 AI 浪潮中抢占市场先机
+  desc: 原生基于 LiteFlow，源码交付，帮助企业在AI浪潮中抢占市场先机
   avatar: /img/donate/suzhong.jpg
   link: https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci=
   bgColor: '#302294'
