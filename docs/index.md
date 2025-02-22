@@ -25,7 +25,7 @@ features: # 可选的
   - title: 🛖 规则存储
     details: 支持把规则和脚本存在任何关系型数据库，并且支持大部分的注册中心，支持zk，nacos，etcd，apollo，redis。
   - title: 🍃 平滑热刷
-    details: 无论是编排规则，还是脚本组件，你都可以在不用重启应用的情况下进行即时刷新。实时替换逻辑。
+    details: 无论是编排规则，还是逻辑组件，全部可热更替，实时更改，无需重启。
   - title: ⭐️ 支持度广
     details: JDK8~JDK17，Spring 2.X ~ Spring 3.X，统统支持。非Spring也给予了支持。
   - title: 🍱 高级特性
