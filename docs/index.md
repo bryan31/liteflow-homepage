@@ -91,7 +91,7 @@ notices: # 可选的
   link: https://fastbee.cn/
   bgColor: '#f4dec8'
   textColor: '#000000'
-  expired: '2025-02-20'
+  expired: '2026-03-07'
 - name: JNPF低代码开发平台
   desc: 技术双引擎系统，无限制业务场景，永久使用权，全源码交付
   avatar: /img/donate/yinmai.png
