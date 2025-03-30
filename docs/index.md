@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.13.0 进入文档
+  - actionText: ⛵️ v2.13.1 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -38,9 +38,9 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.13.0
-    title: 🚀 LiteFlow v2.13.0 发布！
-    content: '<div><p>2025-02-25</p><ul><li>2025年第一个全新大版本升级！</li><li>22个Issue的更新</li><li>7大新特性来袭</li></ul></div><p style="text-align: right;"><a href="/pages/8ff022/">查看详情</a></p>'
+  - id: Liteflow-2.13.1
+    title: 🚀 LiteFlow v2.13.1 发布！
+    content: '<div><p>2025-03-31</p><ul><li>表达式取参设参特性来袭！</li><li>10个Issue的更新</li></ul></div><p style="text-align: right;"><a href="/pages/8ff023/">查看详情</a></p>'
     isHtmlContent: true
 ---
 
@@ -188,7 +188,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.13.0</version>
+    <version>2.13.1</version>
 </dependency>
 ```
 
