@@ -6,6 +6,7 @@ module.exports = [
 
   ['meta', { name: 'wwads-cn-verify', content: '6c4b761a28b734fe93831e3fb400ce87' }], // 广告相关，你可以去掉
   ['script', {async: true, src: 'https://cdn.wwads.cn/js/makemoney.js', type: 'text/javascript' }], // 广告相关，你可以去掉
+  ['script', {src: 'https://agi-dev-platform-web.bj.bcebos.com/ai_apaas/embed/output/embedLiteSDK.js?responseExpires=0', type: 'text/javascript' }],
   ['script', {}, `
     // 万维广告“禁止”广告拦截
     // function called if wwads is blocked

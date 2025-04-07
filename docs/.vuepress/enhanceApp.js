@@ -17,6 +17,8 @@ export default ({
             ABDetected();
           }
         }, 3000);
+
+        new EmbedLiteSDK({appId: '326d66ec-91d7-4e29-b4c2-1b6d024b1d45', code: 'embed1DsfdPz8nKKWDKZdP4gN'});
       });
       
       function refreshAdv() {
