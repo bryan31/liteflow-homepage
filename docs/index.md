@@ -92,13 +92,6 @@ notices: # 可选的
   bgColor: '#f4dec8'
   textColor: '#000000'
   expired: '2026-03-07'
-- name: JNPF低代码开发平台
-  desc: 技术双引擎系统，无限制业务场景，永久使用权，全源码交付
-  avatar: /img/donate/yinmai.png
-  link: https://www.jnpfsoft.com/index.html?from=liteflow
-  bgColor: '#aaccff'
-  textColor: '#000000'
-  expired: '2025-04-12'
 - name: 明道云HAP超级应用平台
   desc: 不止零代码，融合多元能力，就是能解决很多问题
   avatar: /img/donate/mdy.png
