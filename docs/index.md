@@ -40,7 +40,7 @@ postList: none
 notices: # 可选的
   - id: Liteflow-2.13.2
     title: 🚀 LiteFlow v2.13.2 发布！
-    content: '<div><p>2025-05-07</p><ul><li>一些历史遗留的bug修复</li>=/ul></div><p style="text-align: right;"></p>'
+    content: '<div><p>2025-05-07</p><ul><li>一些历史遗留的bug修复</li></ul></div><p style="text-align: right;"></p>'
     isHtmlContent: true
 ---
 
