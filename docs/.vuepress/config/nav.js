@@ -37,7 +37,7 @@ module.exports = [
         ]
     },
     { text: '💖赞助', link: '/pages/fb599d/' },
-    { text: '🧩插件', link: '/pages/liteflowx/' },
+    { text: '🧩IDEA插件', link: '/pages/liteflow-helper/' },
     { text: '🔥PPT', link: '/pages/8d6666/' },
     { text: '🐶关于项目', items: [
             { text: '项目介绍', link: '/pages/8d7f1e/'},
