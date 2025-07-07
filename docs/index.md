@@ -92,13 +92,6 @@ notices: # 可选的
   bgColor: '#f4dec8'
   textColor: '#000000'
   expired: '2026-03-07'
-- name: 明道云HAP超级应用平台
-  desc: 不止零代码，融合多元能力，就是能解决很多问题
-  avatar: /img/donate/mdy.png
-  link: https://www.mingdao.com?s=utm_49=utm_source=liteflow&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1
-  bgColor: '#2196F3'
-  textColor: '#FFFFFF'
-  expired: '2025-06-25'
 - name: 速众 AI 低代码开发平台
   desc: 原生基于 LiteFlow，源码交付，帮助企业在AI浪潮中抢占市场先机
   avatar: /img/donate/suzhong.jpg
