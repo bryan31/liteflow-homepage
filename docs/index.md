@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.13.2 进入文档
+  - actionText: ⛵️ v2.15.0 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -27,7 +27,7 @@ features: # 可选的
   - title: 🍃 平滑热刷
     details: 无论是编排规则，还是逻辑组件，全部可热更替，实时更改，无需重启。
   - title: ⭐️ 支持度广
-    details: JDK8~JDK17，Spring 2.X ~ Spring 3.X，统统支持。非Spring也给予了支持。
+    details: JDK8~JDK25，Spring 2.X ~ Spring 3.X，统统支持。非Spring也给予了支持。
   - title: 🍱 高级特性
     details: 超多的高级特性，每一个都能贴合你的业务，利用高级特性让你的复杂场景瞬间变得简单且灵动。
   - title: 🏤 社区强大
@@ -167,7 +167,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.13.2</version>
+    <version>2.15.0</version>
 </dependency>
 ```
 
