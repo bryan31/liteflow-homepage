@@ -10,7 +10,7 @@ export default ({
 
   // 用于监控在路由变化时检查广告拦截器 (to主题使用者：你可以去掉本文件的所有代码)
   if (!isServer) {
-    new EmbedLiteSDK({appId: '326d66ec-91d7-4e29-b4c2-1b6d024b1d45', code: 'embed1DsfdPz8nKKWDKZdP4gN'});
+    //new EmbedLiteSDK({appId: '326d66ec-91d7-4e29-b4c2-1b6d024b1d45', code: 'embed1DsfdPz8nKKWDKZdP4gN'});
 
     router.afterEach(() => {
       //check if wwads' fire function was blocked after document is ready with 3s timeout (waiting the ad loading)
@@ -34,7 +34,7 @@ export default ({
         }
 
         // 需要显示几个轮播广告
-        const showCount = 5;
+        const showCount = 4;
 
         // 1 - n 取随机数
         function getRandomInt(n) {
