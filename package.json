@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "vuepress dev docs",
-    "build": "vuepress build docs",
+    "build": "node --max-old-space-size=8192 ./node_modules/.bin/vuepress build docs",
     "deploy": "bash deploy.sh",
     "updateTheme": "yarn remove vuepress-theme-vdoing && rm -rf node_modules && yarn && yarn add vuepress-theme-vdoing -D",
     "editFm": "node utils/editFrontmatter.js",
