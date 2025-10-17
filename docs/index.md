@@ -85,12 +85,12 @@ notices: # 可选的
   bgColor: '#f4dec8'
   textColor: '#000000'
   expired: '2026-03-07'
-- name: 速众 AI 低代码开发平台
-  desc: 原生基于 LiteFlow，源码交付，帮助企业在AI浪潮中抢占市场先机
-  avatar: /img/donate/suzhong.jpg
+- name: 速众低代码开发平台
+  desc: Java+Vue3+大模型 100%开源
+  avatar: /img/donate/suzhong.gif
   link: https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci=
-  bgColor: '#302294'
-  textColor: '#FFEA5C'
+  bgColor: '#2284FF'
+  textColor: '#FFFFFF'
   expired: '2026-02-17'
 
 ```
