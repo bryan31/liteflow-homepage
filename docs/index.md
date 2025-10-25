@@ -3,16 +3,13 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
-slogan: '<div class="slo">Make your code amazing.</div>'
+slogan: '<div class="slo"><a style="font-weight: bolder" href="https://gitee.com/activity/2025opensource?ident=IA4QYO">🔥LiteFlow正在参加Gitee 2025最受欢迎的开源软件投票活动<br>点击请给LiteFlow投上一票！💪</a></div>'
 actions:
   - actionText: ⛵️ v2.15.1 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
     actionLink: /pages/8d8888/
-    actionClass: action-button-liteflowx
-  - actionText: 🌟 为LiteFlow点星
-    actionLink: https://gitee.com/dromara/liteFlow
     actionClass: action-button-liteflowx
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
@@ -41,6 +38,14 @@ notices: # 可选的
   - id: Liteflow-2.15.1
     title: 🚀 LiteFlow v2.15.1 发布！
     content: '<div><p>2025-10-20</p><ul><li>一些性能改进和对高版本JDK的优化</li></ul></div><p style="text-align: right;"><a href="/pages/8ff026/">查看详情</a></p>'
+    isHtmlContent: true
+  - id: vote-to-liteflow
+    title: LiteFlow需要您的支持
+    content: 
+      <div>
+        LiteFlow正在参加【Gitee 2025最受欢迎的开源软件】投票活动，需要您的投票支持，请给LiteFlow投下您宝贵的一票❤️<br>
+        <a href="https://gitee.com/activity/2025opensource?ident=IA4QYO">https://gitee.com/activity/2025opensource?ident=IA4QYO</a>
+      </div>
     isHtmlContent: true
 ---
 
@@ -476,77 +481,23 @@ LiteFlow首页的背景由插画师`森阳`提供，感谢她的创作，如需�
     &:hover
         background-color lighten(#A63939, 10%)
 </style>
-<!-- 节日彩蛋 
-<style>
-  .numbers {
-    position: fixed;
-    z-index: 1000;
-    left: 50%;
-    margin-left: -237px;
-    bottom: 10px;
-  }
-  .numbers ul {
-    text-align: center;
-    display: flex;
-  }
-  .numbers li {
-    list-style: none;
-    margin: 20px;
-    font-size: 120px;
-    position: relative;
-    top: 0;
-    color: transparent;
-  }
-  .numbers li:nth-child(1) {
-    animation: myAnimate 1.5s ease alternate infinite;
-  }
-  .numbers li:nth-child(2) {
-    animation: myAnimate 1.5s ease 0.5s alternate infinite;
-  }
-  .numbers li:nth-child(3) {
-    animation: myAnimate 1.5s ease 1s alternate infinite;
-  }
-  .numbers li:nth-child(4) {
-    animation: myAnimate 1.5s ease 1.5s alternate infinite;
-  }
-  @keyframes myAnimate {
-    0% {
-      color: rgb(299, 255, 80);
-      top: 160px;
-      transform: rotateY(0deg) scale(1);
-    }
-    50% {
-      color: rgb(2, 150, 200);
-      top: 0;
-      transform: rotateY(180deg) scale(1.5);
-    }
-    100% {
-      color: rgb(255, 106, 198);
-      top: 160px;
-      transform: rotateY(0deg) scale(1);
-    }
-  }
-</style>
-
-<div class="numbers">
-  <ul>
-    <li>1</li>
-    <li>0</li>
-    <li>2</li>
-    <li>4</li>
-  </ul>
-</div>
--->
 
 <style>
-  .slo{
-      margin:auto;
-      max-width:500px;
-      max-height:75px;
-      background-image:-webkit-linear-gradient(left,#ff5c36,#ff494d,#FF3860); 
-      -webkit-background-clip:text; 
-      -webkit-text-fill-color:transparent;
-      font-size: large;
-      font-weight: bolder;
+  .slo {
+    margin: auto;
+    max-width: 500px;
+    max-height: 75px;
+    background-image: -webkit-linear-gradient(left, #ff5c36, #ff494d, #FF3860);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* 初始状态为透明，显示背景渐变 */
+    font-size: large;
+    font-weight: bolder;
+
+    transition: -webkit-text-fill-color 0.3s ease-in-out;
+  }
+
+  .slo:hover {
+    background-image: none; 
+    -webkit-text-fill-color: #a63939;
   }
 </style>
