@@ -35,10 +35,6 @@ features: # 可选的
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
 notices: # 可选的
-  - id: Liteflow-2.15.1
-    title: 🚀 LiteFlow v2.15.1 发布！
-    content: '<div><p>2025-10-20</p><ul><li>一些性能改进和对高版本JDK的优化</li></ul></div><p style="text-align: right;"><a href="/pages/8ff026/">查看详情</a></p>'
-    isHtmlContent: true
   - id: vote-to-liteflow
     title: LiteFlow需要您的支持
     content: 
@@ -47,6 +43,9 @@ notices: # 可选的
         <a href="https://gitee.com/activity/2025opensource?ident=IA4QYO">https://gitee.com/activity/2025opensource?ident=IA4QYO</a>
       </div>
     isHtmlContent: true
+    position: center
+    width: 500
+    height: 200
 ---
 
 <Notice :data="$frontmatter.notices"/>
