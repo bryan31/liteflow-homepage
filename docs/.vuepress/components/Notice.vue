@@ -3,7 +3,6 @@
   <div
     v-if="showOverlay"
     class="notice-overlay"
-    @click="closeAllNotifications"
   ></div>
 </template>
 <script>
@@ -34,6 +33,7 @@ export default {
           position: "top-right", // 新增：可选 "top-right" 或 "center"
           width: null, // 新增：居中模式下的宽度
           height: null, // 新增：居中模式下的高度
+          confirmUrl: null, // 新增：居中模式下点击确认按钮跳转的URL，不填则关闭弹框
         },
       ],
     },
@@ -115,6 +115,10 @@ export default {
               if (confirmBtn) {
                 confirmBtn.addEventListener('click', (e) => {
                   e.stopPropagation();
+                  // 如果有 confirmUrl，则跳转到指定 URL
+                  if (element.confirmUrl) {
+                    window.open(element.confirmUrl, '_blank');
+                  }
                   notificationInstance.close();
                 });
               }
@@ -131,15 +135,15 @@ export default {
       closeTimeData[id] = Date.now();
       localStorage.setItem("noticeCloseTime", JSON.stringify(closeTimeData));
     },
-    // 检查通知是否在1小时内关闭过
+    // 检查通知是否在6小时内关闭过
     isNoticeRecentlyClosed(id){
       const closeTimeData = JSON.parse(localStorage.getItem("noticeCloseTime") || "{}");
       const closeTime = closeTimeData[id];
       if (!closeTime) return false;
 
-      const oneHourInMs = 60 * 60 * 1000; // 1小时的毫秒数
+      const sixHoursInMs = 6 * 60 * 60 * 1000; // 6小时的毫秒数
       const timePassed = Date.now() - closeTime;
-      return timePassed < oneHourInMs;
+      return timePassed < sixHoursInMs;
     },
     closeAllNotifications() {
       // 点击遮罩层时关闭所有通知

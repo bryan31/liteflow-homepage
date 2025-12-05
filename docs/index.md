@@ -46,6 +46,7 @@ notices: # 可选的
     position: center
     width: 500
     height: 200
+    confirmUrl: https://gitee.com/activity/2025opensource?ident=IA4QYO
 ---
 
 <Notice :data="$frontmatter.notices"/>
