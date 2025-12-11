@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo"><a style="font-weight: bolder" href="https://gitee.com/activity/2025opensource?ident=IA4QYO">🔥LiteFlow正在参加Gitee 2025最受欢迎的开源软件投票活动<br>点击请给LiteFlow投上一票！💪</a></div>'
 actions:
-  - actionText: ⛵️ v2.15.1 进入文档
+  - actionText: ⛵️ v2.15.2 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -45,7 +45,7 @@ notices: # 可选的
     isHtmlContent: true
     position: center
     width: 500
-    height: 200
+    height: 210
     confirmUrl: https://gitee.com/activity/2025opensource?ident=IA4QYO
 ---
 
@@ -62,20 +62,6 @@ notices: # 可选的
   bgColor: '#ba4552'
   textColor: '#FFFFFF'
   expired: '2025-11-21'
-- name: Snowy
-  desc: 国内首个国密前后端分离快速开发平台，中国式工作流、独家双模式租户
-  avatar: /img/donate/snowy.png
-  link: https://xiaonuo.vip
-  bgColor: '#1373CC'
-  textColor: '#ffffff'
-  expired: '2025-11-04'
-- name: 云程低代码平台
-  desc: 采用springboot+vue技术，可私有化部署，可交付源代码
-  avatar: /img/donate/yuncheng.png
-  link: http://www.yunchengxc.com/
-  bgColor: '#A6A1F3'
-  textColor: '#FFFFFF'
-  expired: '2025-10-31'
 - name: 驰骋工作流引擎
   desc: 专注流程表单引擎领域研发20年，100%核心源代码开放
   avatar: /img/donate/chicheng.png
@@ -172,7 +158,7 @@ notices: # 可选的
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.15.1</version>
+    <version>2.15.2</version>
 </dependency>
 ```
 
