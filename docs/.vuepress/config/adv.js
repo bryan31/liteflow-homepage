@@ -7,9 +7,6 @@ module.exports = function advHtml() {
     `<a name="adv" class="none" href="https://ccbpm.cn/?frm=liteFlow" target="_blank">
       <img class="no-zoom" style="width:100%;" src="/img/donate/chicheng-banner.png">
     </a>`,
-    `<a name="adv" class="none" href="https://www.misboot.com/?from=LiteFlow" target="_blank">
-        <img class="no-zoom" style="width:100%;" src="/img/donate/misboot-banner.png">
-    </a>`,
     `<a name="adv" class="none" href="https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci=" target="_blank">
         <img class="no-zoom" style="width:100%;" src="/img/donate/suzhong-banner-1.jpg">
     </a>`

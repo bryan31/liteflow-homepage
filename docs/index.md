@@ -55,13 +55,6 @@ notices: # 可选的
 
 ::: cardList
 ```yaml
-- name: MISBoot低代码开发平台
-  desc: 零代码应用快速搭建<br>让开发更简单
-  avatar: /img/donate/misboot.png
-  link: https://www.misboot.com/?from=LiteFlow
-  bgColor: '#ba4552'
-  textColor: '#FFFFFF'
-  expired: '2025-11-21'
 - name: 驰骋工作流引擎
   desc: 专注流程表单引擎领域研发20年，100%核心源代码开放
   avatar: /img/donate/chicheng.png
