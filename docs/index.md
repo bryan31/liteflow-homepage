@@ -34,19 +34,7 @@ features: # 可选的
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
-notices: # 可选的
-  - id: vote-to-liteflow
-    title: LiteFlow需要您的支持
-    content: 
-      <div>
-        LiteFlow正在参加【Gitee 2025最受欢迎的开源软件】投票活动，需要您的投票支持，请给LiteFlow投下您宝贵的一票❤️<br>
-        <a href="https://gitee.com/activity/2025opensource?ident=IA4QYO">https://gitee.com/activity/2025opensource?ident=IA4QYO</a>
-      </div>
-    isHtmlContent: true
-    position: center
-    width: 500
-    height: 210
-    confirmUrl: https://gitee.com/activity/2025opensource?ident=IA4QYO
+
 ---
 
 <Notice :data="$frontmatter.notices"/>
