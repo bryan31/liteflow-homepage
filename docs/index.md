@@ -3,7 +3,7 @@ home: true
 heroImage: /img/logo.svg
 heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
-slogan: '<div class="slo"><a style="font-weight: bolder" href="https://gitee.com/activity/2025opensource?ident=IA4QYO">🔥LiteFlow正在参加Gitee 2025最受欢迎的开源软件投票活动<br>点击请给LiteFlow投上一票！💪</a></div>'
+slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
   - actionText: ⛵️ v2.15.2 进入文档
     actionLink: /pages/5816c5/

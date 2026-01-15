@@ -23,13 +23,12 @@ module.exports = {
   sidebarT: advHtml(),
   // 万维广告
   pageT: `
-  <div class="wwads-cn wwads-horizontal page-wwads" data-id="129"></div>
   <div class="pin-adv">
-    <a href="https://www.unibridge.one/"><img style="width:90.5%;border-radius: 3px;" src="/img/donate/yunjieapi_banner.png"></a>
+    <a href="https://www.unibridge.one/" target="_blank" rel="noopener noreferrer"><img style="width:90.5%;border-radius: 3px;" src="/img/donate/yunjieapi_banner.png"></a>
   </div>
   <div class="pin-adv">
-    <a href="https://fastbee.cn/"><img style="width:45%;border-radius: 3px;" src="/img/donate/fb-banner.png"></a>
-    <a href="https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci="><img style="width:45%;border-radius: 3px;" src="/img/donate/suzhong-banner-2.jpg"></a>
+    <a href="https://fastbee.cn/" target="_blank" rel="noopener noreferrer"><img style="width:45%;border-radius: 3px;" src="/img/donate/fb-banner.png"></a>
+    <a href="https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci=" target="_blank" rel="noopener noreferrer"><img style="width:45%;border-radius: 3px;" src="/img/donate/suzhong-banner-2.jpg"></a>
   </div>
   <style>
       .pin-adv{
@@ -60,6 +59,30 @@ module.exports = {
       }
   </style>
   `,
+  pageB: `
+  <div class="wwads-cn wwads-horizontal page-wwads" data-id="129"></div>
+  <style>
+      .page-wwads{
+        width:100%!important;
+        min-height: 0;
+        margin: 0;
+      }
+      .page-wwads .wwads-img img{
+        width:80px!important;
+      }
+      .page-wwads .wwads-poweredby{
+        width: 40px;
+        position: absolute;
+        right: 25px;
+        bottom: 3px;
+      }
+      .wwads-content .wwads-text, .page-wwads .wwads-text{
+        height: 100%;
+        padding-top: 5px;
+        display: block;
+      }
+  </style>
+  `
   // windowRB: `
   //   <div class="wwads-cn wwads-vertical windowRB" data-id="136" style="max-width:160px;
   //   min-width: auto;min-height:auto;"></div>
