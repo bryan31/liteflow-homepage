@@ -24,7 +24,7 @@ module.exports = {
   // 万维广告
   pageT: `
   <div class="pin-adv">
-    <a href="https://www.unibridge.one/" target="_blank" rel="noopener noreferrer"><img style="width:90.5%;border-radius: 3px;" src="/img/donate/yunjieapi_banner.png"></a>
+    <a href="https://www.unibridge.one/register?aff=Zapo" target="_blank" rel="noopener noreferrer"><img style="width:90.5%;border-radius: 3px;" src="/img/donate/yunjieapi_banner.png"></a>
   </div>
   <div class="pin-adv">
     <a href="https://fastbee.cn/" target="_blank" rel="noopener noreferrer"><img style="width:45%;border-radius: 3px;" src="/img/donate/fb-banner.png"></a>
