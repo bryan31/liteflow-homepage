@@ -5,7 +5,7 @@ heroText: LiteFlow
 tagline: 🚀 轻量，快速，稳定可编排的组件式规则引擎
 slogan: '<div class="slo">Make your code amazing.</div>'
 actions:
-  - actionText: ⛵️ v2.15.2 进入文档
+  - actionText: ⛵️ v2.15.3 进入文档
     actionLink: /pages/5816c5/
     actionClass: action-button-liteflowx
   - actionText: 👑 LF CLUB社区
@@ -139,7 +139,7 @@ postList: none
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.15.2</version>
+    <version>2.15.3</version>
 </dependency>
 ```
 
