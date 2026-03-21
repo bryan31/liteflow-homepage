@@ -38,17 +38,21 @@ table
     padding 0 1rem
 
 .theme-mode-light .home-wrapper .banner{
-  background: url(/img/bg-light.png) center center / cover no-repeat !important;
+  background: #fafafa !important;
+  background-image:
+    linear-gradient(rgba(255,56,97,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,56,97,0.05) 1px, transparent 1px) !important;
+  background-size: 38px 38px !important;
   height: 850px;
 }
 
 .theme-mode-dark .home-wrapper .banner{
-  background: url(/img/bg-dark.png) center center / cover no-repeat !important;
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 55%, #0a1628 100%) !important;
   height: 850px;
 }
 
 .theme-mode-read .home-wrapper .banner{
-  background: url(/img/bg-read.png) center center / cover no-repeat !important;
+  background: linear-gradient(135deg, #0d0d1a 0%, #1a0a2e 55%, #0a1628 100%) !important;
   height: 850px;
 }
 
@@ -221,3 +225,37 @@ body .vuepress-plugin-demo-block__wrapper
     filter:drop-shadow(0px 0px 30px #ff4851);
   }
 }
+// 亮色 Banner 装饰光晕
+.banner-orb
+  position: absolute
+  border-radius: 50%
+  pointer-events: none
+  z-index: 0
+
+.banner-orb-1
+  width: 300px
+  height: 300px
+  background: radial-gradient(circle, rgba(255,56,97,0.1) 0%, transparent 70%)
+  top: -80px
+  left: -60px
+  animation: orbMove1 8s ease-in-out infinite alternate
+
+.banner-orb-2
+  width: 240px
+  height: 240px
+  background: radial-gradient(circle, rgba(99,102,241,0.07) 0%, transparent 70%)
+  bottom: -60px
+  right: -40px
+  animation: orbMove2 10s ease-in-out infinite alternate
+
+@keyframes orbMove1
+  from
+    transform: translate(0, 0)
+  to
+    transform: translate(30px, 20px)
+
+@keyframes orbMove2
+  from
+    transform: translate(0, 0)
+  to
+    transform: translate(-20px, -15px)
