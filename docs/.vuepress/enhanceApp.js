@@ -99,7 +99,7 @@ export default ({
       if (to.path === '/') {
         setTimeout(() => {
           const banner = document.querySelector('.home-wrapper .banner')
-          if (banner && !cleanupCanvas) {
+          if (banner && !cleanupCanvas && !cleanupOrbs) {
             cleanupCanvas = initBannerCanvas(banner)
             cleanupOrbs = injectLightOrbs(banner)
           }
