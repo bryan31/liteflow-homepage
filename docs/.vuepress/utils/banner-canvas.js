@@ -174,8 +174,62 @@ function drawParticles(props, ctxA, W, H, centerY, dark, tick) {
 }
 
 // ─── 5. Canvas setup ──────────────────────────────────────────────────────
+function createCanvases(bannerEl) {
+  // Canvas A: offscreen drawing buffer, never inserted into DOM
+  const canvasA = document.createElement('canvas')
+  const ctxA = canvasA.getContext('2d')
+
+  // Canvas B: visible output, inserted into banner at z-index 0
+  const canvasB = document.createElement('canvas')
+  canvasB.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;'
+  bannerEl.style.position = 'relative'
+  bannerEl.insertBefore(canvasB, bannerEl.firstChild)
+  const ctxB = canvasB.getContext('2d')
+
+  return { canvasA, ctxA, canvasB, ctxB }
+}
+
+function resizeCanvases(canvasA, canvasB, bannerEl) {
+  const W = bannerEl.offsetWidth
+  const H = bannerEl.offsetHeight
+  canvasA.width  = W; canvasA.height = H
+  canvasB.width  = W; canvasB.height = H
+  return { W, H, centerY: H / 2 }
+}
 
 // ─── 6. Render pipeline ───────────────────────────────────────────────────
+function renderFrame(ctxA, ctxB, canvasA, W, H, dark) {
+  // Step 3: fill/clear canvas B background
+  if (dark) {
+    ctxB.fillStyle = 'hsla(350,35%,3.5%,1)'
+    ctxB.fillRect(0, 0, W, H)
+  } else {
+    ctxB.clearRect(0, 0, W, H)
+  }
+
+  const blurA = dark ? '8px' : '4px'
+  const blurB = dark ? '4px' : '2px'
+
+  // Step 4: bloom layer 1 (heavy blur)
+  ctxB.save()
+  ctxB.filter = `blur(${blurA}) brightness(200%)`
+  ctxB.globalCompositeOperation = 'lighter'
+  ctxB.drawImage(canvasA, 0, 0)
+  ctxB.restore()
+
+  // Step 5: bloom layer 2 (soft blur)
+  ctxB.save()
+  ctxB.filter = `blur(${blurB}) brightness(200%)`
+  ctxB.globalCompositeOperation = 'lighter'
+  ctxB.drawImage(canvasA, 0, 0)
+  ctxB.restore()
+
+  // Step 6: raw particle layer
+  ctxB.save()
+  ctxB.globalCompositeOperation = 'lighter'
+  ctxB.drawImage(canvasA, 0, 0)
+  ctxB.restore()
+}
 
 // ─── 7. Main draw loop ────────────────────────────────────────────────────
 
