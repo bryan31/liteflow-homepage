@@ -70,6 +70,23 @@ function isDarkTheme() {
   return cls.contains('theme-mode-dark') || cls.contains('theme-mode-read')
 }
 
+// Read the accent hue from the CSS variable --textLightenColor (e.g. #FF3861 → 348°)
+function getAccentHue() {
+  const hex = getComputedStyle(document.documentElement)
+    .getPropertyValue('--textLightenColor').trim()
+  if (!hex || hex.length < 7) return 348  // fallback: #FF3861
+  const r = parseInt(hex.slice(1, 3), 16) / 255
+  const g = parseInt(hex.slice(3, 5), 16) / 255
+  const b = parseInt(hex.slice(5, 7), 16) / 255
+  const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min
+  if (d === 0) return 0
+  let h
+  if (max === r)      h = ((g - b) / d + (g < b ? 6 : 0)) / 6
+  else if (max === g) h = ((b - r) / d + 2) / 6
+  else                h = ((r - g) / d + 4) / 6
+  return Math.round(h * 360)
+}
+
 // ─── 3. Constants ─────────────────────────────────────────────────────────
 const PARTICLE_COUNT = 700
 const PROP_COUNT     = 9   // x, y, vx, vy, life, ttl, speed, radius, hue
@@ -88,13 +105,7 @@ const Y_OFF       = 0.00125
 const Z_OFF       = 0.0005
 const NOISE_STEPS = 8
 
-// Dark / read mode
-const DARK_BASE_HUE  = 320
-const DARK_HUE_RANGE = 70   // 320–390 (wraps: pink→red→orange-red)
-
-// Light mode
-const LIGHT_BASE_HUE  = 330
-const LIGHT_HUE_RANGE = 30  // 330–360 (pure brand pink)
+const HUE_RANGE       = 30   // ±15° spread around accent hue
 const LIGHT_MAX_ALPHA = 0.35
 
 // ─── 4. Particle helpers ──────────────────────────────────────────────────
@@ -103,23 +114,21 @@ const LIGHT_MAX_ALPHA = 0.35
 //   [i+0]=x  [i+1]=y  [i+2]=vx  [i+3]=vy
 //   [i+4]=life  [i+5]=ttl  [i+6]=speed  [i+7]=radius  [i+8]=hue
 
-function initParticle(props, i, W, centerY, dark) {
-  const baseHue  = dark ? DARK_BASE_HUE  : LIGHT_BASE_HUE
-  const hueRange = dark ? DARK_HUE_RANGE : LIGHT_HUE_RANGE
-  props[i]   = rand(W)                                    // x
+function initParticle(props, i, W, centerY) {
+  props[i]   = rand(W)                                         // x
   props[i+1] = centerY + (Math.random() - 0.5) * 2 * RANGE_Y  // y
-  props[i+2] = 0                                          // vx
-  props[i+3] = 0                                          // vy
-  props[i+4] = 0                                          // life
-  props[i+5] = BASE_TTL + rand(RANGE_TTL)                 // ttl
-  props[i+6] = BASE_SPEED + rand(RANGE_SPEED)             // speed
-  props[i+7] = BASE_RADIUS + rand(RANGE_RADIUS)           // radius
-  props[i+8] = baseHue + rand(hueRange)                   // hue
+  props[i+2] = 0                                               // vx
+  props[i+3] = 0                                               // vy
+  props[i+4] = 0                                               // life
+  props[i+5] = BASE_TTL + rand(RANGE_TTL)                      // ttl
+  props[i+6] = BASE_SPEED + rand(RANGE_SPEED)                  // speed
+  props[i+7] = BASE_RADIUS + rand(RANGE_RADIUS)                // radius
+  props[i+8] = getAccentHue() + rand(HUE_RANGE)                // hue
 }
 
-function initParticles(props, W, centerY, dark) {
+function initParticles(props, W, centerY) {
   for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
-    initParticle(props, i, W, centerY, dark)
+    initParticle(props, i, W, centerY)
   }
 }
 
@@ -163,7 +172,7 @@ function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   props[i+4] = life + 1
 
   if (x2 < 0 || x2 > W || y2 < 0 || y2 > H || life >= ttl) {
-    initParticle(props, i, W, centerY, dark)
+    initParticle(props, i, W, centerY)
   }
 }
 
@@ -231,7 +240,7 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
   let { W, H, centerY } = resizeCanvases(canvasA, canvasB, bannerEl)
   let dark = isDarkTheme()
   const props = new Float32Array(PROPS_LEN)
-  initParticles(props, W, centerY, dark)
+  initParticles(props, W, centerY)
 
   let tick = 0
   let rafId = null
@@ -258,7 +267,7 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
     resizeTimer = setTimeout(() => {
       const dims = resizeCanvases(canvasA, canvasB, bannerEl)
       W = dims.W; H = dims.H; centerY = dims.centerY
-      initParticles(props, W, centerY, isDarkTheme())
+      initParticles(props, W, centerY)
     }, 150)
   }
   window.addEventListener('resize', debouncedResize)
