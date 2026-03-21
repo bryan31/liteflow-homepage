@@ -232,12 +232,57 @@ function renderFrame(ctxB, canvasA, W, H, dark) {
 }
 
 // ─── 7. Main draw loop ────────────────────────────────────────────────────
+function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
+  let { W, H, centerY } = resizeCanvases(canvasA, canvasB, bannerEl)
+  let dark = isDarkTheme()
+  const props = new Float32Array(PROPS_LEN)
+  initParticles(props, W, centerY, dark)
+
+  let tick = 0
+  let rafId = null
+
+  function loop() {
+    tick++
+    dark = isDarkTheme()
+
+    // Step 1: clear offscreen canvas A
+    ctxA.clearRect(0, 0, W, H)
+
+    // Step 2: draw all particles onto canvas A
+    drawParticles(props, ctxA, W, H, centerY, dark, tick)
+
+    // Steps 3–6: composite canvas A onto canvas B with bloom
+    renderFrame(ctxB, canvasA, W, H, dark)
+
+    rafId = requestAnimationFrame(loop)
+  }
+
+  let resizeTimer = null
+  function debouncedResize() {
+    clearTimeout(resizeTimer)
+    resizeTimer = setTimeout(() => {
+      const dims = resizeCanvases(canvasA, canvasB, bannerEl)
+      W = dims.W; H = dims.H; centerY = dims.centerY
+      initParticles(props, W, centerY, isDarkTheme())
+    }, 150)
+  }
+  window.addEventListener('resize', debouncedResize)
+
+  rafId = requestAnimationFrame(loop)
+
+  return function cleanup() {
+    cancelAnimationFrame(rafId)
+    clearTimeout(resizeTimer)
+    window.removeEventListener('resize', debouncedResize)
+    canvasB.remove()   // canvas A never entered DOM
+  }
+}
 
 // ─── 8. Public API ────────────────────────────────────────────────────────
-
 export function initBannerCanvas(bannerEl) {
-  // TODO
-  return function cleanup() {}
+  const { canvasA, ctxA, canvasB, ctxB } = createCanvases(bannerEl)
+  if (!ctxA || !ctxB) return function cleanup() { canvasB.remove() }
+  return startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl)
 }
 
 export function injectLightOrbs(bannerEl) {
