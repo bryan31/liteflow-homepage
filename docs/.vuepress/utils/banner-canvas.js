@@ -162,7 +162,7 @@ function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   props[i+3] = vy
   props[i+4] = life + 1
 
-  if (x2 < 0 || x2 > W || y2 < 0 || y2 > H || life > ttl) {
+  if (x2 < 0 || x2 > W || y2 < 0 || y2 > H || life >= ttl) {
     initParticle(props, i, W, centerY, dark)
   }
 }
@@ -198,7 +198,7 @@ function resizeCanvases(canvasA, canvasB, bannerEl) {
 }
 
 // ─── 6. Render pipeline ───────────────────────────────────────────────────
-function renderFrame(ctxA, ctxB, canvasA, W, H, dark) {
+function renderFrame(ctxB, canvasA, W, H, dark) {
   // Step 3: fill/clear canvas B background
   if (dark) {
     ctxB.fillStyle = 'hsla(350,35%,3.5%,1)'
