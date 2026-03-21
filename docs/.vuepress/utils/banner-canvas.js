@@ -242,7 +242,7 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
   let rafId = null
 
   function loop() {
-    tick++
+    tick = (tick + 1) % 1000000
     dark = isDarkTheme()
 
     // Step 1: clear offscreen canvas A
