@@ -136,7 +136,7 @@ Hover 阴影：0 8px 20px rgba(255,56,97,0.1)
 移除静态图片 `bg-light.png`，替换为：
 
 - CSS 网格背景：`rgba(255,56,97,0.05)` 细线，间距 38px
-- 两个径向渐变光晕装饰（`::before` / `::after` 或额外 div）
+- 两个径向渐变光晕装饰，使用额外的 `<div class="light-orb1">` / `<div class="light-orb2">` 实现（不使用伪元素，避免与 Features 卡片的 `::before` 选择器冲突）
 - Canvas 节点透明度整体降低（`baseAlpha × 0.6`）
 
 ---
