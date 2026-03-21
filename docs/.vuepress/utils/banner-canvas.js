@@ -91,6 +91,7 @@ export function initBannerCanvas(bannerEl) {
   bannerEl.insertBefore(canvas, bannerEl.firstChild)
 
   const ctx = canvas.getContext('2d')
+  if (!ctx) return () => { canvas.remove() }
   let nodes = []
   let dashOffset = 0
   let rafId = null
@@ -108,12 +109,17 @@ export function initBannerCanvas(bannerEl) {
   }
 
   resize()
-  window.addEventListener('resize', resize)
+  let resizeTimer = null
+  function debouncedResize() {
+    clearTimeout(resizeTimer)
+    resizeTimer = setTimeout(resize, 150)
+  }
+  window.addEventListener('resize', debouncedResize)
   rafId = requestAnimationFrame(loop)
 
   return function cleanup() {
     cancelAnimationFrame(rafId)
-    window.removeEventListener('resize', resize)
+    window.removeEventListener('resize', debouncedResize)
     canvas.remove()
   }
 }
