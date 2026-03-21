@@ -119,6 +119,7 @@ export function initBannerCanvas(bannerEl) {
 
   return function cleanup() {
     cancelAnimationFrame(rafId)
+    clearTimeout(resizeTimer)
     window.removeEventListener('resize', debouncedResize)
     canvas.remove()
   }
