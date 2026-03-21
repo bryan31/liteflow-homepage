@@ -1,3 +1,5 @@
+import { initBannerCanvas, injectLightOrbs } from './utils/banner-canvas'
+
 export default ({
   Vue, // VuePress 正在使用的 Vue 构造函数
   options, // 附加到根实例的一些选项
@@ -6,13 +8,14 @@ export default ({
   isServer // 当前应用配置是处于 服务端渲染 还是 客户端
 }) => {
 
-
+  let cleanupCanvas = null
+  let cleanupOrbs = null
 
   // 用于监控在路由变化时检查广告拦截器 (to主题使用者：你可以去掉本文件的所有代码)
   if (!isServer) {
     //new EmbedLiteSDK({appId: '326d66ec-91d7-4e29-b4c2-1b6d024b1d45', code: 'embed1DsfdPz8nKKWDKZdP4gN'});
 
-    router.afterEach(() => {
+    router.afterEach((to) => {
       //check if wwads' fire function was blocked after document is ready with 3s timeout (waiting the ad loading)
       docReady(function () {
         setTimeout(function () {
@@ -91,6 +94,20 @@ export default ({
           pageAD.style.display = 'flex';
         }
       }, 900);
+
+      // Canvas 动效：首页注入，离开时清理
+      if (to.path === '/') {
+        setTimeout(() => {
+          const banner = document.querySelector('.home-wrapper .banner')
+          if (banner && !cleanupCanvas && !cleanupOrbs) {
+            cleanupCanvas = initBannerCanvas(banner)
+            cleanupOrbs = injectLightOrbs(banner)
+          }
+        }, 150)
+      } else {
+        if (cleanupCanvas) { cleanupCanvas(); cleanupCanvas = null }
+        if (cleanupOrbs)   { cleanupOrbs();   cleanupOrbs = null }
+      }
     })
   }
 }
