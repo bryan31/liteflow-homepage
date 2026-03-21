@@ -98,6 +98,80 @@ const LIGHT_HUE_RANGE = 30  // 330–360 (pure brand pink)
 const LIGHT_MAX_ALPHA = 0.35
 
 // ─── 4. Particle helpers ──────────────────────────────────────────────────
+// particleProps is a Float32Array of length PROPS_LEN.
+// Each particle occupies PROP_COUNT consecutive slots:
+//   [i+0]=x  [i+1]=y  [i+2]=vx  [i+3]=vy
+//   [i+4]=life  [i+5]=ttl  [i+6]=speed  [i+7]=radius  [i+8]=hue
+
+function initParticle(props, i, W, centerY, dark) {
+  const baseHue  = dark ? DARK_BASE_HUE  : LIGHT_BASE_HUE
+  const hueRange = dark ? DARK_HUE_RANGE : LIGHT_HUE_RANGE
+  props[i]   = rand(W)                                    // x
+  props[i+1] = centerY + (Math.random() - 0.5) * 2 * RANGE_Y  // y
+  props[i+2] = 0                                          // vx
+  props[i+3] = 0                                          // vy
+  props[i+4] = 0                                          // life
+  props[i+5] = BASE_TTL + rand(RANGE_TTL)                 // ttl
+  props[i+6] = BASE_SPEED + rand(RANGE_SPEED)             // speed
+  props[i+7] = BASE_RADIUS + rand(RANGE_RADIUS)           // radius
+  props[i+8] = baseHue + rand(hueRange)                   // hue
+}
+
+function initParticles(props, W, centerY, dark) {
+  for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
+    initParticle(props, i, W, centerY, dark)
+  }
+}
+
+function drawParticle(ctx, x, y, x2, y2, life, ttl, radius, hue, dark) {
+  let alpha = fadeInOut(life, ttl)
+  if (!dark) alpha *= LIGHT_MAX_ALPHA
+  ctx.save()
+  ctx.lineCap = 'round'
+  ctx.lineWidth = radius
+  ctx.strokeStyle = `hsla(${hue % 360},100%,60%,${alpha})`
+  ctx.beginPath()
+  ctx.moveTo(x, y)
+  ctx.lineTo(x2, y2)
+  ctx.stroke()
+  ctx.restore()
+}
+
+function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
+  const x     = props[i]
+  const y     = props[i+1]
+  let   vx    = props[i+2]
+  let   vy    = props[i+3]
+  const life  = props[i+4]
+  const ttl   = props[i+5]
+  const speed = props[i+6]
+  const radius = props[i+7]
+  const hue   = props[i+8]
+
+  const angle = noise3D(x * X_OFF, y * Y_OFF, tick * Z_OFF) * NOISE_STEPS * TAU
+  vx = lerp(vx, Math.cos(angle), 0.5)
+  vy = lerp(vy, Math.sin(angle), 0.5)
+  const x2 = x + vx * speed
+  const y2 = y + vy * speed
+
+  drawParticle(ctxA, x, y, x2, y2, life, ttl, radius, hue, dark)
+
+  props[i]   = x2
+  props[i+1] = y2
+  props[i+2] = vx
+  props[i+3] = vy
+  props[i+4] = life + 1
+
+  if (x2 < 0 || x2 > W || y2 < 0 || y2 > H || life > ttl) {
+    initParticle(props, i, W, centerY, dark)
+  }
+}
+
+function drawParticles(props, ctxA, W, H, centerY, dark, tick) {
+  for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
+    updateParticle(props, i, ctxA, W, H, centerY, dark, tick)
+  }
+}
 
 // ─── 5. Canvas setup ──────────────────────────────────────────────────────
 
