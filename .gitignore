@@ -17,3 +17,5 @@ urls.txt
 .DS_Store
 
 .idea
+/.superpowers/
+/docs/superpowers/

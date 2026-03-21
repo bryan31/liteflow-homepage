@@ -199,16 +199,11 @@ function resizeCanvases(canvasA, canvasB, bannerEl) {
 
 // ─── 6. Render pipeline ───────────────────────────────────────────────────
 function renderFrame(ctxB, canvasA, W, H, dark) {
-  // Step 3: fill/clear canvas B background
-  if (dark) {
-    ctxB.fillStyle = 'hsla(350,35%,3.5%,1)'
-    ctxB.fillRect(0, 0, W, H)
-  } else {
-    ctxB.clearRect(0, 0, W, H)
-  }
+  // Step 3: clear canvas B — transparent in all modes so the page background shows through
+  ctxB.clearRect(0, 0, W, H)
 
-  const blurA = dark ? '8px' : '4px'
-  const blurB = dark ? '4px' : '2px'
+  const blurA = '8px'
+  const blurB = '4px'
 
   // Step 4: bloom layer 1 (heavy blur)
   ctxB.save()
