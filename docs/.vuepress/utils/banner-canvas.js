@@ -58,8 +58,44 @@ function noise3D(xin, yin, zin) {
 }
 
 // ─── 2. Math utilities ────────────────────────────────────────────────────
+const TAU = Math.PI * 2
+const rand = n => Math.random() * n
+const lerp = (a, b, t) => (1 - t) * a + t * b
+function fadeInOut(t, m) {
+  const hm = m * 0.5
+  return Math.abs((t + hm) % m - hm) / hm
+}
+function isDarkTheme() {
+  const cls = document.documentElement.classList
+  return cls.contains('theme-mode-dark') || cls.contains('theme-mode-read')
+}
 
 // ─── 3. Constants ─────────────────────────────────────────────────────────
+const PARTICLE_COUNT = 700
+const PROP_COUNT     = 9   // x, y, vx, vy, life, ttl, speed, radius, hue
+const PROPS_LEN      = PARTICLE_COUNT * PROP_COUNT
+
+const BASE_TTL    = 50
+const RANGE_TTL   = 150
+const BASE_SPEED  = 0.1
+const RANGE_SPEED = 2
+const BASE_RADIUS = 1
+const RANGE_RADIUS = 4
+const RANGE_Y     = 100   // max px offset from banner vertical center on respawn
+
+const X_OFF       = 0.00125
+const Y_OFF       = 0.00125
+const Z_OFF       = 0.0005
+const NOISE_STEPS = 8
+
+// Dark / read mode
+const DARK_BASE_HUE  = 320
+const DARK_HUE_RANGE = 70   // 320–390 (wraps: pink→red→orange-red)
+
+// Light mode
+const LIGHT_BASE_HUE  = 330
+const LIGHT_HUE_RANGE = 30  // 330–360 (pure brand pink)
+const LIGHT_MAX_ALPHA = 0.35
 
 // ─── 4. Particle helpers ──────────────────────────────────────────────────
 
