@@ -260,3 +260,62 @@ body .vuepress-plugin-demo-block__wrapper
     transform: translate(0, 0)
   to
     transform: translate(-20px, -15px)
+
+// Features 卡片重设计
+.home-wrapper .features .feature
+  background: rgba(255,56,97,0.04)
+  border: 1px solid rgba(255,56,97,0.12)
+  border-radius: 10px
+  padding: 16px 14px
+  transition: all 0.25s ease
+  position: relative
+  overflow: hidden
+  cursor: default
+  box-sizing: border-box
+
+.home-wrapper .features .feature::before
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: 2px
+  background: linear-gradient(90deg, transparent, #FF3861, transparent)
+  opacity: 0
+  transition: opacity 0.25s ease
+
+.home-wrapper .features .feature:hover
+  transform: translateY(-3px)
+  background: rgba(255,56,97,0.08)
+  border-color: rgba(255,56,97,0.3)
+  box-shadow: 0 8px 24px rgba(255,56,97,0.12)
+
+.home-wrapper .features .feature:hover::before
+  opacity: 1
+
+.home-wrapper .features .feature h2
+  color: #ff8fa3
+  font-size: 1rem
+  margin-bottom: 0.4rem
+
+.home-wrapper .features .feature p
+  color: #666
+  font-size: 0.9rem
+  line-height: 1.6
+
+// 亮色模式 Features 覆盖
+.theme-mode-light .home-wrapper .features .feature
+  background: #fff
+  border: 1px solid rgba(255,56,97,0.1)
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04)
+
+.theme-mode-light .home-wrapper .features .feature:hover
+  background: #fff
+  border-color: rgba(255,56,97,0.25)
+  box-shadow: 0 8px 20px rgba(255,56,97,0.1)
+
+.theme-mode-light .home-wrapper .features .feature h2
+  color: #FF3861
+
+.theme-mode-light .home-wrapper .features .feature p
+  color: #888
