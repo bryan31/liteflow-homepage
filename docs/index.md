@@ -63,7 +63,14 @@ postList: none
   link: https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci=
   bgColor: '#2284FF'
   textColor: '#FFFFFF'
-  expired: '2026-02-17'
+  expired: '2027-02-25'
+- name: Easysearch
+  desc: 企业级的分布式搜索型数据库
+  avatar: /img/donate/easySearch.png
+  link: https://easysearch.cn
+  bgColor: '#836EFF'
+  textColor: '#1F2221'
+  expired: '2027-03-22'
 
 ```
 :::
