@@ -69,7 +69,7 @@ postList: none
   avatar: /img/donate/easySearch.png
   link: https://easysearch.cn
   bgColor: '#836EFF'
-  textColor: '#1F2221'
+  textColor: '#FFFFFF'
   expired: '2027-03-22'
 
 ```
