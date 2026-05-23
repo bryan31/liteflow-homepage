@@ -87,14 +87,6 @@ function getAccentHue() {
   return Math.round(h * 360)
 }
 
-// Standard normal random number via Box–Muller.
-function randn() {
-  let u = 0, v = 0
-  while (u === 0) u = Math.random()
-  while (v === 0) v = Math.random()
-  return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v)
-}
-
 // ─── 3. Constants ─────────────────────────────────────────────────────────
 const PARTICLE_COUNT = 700
 const PROP_COUNT     = 9   // x, y, vx, vy, life, ttl, speed, radius, hue
@@ -106,6 +98,7 @@ const BASE_SPEED  = 0.1
 const RANGE_SPEED = 2
 const BASE_RADIUS = 1
 const RANGE_RADIUS = 4
+const RANGE_Y     = 100   // max px offset from banner vertical center on respawn
 
 const X_OFF       = 0.00125
 const Y_OFF       = 0.00125
@@ -115,38 +108,15 @@ const NOISE_STEPS = 8
 const HUE_RANGE       = 30   // ±15° spread around accent hue
 const LIGHT_MAX_ALPHA = 0.35
 
-// ─── Lane (curved-stream) parameters ──────────────────────────────────────
-// y(x,t) = baseline*H + a1·sin(w1·x + p1 + v1·t) + a2·sin(w2·x + p2 + v2·t)
-const LANE_BASELINES = [0.18, 0.35, 0.50, 0.65, 0.82]
-const LANE_COUNT     = LANE_BASELINES.length
-const LANE_SIGMA     = 35  // gaussian σ for offsetY (px)
-
-const LANE_PARAMS = [
-  // a1, a2 px ; w1, w2 = 2π / wavelength_px ; p1, p2 ∈ [0, 2π) ; v1, v2 rad/tick
-  { a1: 60, a2: 25, w1: TAU / 720, w2: TAU / 310, p1: 0.0, p2: 1.7, v1: 0.0018, v2: 0.0032 },
-  { a1: 80, a2: 30, w1: TAU / 560, w2: TAU / 410, p1: 1.1, p2: 0.4, v1: 0.0024, v2: 0.0011 },
-  { a1: 45, a2: 35, w1: TAU / 820, w2: TAU / 360, p1: 2.6, p2: 3.1, v1: 0.0014, v2: 0.0028 },
-  { a1: 70, a2: 20, w1: TAU / 640, w2: TAU / 290, p1: 0.5, p2: 4.2, v1: 0.0030, v2: 0.0019 },
-  { a1: 55, a2: 40, w1: TAU / 900, w2: TAU / 380, p1: 3.7, p2: 0.9, v1: 0.0022, v2: 0.0036 },
-]
-
-function laneY(lane, x, tick, H) {
-  const baseline = LANE_BASELINES[lane] * H
-  const p = LANE_PARAMS[lane]
-  return baseline
-    + p.a1 * Math.sin(p.w1 * x + p.p1 + p.v1 * tick)
-    + p.a2 * Math.sin(p.w2 * x + p.p2 + p.v2 * tick)
-}
-
 // ─── 4. Particle helpers ──────────────────────────────────────────────────
 // particleProps is a Float32Array of length PROPS_LEN.
 // Each particle occupies PROP_COUNT consecutive slots:
 //   [i+0]=x  [i+1]=y  [i+2]=vx  [i+3]=vy
 //   [i+4]=life  [i+5]=ttl  [i+6]=speed  [i+7]=radius  [i+8]=hue
 
-function initParticle(props, i, W, H) {
+function initParticle(props, i, W, centerY) {
   props[i]   = rand(W)                                         // x
-  props[i+1] = rand(H)                                         // y — full banner height
+  props[i+1] = centerY + (Math.random() - 0.5) * 2 * RANGE_Y  // y
   props[i+2] = 0                                               // vx
   props[i+3] = 0                                               // vy
   props[i+4] = 0                                               // life
@@ -156,9 +126,9 @@ function initParticle(props, i, W, H) {
   props[i+8] = getAccentHue() + rand(HUE_RANGE)                // hue
 }
 
-function initParticles(props, W, H) {
+function initParticles(props, W, centerY) {
   for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
-    initParticle(props, i, W, H)
+    initParticle(props, i, W, centerY)
   }
 }
 
@@ -176,7 +146,7 @@ function drawParticle(ctx, x, y, x2, y2, life, ttl, radius, hue, dark) {
   ctx.restore()
 }
 
-function updateParticle(props, i, ctxA, W, H, dark, tick) {
+function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   const x     = props[i]
   const y     = props[i+1]
   let   vx    = props[i+2]
@@ -202,13 +172,13 @@ function updateParticle(props, i, ctxA, W, H, dark, tick) {
   props[i+4] = life + 1
 
   if (x2 < 0 || x2 > W || y2 < 0 || y2 > H || life >= ttl) {
-    initParticle(props, i, W, H)
+    initParticle(props, i, W, centerY)
   }
 }
 
-function drawParticles(props, ctxA, W, H, dark, tick) {
+function drawParticles(props, ctxA, W, H, centerY, dark, tick) {
   for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
-    updateParticle(props, i, ctxA, W, H, dark, tick)
+    updateParticle(props, i, ctxA, W, H, centerY, dark, tick)
   }
 }
 
@@ -233,7 +203,7 @@ function resizeCanvases(canvasA, canvasB, bannerEl) {
   const H = bannerEl.offsetHeight
   canvasA.width  = W; canvasA.height = H
   canvasB.width  = W; canvasB.height = H
-  return { W, H }
+  return { W, H, centerY: H / 2 }
 }
 
 // ─── 6. Render pipeline ───────────────────────────────────────────────────
@@ -267,10 +237,10 @@ function renderFrame(ctxB, canvasA, W, H, dark) {
 
 // ─── 7. Main draw loop ────────────────────────────────────────────────────
 function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
-  let { W, H } = resizeCanvases(canvasA, canvasB, bannerEl)
+  let { W, H, centerY } = resizeCanvases(canvasA, canvasB, bannerEl)
   let dark = isDarkTheme()
   const props = new Float32Array(PROPS_LEN)
-  initParticles(props, W, H)
+  initParticles(props, W, centerY)
 
   let tick = 0
   let rafId = null
@@ -283,7 +253,7 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
     ctxA.clearRect(0, 0, W, H)
 
     // Step 2: draw all particles onto canvas A
-    drawParticles(props, ctxA, W, H, dark, tick)
+    drawParticles(props, ctxA, W, H, centerY, dark, tick)
 
     // Steps 3–6: composite canvas A onto canvas B with bloom
     renderFrame(ctxB, canvasA, W, H, dark)
@@ -296,8 +266,8 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
     clearTimeout(resizeTimer)
     resizeTimer = setTimeout(() => {
       const dims = resizeCanvases(canvasA, canvasB, bannerEl)
-      W = dims.W; H = dims.H
-      initParticles(props, W, H)
+      W = dims.W; H = dims.H; centerY = dims.centerY
+      initParticles(props, W, centerY)
     }, 150)
   }
   window.addEventListener('resize', debouncedResize)
