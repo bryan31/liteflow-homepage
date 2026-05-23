@@ -104,6 +104,36 @@ export default ({
             cleanupOrbs = injectLightOrbs(banner)
           }
         }, 150)
+
+        // 打字机效果
+        setTimeout(() => {
+          const el = document.querySelector('.tw-text')
+          if (!el || el._twInit) return
+          el._twInit = true
+          const phrases = [
+            '编排业务逻辑，也编排 AI Agent',
+            'Re-Act 驱动，智能体即组件',
+            '5 分钟上手，复杂流程轻松搞定',
+            '热刷新规则，零停机实时生效',
+            '从 JDK8 到 JDK25，全版本覆盖'
+          ]
+          let pi = 0, ci = 0, del = false
+          function tick() {
+            const s = phrases[pi]
+            if (!del) {
+              el.textContent = s.slice(0, ci + 1)
+              ci++
+              if (ci >= s.length) { setTimeout(() => { del = true; tick() }, 2200); return }
+              setTimeout(tick, 80)
+            } else {
+              el.textContent = s.slice(0, ci)
+              ci--
+              if (ci < 0) { del = false; ci = 0; pi = (pi + 1) % phrases.length; setTimeout(tick, 500); return }
+              setTimeout(tick, 40)
+            }
+          }
+          tick()
+        }, 200)
       } else {
         if (cleanupCanvas) { cleanupCanvas(); cleanupCanvas = null }
         if (cleanupOrbs)   { cleanupOrbs();   cleanupOrbs = null }

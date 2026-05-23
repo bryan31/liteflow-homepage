@@ -19,3 +19,5 @@ urls.txt
 .idea
 /.superpowers/
 /docs/superpowers/
+.superpowers/
+.playwright-mcp/

@@ -14,9 +14,103 @@
   display: none !important;
 }
 
-.home-wrapper .banner .banner-conent .hero h1{
-  font-size 2.8rem!important
-}
+// Hero: 自定义 HTML 渲染（logo + LiteFlow + tagline + 打字机）
+@keyframes shimmer
+  0%
+    background-position 0% 50%
+  50%
+    background-position 100% 50%
+  100%
+    background-position 0% 50%
+
+@keyframes cursorBlink
+  50%
+    opacity 0
+
+.hero-custom
+  margin-top 4.5rem
+  text-align center
+
+.hero-brand
+  display flex
+  justify-content center
+  align-items center
+  gap 16px
+  margin-bottom 1.5rem
+
+.hero-custom-logo
+  height 96px
+  width auto
+  filter drop-shadow(0 6px 20px rgba(255, 72, 81, 0.2))
+  transition filter 0.3s ease, transform 0.3s ease
+
+.hero-custom-title
+  font-size 4rem
+  font-weight 800
+  letter-spacing -0.03em
+  line-height 1
+  background linear-gradient(135deg, #FF5D34, #FF3466, #FF8A5C, #FF3466, #FF5D34)
+  background-size 300% 300%
+  animation shimmer 4s ease infinite
+  -webkit-background-clip text
+  -webkit-text-fill-color transparent
+  background-clip text
+
+.hero-custom-tagline
+  margin 0 auto 1.2rem !important
+  font-size 1.35rem !important
+  font-weight 700
+  line-height 1.6
+  letter-spacing 0.02em
+  color var(--textColor)
+
+.hero-custom-typewriter
+  font-size 1.5rem
+  font-weight 700
+  letter-spacing 0.02em
+  min-height 2.4em
+  display flex
+  align-items center
+  justify-content center
+  background linear-gradient(90deg, #ff5c36, #ff494d, #FF3860)
+  -webkit-background-clip text
+  -webkit-text-fill-color transparent
+  background-clip text
+
+.tw-cursor
+  display inline-block
+  width 2px
+  height 1.4em
+  background #FF3466
+  margin-left 2px
+  vertical-align text-bottom
+  animation cursorBlink 0.8s step-end infinite
+
+.hero-custom:hover .hero-custom-logo
+  transform translateY(-2px)
+  filter drop-shadow(0 8px 24px rgba(255, 72, 81, 0.35))
+
+@media (max-width 1025px)
+  .hero-brand
+    gap 12px
+  .hero-custom-logo
+    height 80px
+  .hero-custom-title
+    font-size 3.2rem
+
+@media (max-width 419px)
+  .hero-custom
+    margin-top 3rem
+  .hero-brand
+    gap 8px
+  .hero-custom-logo
+    height 64px
+  .hero-custom-title
+    font-size 2.4rem
+  .hero-custom-tagline
+    font-size 1.1rem !important
+  .hero-custom-typewriter
+    font-size 1.2rem
 
 // 文档中适配
 table
@@ -127,59 +221,4 @@ body .vuepress-plugin-demo-block__wrapper
   min-height: 1200px!important
 }
 
-.hero-image{
-  padding-top: 30px;
-}
-
-.theme-mode-dark .hero .hero-image{
-  filter:drop-shadow(0px 0px 0px #ff4851)
-  animation:logoFadeIn 3s ease forwards alternate, logoLight 15s ease-in-out 3s infinite alternate, logoFloat 10s ease-in-out 3s infinite alternate;
-}
-
-.theme-mode-light .hero .hero-image{
-  filter:drop-shadow(0px 0px 0px #ff4851)
-  animation:logoFloat 10s ease-in-out infinite alternate;
-}
-
-@keyframes logoFadeIn{
-  0%{
-      transform:scale(1);
-      opacity:1;
-      filter:drop-shadow(0px 0px 0px #ff4851)
-  }
-  100%{
-      transform:scale(1);
-      opacity:1;
-      filter:drop-shadow(0px 0px 50px #ff4851)
-  }
-}
-
-@keyframes logoFloat{
-  0%{
-    transform:translate(0%, 0% scale(1));
-  }
-  25%{
-    transform:translate(0%, -5%) scale(1);
-  }
-  50%{
-    transform:translate(0%, 0%) scale(1);
-  }
-  75%{
-    transform:translate(0%, -5%) scale(1);
-  }
-}
-
-@keyframes logoLight{
-  0%{
-    filter:drop-shadow(0px 0px 50px #ff4851);
-  }
-  25%{
-    filter:drop-shadow(0px 0px 30px #ff4851);
-  }
-  50%{
-    filter:drop-shadow(0px 0px 50px #ff4851);
-  }
-  75%{
-    filter:drop-shadow(0px 0px 30px #ff4851);
-  }
-}
+// logo 发光效果已在 .hero-custom-logo 中内联处理
