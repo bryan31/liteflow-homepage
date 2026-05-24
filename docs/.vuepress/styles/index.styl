@@ -579,6 +579,12 @@ $dropdownRadius = 12px
   50%
     opacity 0
 
+@keyframes typewriterFlow
+  0%
+    background-position 0% 50%
+  100%
+    background-position 100% 50%
+
 .hero-custom
   margin-top 4.5rem
   text-align center
@@ -628,28 +634,64 @@ $dropdownRadius = 12px
   color var(--textColor)
 
 .hero-custom-typewriter
+  position relative
+  width fit-content
+  max-width 88vw
+  margin 0 auto
+  padding-bottom 0.42em
   font-size 1.5rem
   font-weight 700
-  letter-spacing 0.02em
+  letter-spacing 0.015em
   min-height 2.4em
-  display flex
+  display inline-flex
   align-items center
   justify-content center
-  background linear-gradient(90deg, #ff5c36, #ff494d, #FF3860)
-  -webkit-background-clip text
-  -webkit-text-fill-color transparent
-  background-clip text
+  line-height 1.35
+  color var(--textColor)
+
+.hero-custom-typewriter::after
+  content ''
+  position absolute
+  left 50%
+  bottom 0.12em
+  width min(100%, 34rem)
+  height 1px
+  transform translateX(-50%)
+  background linear-gradient(90deg, transparent 0%, rgba(35,132,140,0.16) 16%, rgba(35,132,140,0.58) 50%, rgba(35,132,140,0.16) 84%, transparent 100%)
+  background-size 200% 100%
+  opacity 0.88
+  animation typewriterFlow 4.8s ease-in-out infinite alternate
+
+.tw-text
+  display inline-block
+  max-width min(88vw, 760px)
+  min-width 0
+  color currentColor
+  text-align center
+  text-wrap balance
+  text-shadow 0 1px 0 rgba(255,255,255,0.42), 0 0 10px rgba(255,56,97,0.24), 0 0 24px rgba(255,56,97,0.18), 0 0 34px rgba(35,132,140,0.14)
 
 .tw-cursor
   display inline-block
-  width 0.55em
-  height 1.15em
-  background #FF3466
-  margin-left 6px
-  border-radius 2px
-  vertical-align text-bottom
-  transform translateY(0.12em)
+  width 0.52em
+  height 1em
+  flex 0 0 auto
+  align-self center
+  background rgba(255,56,97,0.82)
+  margin-left 8px
+  border-radius 3px
+  box-shadow 0 0 0 1px rgba(255,56,97,0.14), 0 8px 18px rgba(255,56,97,0.2), 0 0 12px rgba(35,132,140,0.1)
   animation cursorBlink 0.8s step-end infinite
+
+.theme-mode-dark .hero-custom-typewriter::after
+  background linear-gradient(90deg, transparent 0%, rgba(103,232,249,0.12) 16%, rgba(103,232,249,0.5) 50%, rgba(103,232,249,0.12) 84%, transparent 100%)
+
+.theme-mode-dark .tw-text
+  text-shadow 0 0 10px rgba(255,76,116,0.32), 0 0 28px rgba(255,76,116,0.24), 0 0 40px rgba(103,232,249,0.18)
+
+.theme-mode-dark .tw-cursor
+  background rgba(255,76,116,0.9)
+  box-shadow 0 0 0 1px rgba(255,76,116,0.16), 0 8px 20px rgba(255,76,116,0.22), 0 0 14px rgba(103,232,249,0.12)
 
 @media (max-width 1025px)
   .hero-brand
