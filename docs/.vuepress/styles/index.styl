@@ -424,31 +424,135 @@ $dropdownRadius = 12px
 
 @media (max-width $MQMobile)
   .navbar
-    padding 0 1rem !important
+    padding 0 1rem 0 4rem !important
     .logo
       height 32px !important
       min-width 32px !important
       width 32px !important
+      margin-right 10px !important
+    .home-link
+      min-width 0
+      max-width calc(100vw - 8.5rem)
+      overflow hidden
+    .site-name
+      overflow hidden
+      text-overflow ellipsis
+      white-space nowrap
     .site-name::after
       display none
-  .nav-links
-    background transparent
-    padding 0
-    border-radius 0
-    display block !important
-  .nav-links .nav-item
-    display block
-    margin-left 0 !important
-  .nav-links .nav-item > .nav-link,
-  .nav-links .dropdown-wrapper .dropdown-title
-    padding 8px 12px
-    display block
-  .nav-links .repo-link,
-  .nav-links .gitee-link
-    margin 8px 0 0 0 !important
-    display inline-flex !important
   .navbar .links
+    margin 0 0 0 auto
+    padding-left 0 !important
+    flex 0 0 auto
+    .search-box
+      margin-right 0
+      input
+        height 32px
+        left 0
+        padding 5px 10px 5px 30px
+      .suggestions
+        right 0
+        width calc(100vw - 2rem)
+        max-width 20rem
+  .navbar .links .nav-links
+    display none !important
+  .sidebar .nav-links
+    display block !important
+    background transparent
+    border-bottom 1px solid var(--borderColor)
+    border-radius 0
     margin 0
+    padding 10px 12px 14px
+  .sidebar .nav-links .nav-item
+    display block
+    margin 0 !important
+    padding 0
+    line-height normal !important
+  .sidebar .nav-links .nav-item > .nav-link,
+  .sidebar .nav-links .dropdown-wrapper .dropdown-title
+    align-items center
+    border-radius 8px
+    box-sizing border-box
+    color var(--textColor)
+    display flex !important
+    font-size 15px
+    justify-content space-between
+    line-height 1.35 !important
+    padding 11px 12px
+    width 100%
+  .sidebar .nav-links .nav-item > .nav-link.router-link-active,
+  .sidebar .nav-links .dropdown-wrapper:has(.router-link-active) .dropdown-title
+    background $segmentHoverBg
+    color $accentColor
+  .sidebar .nav-links .dropdown-wrapper
+    height auto !important
+    width 100%
+    &.open .dropdown-title
+      margin-bottom 4px
+    .dropdown-title
+      text-align left
+      .title
+        color inherit !important
+      .link-title
+        display none !important
+      .arrow
+        flex 0 0 auto
+        margin-left 10px
+    .nav-dropdown
+      background transparent
+      border 0
+      box-shadow none
+      margin 0
+      max-height none
+      overflow hidden
+      padding 0 0 8px
+      position static
+      transform none
+      white-space normal
+      .dropdown-item
+        h4
+          border-top 0
+          color #999
+          font-size 12px
+          font-weight 600
+          letter-spacing 0.03em
+          line-height 1.4
+          margin 8px 0 4px
+          padding 0 12px
+        a
+          border-radius 7px
+          color var(--textColor)
+          font-size 14px
+          line-height 1.4
+          margin 0
+          padding 9px 12px 9px 24px
+          white-space normal
+          &:hover
+            background $segmentHoverBg
+            border-bottom none !important
+          &.router-link-active
+            background $segmentHoverBg
+            color $accentColor
+            &::after
+              display none
+        .dropdown-subitem-wrapper
+          padding 0 !important
+          .dropdown-subitem
+            padding-left 0
+            a
+              font-size 13px
+              padding-left 34px
+  .sidebar .nav-links .repo-link,
+  .sidebar .nav-links .gitee-link
+    border-radius 8px
+    box-sizing border-box
+    display flex !important
+    font-size 15px
+    justify-content flex-start
+    line-height 1.35 !important
+    margin 2px 0 0 !important
+    padding 11px 12px
+    width 100%
 
 // =============================================
 // 原有样式
