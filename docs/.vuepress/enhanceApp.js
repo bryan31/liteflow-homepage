@@ -11,6 +11,37 @@ export default ({
   let cleanupCanvas = null
   let cleanupOrbs = null
 
+  // 注入 Gitee 链接 + 为 GitHub 链接添加 class
+  if (!isServer) {
+    const addRepoLinks = () => {
+      const navLinks = document.querySelector('.navbar .links .nav-links')
+      if (!navLinks || navLinks.querySelector('.gitee-link')) return
+
+      // 给 GitHub repo-link 添加 class
+      const repoLink = navLinks.querySelector('.repo-link')
+      if (repoLink) {
+        repoLink.classList.add('github-link')
+        // 修改文字为 GitHub
+        const textNode = Array.from(repoLink.childNodes).find(n => n.nodeType === 3 && n.textContent.trim())
+        if (textNode) textNode.textContent = ' GitHub '
+      }
+
+      // 创建 Gitee 链接
+      const giteeLink = document.createElement('a')
+      giteeLink.href = 'https://gitee.com/dromara/liteFlow'
+      giteeLink.className = 'gitee-link'
+      giteeLink.target = '_blank'
+      giteeLink.rel = 'noopener noreferrer'
+      giteeLink.textContent = ' Gitee '
+      navLinks.appendChild(giteeLink)
+    }
+
+    router.afterEach(() => {
+      setTimeout(addRepoLinks, 100)
+    })
+    setTimeout(addRepoLinks, 500)
+  }
+
   // 用于监控在路由变化时检查广告拦截器 (to主题使用者：你可以去掉本文件的所有代码)
   if (!isServer) {
     //new EmbedLiteSDK({appId: '326d66ec-91d7-4e29-b4c2-1b6d024b1d45', code: 'embed1DsfdPz8nKKWDKZdP4gN'});

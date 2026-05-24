@@ -1,3 +1,459 @@
+// =============================================
+// 导航栏重新设计 — 段选器导航 + Slogan
+// =============================================
+
+$navbarHeight = 60px
+$segmentBg = #f5f5f7
+$segmentActiveBg = #FF3861
+$segmentActiveColor = #fff
+$segmentHoverBg = rgba(255,56,97,0.08)
+$segmentRadius = 8px
+$segmentContainerRadius = 10px
+$dropdownRadius = 12px
+
+// 导航栏容器
+.navbar
+  height $navbarHeight !important
+  padding 0 1.5rem !important
+  line-height $navbarHeight !important
+  box-shadow 0 1px 3px rgba(0,0,0,0.04), 0 1px 0 rgba(0,0,0,0.06) !important
+  backdrop-filter saturate(200%) blur(20px)
+  display flex !important
+  align-items center !important
+
+// Logo 区域
+.navbar .home-link
+  display flex !important
+  align-items center !important
+  flex-shrink 0
+
+.navbar .logo
+  height 36px !important
+  min-width 36px !important
+  width 36px !important
+  border-radius 10px
+  margin-right 12px !important
+  transition transform 0.2s ease, filter 0.2s ease
+  object-fit cover
+  &:hover
+    transform scale(1.05)
+
+.navbar .site-name
+  font-size 17px !important
+  font-weight 700 !important
+  letter-spacing -0.03em
+  color var(--textColor) !important
+  line-height 1.2 !important
+
+// Slogan
+.navbar .site-name::after
+  content 'RULES AS CODE'
+  display block
+  font-size 10px
+  font-weight 400
+  letter-spacing 0.05em
+  color #999
+  margin-top -1px
+
+// 段选器导航容器
+.navbar .links
+  position static !important
+  padding-left 0 !important
+  display flex !important
+  align-items center !important
+  gap 0
+  margin 0 auto
+  font-size 13px
+  .search-box
+    margin-right 8px
+    flex 0 0 auto
+    display inline-flex !important
+    align-items center !important
+    height auto !important
+    line-height normal !important
+
+// 段选器包裹层
+.nav-links
+  display inline-flex !important
+  background $segmentBg
+  padding 3px
+  border-radius $segmentContainerRadius
+  gap 2px
+
+.nav-links .nav-item
+  margin-left 0 !important
+  position relative
+  line-height 1 !important
+
+// 段选器中的普通链接
+.nav-links .nav-item > .nav-link
+  padding 7px 16px
+  border-radius $segmentRadius
+  font-size 13px
+  font-weight 500
+  color #555
+  line-height 1.4
+  transition background 0.15s ease, color 0.15s ease
+  border-bottom none !important
+  margin-bottom 0 !important
+  &:hover
+    background $segmentHoverBg
+    color var(--textColor)
+    border-bottom none !important
+
+// 激活态（当前页面）
+.nav-links .nav-item > .nav-link.router-link-active
+  background $segmentActiveBg
+  color $segmentActiveColor
+  &:hover
+    background $segmentActiveBg
+    color $segmentActiveColor
+
+// 下拉菜单含激活子项时，父级也高亮
+.nav-links .dropdown-wrapper:has(.router-link-active) .dropdown-title
+  background $segmentActiveBg
+  color $segmentActiveColor
+  border-radius $segmentRadius
+  .title
+    color $segmentActiveColor !important
+  .link-title
+    color $segmentActiveColor !important
+  .arrow
+    border-top-color $segmentActiveColor !important
+
+.theme-mode-dark .nav-links .dropdown-wrapper:has(.router-link-active) .dropdown-title
+  .title, .link-title
+    color $segmentActiveColor !important
+
+// 暗色模式段选器
+.theme-mode-dark .nav-links
+  background rgba(255,255,255,0.08)
+
+.theme-mode-dark .nav-links .nav-item > .nav-link
+  color #bbb
+  &:hover
+    color #eee
+
+.theme-mode-dark .navbar .site-name::after
+  color #666
+
+// =============================================
+// 下拉菜单样式
+// =============================================
+
+.nav-links .dropdown-wrapper
+  height auto !important
+  line-height 1 !important
+
+.nav-links .dropdown-wrapper .dropdown-title
+  display flex !important
+  align-items center
+  gap 4px
+  padding 7px 16px
+  border-radius $segmentRadius
+  font-size 13px
+  font-weight 500
+  color #555
+  line-height 1.4
+  background transparent
+  border none
+  cursor pointer
+  transition background 0.15s ease, color 0.15s ease
+
+  .title
+    font-size 13px
+    font-weight 500
+    color inherit
+  // 当 dropdown 同时声明了 link 时，DropdownLink.vue 会渲染 router-link.link-title。
+  // vdoing 主题原始样式给它注入了 hover/active 时的 border-bottom + 负 margin，
+  // 会把整个 dropdown-title 撑高 2~4px，与其他段选器不一致，这里强制抹平。
+  .link-title
+    font-size 13px
+    font-weight 500
+    color inherit !important
+    line-height 1.4
+    padding 0 !important
+    border-bottom none !important
+    margin-bottom 0 !important
+    &:hover, &.router-link-active
+      border-bottom none !important
+      margin-bottom 0 !important
+      color inherit !important
+  .arrow
+    margin-left 2px
+    margin-top -1px
+
+// 下拉触发器 hover（不含激活子项时）
+.nav-links .dropdown-wrapper:not(:has(.router-link-active)):hover .dropdown-title,
+.nav-links .dropdown-wrapper:not(:has(.router-link-active)).open .dropdown-title
+  background $segmentHoverBg
+
+// 下拉菜单面板（桌面端）
+@media (min-width $MQMobile)
+  .nav-links .dropdown-wrapper .nav-dropdown
+    background-color var(--mainBg)
+    border 1px solid rgba(0,0,0,0.04)
+    border-radius $dropdownRadius
+    box-shadow 0 4px 24px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04)
+    padding 8px
+    top calc(100% + 8px)
+    right auto
+    left 50%
+    transform translateX(-50%)
+    min-width 220px
+
+  // 不可见 hover 桥：填充按钮和面板之间 8px 视觉间隙
+  // 必须挂在 dropdown-wrapper 上而非 nav-dropdown 上 —— 后者有 overflow-y: auto 会裁剪外溢的伪元素
+  // 仅在 :hover 时生成，避免误触发其他鼠标轨迹
+  .nav-links .dropdown-wrapper:hover::after
+    content ''
+    position absolute
+    top 100%
+    left 0
+    right 0
+    height 8px
+
+    .dropdown-item
+      line-height 1 !important
+      h4
+        font-size 11px
+        font-weight 600
+        color #aaa
+        text-transform uppercase
+        letter-spacing 0.05em
+        margin 8px 0 2px
+        padding 4px 14px 0
+        border-top 1px solid rgba(0,0,0,0.06)
+        &:first-child
+          margin-top 0
+          padding-top 0
+          border-top none
+
+      a
+        padding 10px 14px
+        border-radius 8px
+        font-size 13px
+        font-weight 500
+        color #444
+        transition background 0.1s ease
+        &:hover
+          background $segmentHoverBg
+          color var(--textColor)
+          border-bottom none !important
+        &.router-link-active
+          color $accentColor
+          background $segmentHoverBg
+          &::after
+            display none
+
+    .dropdown-subitem-wrapper
+      padding 0 !important
+      .dropdown-subitem a
+        padding 8px 14px 8px 24px
+        font-size 12px
+
+// 暗色模式下拉菜单
+.theme-mode-dark .nav-links .dropdown-wrapper .nav-dropdown
+  background-color #2a2a2e
+  border-color rgba(255,255,255,0.06)
+  box-shadow 0 4px 24px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.1)
+  .dropdown-item
+    h4
+      color #666
+      border-top-color rgba(255,255,255,0.08)
+    a
+      color #bbb
+      &:hover
+        background rgba(255,255,255,0.06)
+        color #eee
+
+.theme-mode-dark .nav-links .dropdown-wrapper:not(:has(.router-link-active)):hover .dropdown-title,
+.theme-mode-dark .nav-links .dropdown-wrapper:not(:has(.router-link-active)).open .dropdown-title
+  background rgba(255,255,255,0.06)
+
+// =============================================
+// GitHub / Gitee 按钮 + 搜索框
+// =============================================
+
+// 通用 repo 按钮样式
+.nav-links .repo-link
+  margin-left 12px !important
+  padding 7px 14px
+  background transparent
+  color #555 !important
+  border-radius 8px
+  font-size 13px
+  font-weight 500
+  transition background 0.15s ease, color 0.15s ease
+  display inline-flex !important
+  align-items center
+  gap 5px
+  border none
+  line-height 1.4 !important
+  &:hover
+    background $segmentHoverBg
+    color var(--textColor) !important
+    border-bottom none !important
+  // 隐藏默认的外部链接图标
+  .icon.outbound
+    display none !important
+
+// GitHub 按钮图标
+.nav-links .repo-link.github-link::before
+  content ''
+  display inline-block
+  width 16px
+  height 16px
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23555'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E")
+  background-size contain
+  background-repeat no-repeat
+  flex-shrink 0
+
+.nav-links .repo-link.github-link:hover::before
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FF3861'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E")
+
+// Gitee 按钮
+.nav-links .gitee-link
+  margin-left 0 !important
+  padding 7px 14px
+  background transparent
+  color #555 !important
+  border-radius 8px
+  font-size 13px
+  font-weight 500
+  transition background 0.15s ease, color 0.15s ease
+  display inline-flex !important
+  align-items center
+  gap 5px
+  border none
+  line-height 1.4 !important
+  text-decoration none !important
+  &:hover
+    background $segmentHoverBg
+    color var(--textColor) !important
+    border-bottom none !important
+
+.nav-links .gitee-link::before
+  content ''
+  display inline-block
+  width 16px
+  height 16px
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23555'%3E%3Cpath d='M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z'/%3E%3C/svg%3E")
+  background-size contain
+  background-repeat no-repeat
+  flex-shrink 0
+
+.nav-links .gitee-link:hover::before
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FF3861'%3E%3Cpath d='M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z'/%3E%3C/svg%3E")
+
+// 暗色模式 repo 按钮
+.theme-mode-dark .nav-links .repo-link,
+.theme-mode-dark .nav-links .gitee-link
+  color #bbb !important
+  &:hover
+    color #eee !important
+
+.theme-mode-dark .nav-links .repo-link.github-link::before
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23bbb'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E")
+
+.theme-mode-dark .nav-links .gitee-link::before
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23bbb'%3E%3Cpath d='M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z'/%3E%3C/svg%3E")
+
+.theme-mode-dark .nav-links .repo-link.github-link:hover::before
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23eee'%3E%3Cpath d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E")
+
+.theme-mode-dark .nav-links .gitee-link:hover::before
+  background-image url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23eee'%3E%3Cpath d='M11.984 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.016 0zm6.09 5.333c.328 0 .593.266.592.593v1.482a.594.594 0 0 1-.593.592H9.777c-.982 0-1.778.796-1.778 1.778v5.63c0 .327.266.592.593.592h5.63c.982 0 1.778-.796 1.778-1.778v-.296a.593.593 0 0 0-.592-.593h-4.15a.592.592 0 0 1-.592-.592v-1.482a.593.593 0 0 1 .593-.592h6.815c.327 0 .593.265.593.592v3.408a4 4 0 0 1-4 4H5.926a.593.593 0 0 1-.593-.593V9.778a4.444 4.444 0 0 1 4.445-4.444h8.296z'/%3E%3C/svg%3E")
+
+.navbar .search-box
+  input
+    border 1px solid #e0e0e0
+    border-radius 8px
+    padding 5px 10px 5px 30px
+    height 30px
+    box-sizing border-box
+    line-height normal
+    font-size 13px
+    background-color rgba(0,0,0,0.02) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23999'%3E%3Cpath fill-rule='evenodd' d='M11.5 7a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm-.82 4.74a6 6 0 111.06-1.06l3.04 3.04a.75.75 0 11-1.06 1.06l-3.04-3.04z'/%3E%3C/svg%3E") 8px center / 14px no-repeat
+    transition border-color 0.15s ease, box-shadow 0.15s ease
+    &:focus
+      border-color rgba(255,56,97,0.4)
+      box-shadow 0 0 0 3px rgba(255,56,97,0.08)
+
+.theme-mode-dark .navbar .search-box input
+  border-color rgba(255,255,255,0.12)
+  background-color rgba(255,255,255,0.04)
+  &:focus
+    border-color rgba(255,56,97,0.5)
+
+// =============================================
+// 侧边栏：隐藏顶部导航
+// =============================================
+
+.sidebar .nav-links
+  display none !important
+
+// =============================================
+// 响应式适配
+// =============================================
+
+@media (max-width $MQNarrow)
+  .navbar
+    .site-name
+      display block !important
+    .site-name::after
+      display none
+  .nav-links
+    background transparent
+    padding 0
+    border-radius 0
+  .nav-links .nav-item
+    margin-left 1rem !important
+    > .nav-link
+      padding 4px 8px
+      font-size 12px
+  .nav-links .dropdown-wrapper .dropdown-title
+    padding 4px 8px
+    font-size 12px
+  .nav-links .repo-link
+    padding 4px 8px
+    font-size 12px
+  .nav-links .gitee-link
+    padding 4px 8px
+    font-size 12px
+
+@media (max-width $MQMobile)
+  .navbar
+    padding 0 1rem !important
+    .logo
+      height 32px !important
+      min-width 32px !important
+      width 32px !important
+    .site-name::after
+      display none
+  .nav-links
+    background transparent
+    padding 0
+    border-radius 0
+    display block !important
+  .nav-links .nav-item
+    display block
+    margin-left 0 !important
+  .nav-links .nav-item > .nav-link,
+  .nav-links .dropdown-wrapper .dropdown-title
+    padding 8px 12px
+    display block
+  .nav-links .repo-link,
+  .nav-links .gitee-link
+    margin 8px 0 0 0 !important
+    display inline-flex !important
+  .navbar .links
+    margin 0
+
+// =============================================
+// 原有样式
+// =============================================
+
 .sidebar {
   display: flex;
   flex-direction: column;
