@@ -171,6 +171,44 @@ export default ({
           }
           tick()
         }, 200)
+
+        // 首屏向下箭头
+        setTimeout(() => {
+          const banner = document.querySelector('.home-wrapper .banner')
+          if (!banner || banner.querySelector('.home-hero-arrow')) return
+
+          const arrow = document.createElement('button')
+          arrow.type = 'button'
+          arrow.className = 'home-hero-arrow'
+          arrow.setAttribute('aria-label', '滚动到下方内容')
+          arrow.innerHTML = '<span></span><span></span>'
+
+          arrow.addEventListener('click', () => {
+            const candidates = [
+              document.querySelector('.home-wrapper .banner .features'),
+              document.querySelector('.home-wrapper .banner .slide-banner'),
+              document.querySelector('.home-wrapper .main-wrapper')
+            ].filter(Boolean)
+            const target = candidates.find((item) => {
+              const style = window.getComputedStyle(item)
+              return style.display !== 'none' && item.getClientRects().length > 0
+            })
+            const navbar = document.querySelector('.navbar')
+            const navHeight = navbar ? navbar.offsetHeight : 60
+            const bannerTop = banner.getBoundingClientRect().top + window.pageYOffset
+            const fallbackTop = bannerTop + window.innerHeight - (navHeight * 2)
+            const targetTop = target
+              ? target.getBoundingClientRect().top + window.pageYOffset - navHeight
+              : fallbackTop
+
+            window.scrollTo({
+              top: Math.max(0, targetTop),
+              behavior: 'smooth'
+            })
+          })
+
+          banner.appendChild(arrow)
+        }, 240)
       } else {
         if (cleanupCanvas) { cleanupCanvas(); cleanupCanvas = null }
         if (cleanupOrbs)   { cleanupOrbs();   cleanupOrbs = null }
