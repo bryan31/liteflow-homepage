@@ -102,7 +102,8 @@ $dropdownRadius = 12px
     border-bottom none !important
 
 // 激活态（当前页面）
-.nav-links .nav-item > .nav-link.router-link-active
+.nav-links .nav-item > .nav-link.router-link-active,
+.nav-links .nav-item.nav-item-active > .nav-link
   background $segmentActiveBg
   color $segmentActiveColor
   &:hover
@@ -110,7 +111,8 @@ $dropdownRadius = 12px
     color $segmentActiveColor
 
 // 下拉菜单含激活子项时，父级也高亮
-.nav-links .dropdown-wrapper:has(.router-link-active) .dropdown-title
+.nav-links .dropdown-wrapper:has(.router-link-active) .dropdown-title,
+.nav-links .nav-item.nav-item-active .dropdown-title
   background $segmentActiveBg
   color $segmentActiveColor
   border-radius $segmentRadius
@@ -121,7 +123,8 @@ $dropdownRadius = 12px
   .arrow
     border-top-color $segmentActiveColor !important
 
-.theme-mode-dark .nav-links .dropdown-wrapper:has(.router-link-active) .dropdown-title
+.theme-mode-dark .nav-links .dropdown-wrapper:has(.router-link-active) .dropdown-title,
+.theme-mode-dark .nav-links .nav-item.nav-item-active .dropdown-title
   .title, .link-title
     color $segmentActiveColor !important
 
@@ -197,8 +200,8 @@ $dropdownRadius = 12px
     margin-top -1px
 
 // 下拉触发器 hover（不含激活子项时）
-.nav-links .dropdown-wrapper:not(:has(.router-link-active)):hover .dropdown-title,
-.nav-links .dropdown-wrapper:not(:has(.router-link-active)).open .dropdown-title
+.nav-links .nav-item:not(.nav-item-active) .dropdown-wrapper:not(:has(.router-link-active)):hover .dropdown-title,
+.nav-links .nav-item:not(.nav-item-active) .dropdown-wrapper:not(:has(.router-link-active)).open .dropdown-title
   background $segmentHoverBg
 
 // 下拉菜单面板（桌面端）
@@ -280,8 +283,8 @@ $dropdownRadius = 12px
         background rgba(255,255,255,0.06)
         color #eee
 
-.theme-mode-dark .nav-links .dropdown-wrapper:not(:has(.router-link-active)):hover .dropdown-title,
-.theme-mode-dark .nav-links .dropdown-wrapper:not(:has(.router-link-active)).open .dropdown-title
+.theme-mode-dark .nav-links .nav-item:not(.nav-item-active) .dropdown-wrapper:not(:has(.router-link-active)):hover .dropdown-title,
+.theme-mode-dark .nav-links .nav-item:not(.nav-item-active) .dropdown-wrapper:not(:has(.router-link-active)).open .dropdown-title
   background rgba(255,255,255,0.06)
 
 // =============================================
@@ -663,11 +666,31 @@ $dropdownRadius = 12px
   height 108px
 
 .hero-custom-title
+  display inline-flex
+  align-items flex-end
+  gap 0.58rem
   font-size 3.675rem
   font-weight 700
   letter-spacing -0.03em
   line-height 1
   color var(--textColor)
+
+.hero-custom-version
+  display inline-flex
+  align-items center
+  justify-content center
+  margin-bottom 0.18rem
+  padding 0.22rem 0.5rem
+  border 1px solid rgba(255,56,97,0.22)
+  border-radius 999px
+  background rgba(255,56,97,0.08)
+  color #FF3861
+  font-size 0.88rem
+  font-weight 700
+  letter-spacing 0
+  line-height 1
+  white-space nowrap
+  box-shadow 0 8px 24px rgba(255,56,97,0.08)
 
 .hero-custom-subtitle
   font-size 2.162rem
@@ -744,6 +767,12 @@ $dropdownRadius = 12px
   background rgba(255,76,116,0.9)
   box-shadow 0 0 0 1px rgba(255,76,116,0.16), 0 8px 20px rgba(255,76,116,0.22), 0 0 14px rgba(103,232,249,0.12)
 
+.theme-mode-dark .hero-custom-version
+  border-color rgba(255,76,116,0.28)
+  background rgba(255,76,116,0.12)
+  color #ff6f91
+  box-shadow 0 8px 24px rgba(255,76,116,0.12)
+
 @media (max-width 1025px)
   .hero-brand
     gap 29px
@@ -756,6 +785,10 @@ $dropdownRadius = 12px
     height 88px
   .hero-custom-title
     font-size 2.994rem
+  .hero-custom-version
+    margin-bottom 0.14rem
+    padding 0.2rem 0.44rem
+    font-size 0.74rem
   .hero-custom-subtitle
     font-size 1.761rem
 
@@ -773,6 +806,11 @@ $dropdownRadius = 12px
     height 70px
   .hero-custom-title
     font-size 2.381rem
+    gap 0.42rem
+  .hero-custom-version
+    margin-bottom 0.1rem
+    padding 0.18rem 0.36rem
+    font-size 0.62rem
   .hero-custom-subtitle
     font-size 1.401rem
   .hero-custom-tagline

@@ -61,10 +61,7 @@ function noise3D(xin, yin, zin) {
 const TAU = Math.PI * 2
 const rand = n => Math.random() * n
 const lerp = (a, b, t) => (1 - t) * a + t * b
-function fadeInOut(t, m) {
-  const hm = m * 0.5
-  return Math.abs((t + hm) % m - hm) / hm
-}
+const fadeIn = (life, frames) => Math.min(life / frames, 1)
 function isDarkTheme() {
   const cls = document.documentElement.classList
   return cls.contains('theme-mode-dark') || cls.contains('theme-mode-read')
@@ -89,16 +86,17 @@ function getAccentHue() {
 
 // ─── 3. Constants ─────────────────────────────────────────────────────────
 const PARTICLE_COUNT = 700
-const PROP_COUNT     = 9   // x, y, vx, vy, life, ttl, speed, radius, hue
+const PROP_COUNT     = 9   // x, y, vx, vy, life, fadeInFrames, speed, radius, hue
 const PROPS_LEN      = PARTICLE_COUNT * PROP_COUNT
 
-const BASE_TTL    = 50
-const RANGE_TTL   = 150
+const BASE_FADE_IN    = 24
+const RANGE_FADE_IN   = 36
 const BASE_SPEED  = 0.1
 const RANGE_SPEED = 2
 const BASE_RADIUS = 1
 const RANGE_RADIUS = 4
 const RANGE_Y     = 100   // max px offset from banner vertical center on respawn
+const OFFSCREEN_MARGIN = 60
 
 const X_OFF       = 0.00125
 const Y_OFF       = 0.00125
@@ -112,7 +110,7 @@ const LIGHT_MAX_ALPHA = 0.35
 // particleProps is a Float32Array of length PROPS_LEN.
 // Each particle occupies PROP_COUNT consecutive slots:
 //   [i+0]=x  [i+1]=y  [i+2]=vx  [i+3]=vy
-//   [i+4]=life  [i+5]=ttl  [i+6]=speed  [i+7]=radius  [i+8]=hue
+//   [i+4]=life  [i+5]=fadeInFrames  [i+6]=speed  [i+7]=radius  [i+8]=hue
 
 function initParticle(props, i, W, centerY) {
   props[i]   = rand(W)                                         // x
@@ -120,7 +118,7 @@ function initParticle(props, i, W, centerY) {
   props[i+2] = 0                                               // vx
   props[i+3] = 0                                               // vy
   props[i+4] = 0                                               // life
-  props[i+5] = BASE_TTL + rand(RANGE_TTL)                      // ttl
+  props[i+5] = BASE_FADE_IN + rand(RANGE_FADE_IN)              // fadeInFrames
   props[i+6] = BASE_SPEED + rand(RANGE_SPEED)                  // speed
   props[i+7] = BASE_RADIUS + rand(RANGE_RADIUS)                // radius
   props[i+8] = getAccentHue() + rand(HUE_RANGE)                // hue
@@ -132,8 +130,8 @@ function initParticles(props, W, centerY) {
   }
 }
 
-function drawParticle(ctx, x, y, x2, y2, life, ttl, radius, hue, dark) {
-  let alpha = fadeInOut(life, ttl)
+function drawParticle(ctx, x, y, x2, y2, life, fadeInFrames, radius, hue, dark) {
+  let alpha = fadeIn(life, fadeInFrames)
   if (!dark) alpha *= LIGHT_MAX_ALPHA
   ctx.save()
   ctx.lineCap = 'round'
@@ -152,7 +150,7 @@ function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   let   vx    = props[i+2]
   let   vy    = props[i+3]
   const life  = props[i+4]
-  const ttl   = props[i+5]
+  const fadeInFrames = props[i+5]
   const speed = props[i+6]
   const radius = props[i+7]
   const hue   = props[i+8]
@@ -163,15 +161,20 @@ function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   const x2 = x + vx * speed
   const y2 = y + vy * speed
 
-  drawParticle(ctxA, x, y, x2, y2, life, ttl, radius, hue, dark)
+  drawParticle(ctxA, x, y, x2, y2, life, fadeInFrames, radius, hue, dark)
 
   props[i]   = x2
   props[i+1] = y2
   props[i+2] = vx
   props[i+3] = vy
-  props[i+4] = life + 1
+  props[i+4] = Math.min(life + 1, fadeInFrames)
 
-  if (x2 < 0 || x2 > W || y2 < 0 || y2 > H || life >= ttl) {
+  if (
+    x2 < -OFFSCREEN_MARGIN ||
+    x2 > W + OFFSCREEN_MARGIN ||
+    y2 < -OFFSCREEN_MARGIN ||
+    y2 > H + OFFSCREEN_MARGIN
+  ) {
     initParticle(props, i, W, centerY)
   }
 }
@@ -190,7 +193,7 @@ function createCanvases(bannerEl) {
 
   // Canvas B: visible output, inserted into banner at z-index 0
   const canvasB = document.createElement('canvas')
-  canvasB.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;'
+  canvasB.style.cssText = 'position:absolute;top:0;left:0;width:100%;pointer-events:none;z-index:0;'
   bannerEl.style.position = 'relative'
   bannerEl.insertBefore(canvasB, bannerEl.firstChild)
   const ctxB = canvasB.getContext('2d')
@@ -198,11 +201,18 @@ function createCanvases(bannerEl) {
   return { canvasA, ctxA, canvasB, ctxB }
 }
 
+function getFirstScreenHeight(bannerEl) {
+  const bannerTop = Math.max(bannerEl.getBoundingClientRect().top + window.pageYOffset, 0)
+  const visibleHeight = Math.max(window.innerHeight - bannerTop, 0)
+  return Math.min(bannerEl.offsetHeight, visibleHeight)
+}
+
 function resizeCanvases(canvasA, canvasB, bannerEl) {
   const W = bannerEl.offsetWidth
-  const H = bannerEl.offsetHeight
+  const H = getFirstScreenHeight(bannerEl)
   canvasA.width  = W; canvasA.height = H
   canvasB.width  = W; canvasB.height = H
+  canvasB.style.height = `${H}px`
   return { W, H, centerY: H / 2 }
 }
 

@@ -115,6 +115,42 @@ index da2fbb4..184ecc9 100644
      getScrollTop () {
        return window.pageYOffset
          || document.documentElement.scrollTop
+diff --git a/node_modules/vuepress-theme-vdoing/components/DropdownLink.vue b/node_modules/vuepress-theme-vdoing/components/DropdownLink.vue
+index 7e8bd9e..13f60cb 100644
+--- a/node_modules/vuepress-theme-vdoing/components/DropdownLink.vue
++++ b/node_modules/vuepress-theme-vdoing/components/DropdownLink.vue
+@@ -6,9 +6,12 @@
+       :aria-label="dropdownAriaLabel"
+       @click="toggle"
+     >
+-      <router-link v-if="item.link" :to="item.link" class="link-title">{{
+-        item.text
+-      }}</router-link>
++      <router-link
++        v-if="item.link"
++        :to="item.link"
++        class="link-title"
++        @click.native="$emit('activate')"
++      >{{ item.text }}</router-link>
+       <span class="title" v-show="!item.link">{{ item.text }}</span>
+       <span class="arrow" :class="open ? 'down' : 'right'"></span>
+     </button>
+@@ -34,6 +37,7 @@
+                     isLastItemOfArray(subItem, item.items) &&
+                     toggle()
+                 "
++                @activate="$emit('activate')"
+                 :item="childSubItem"
+               />
+             </li>
+@@ -42,6 +46,7 @@
+           <NavLink
+             v-else
+             @focusout="isLastItemOfArray(subItem, item.items) && toggle()"
++            @activate="$emit('activate')"
+             :item="subItem"
+           />
+         </li>
 diff --git a/node_modules/vuepress-theme-vdoing/components/Footer.vue b/node_modules/vuepress-theme-vdoing/components/Footer.vue
 index 1b5e5c0..54e28b5 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Footer.vue
@@ -259,12 +295,22 @@ index d316ee0..1499b13 100644
        this.currentPage = Number(this.$route.query.p)
      }
 diff --git a/node_modules/vuepress-theme-vdoing/components/NavLink.vue b/node_modules/vuepress-theme-vdoing/components/NavLink.vue
-index 93feac7..429934b 100644
+index 93feac7..e38c15a 100644
 --- a/node_modules/vuepress-theme-vdoing/components/NavLink.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/NavLink.vue
-@@ -11,8 +11,8 @@
+@@ -3,6 +3,7 @@
+     class="nav-link"
+     :to="link"
+     @focusout.native="focusoutAction"
++    @click.native="activate"
+     v-if="!isExternal(link)"
+     :exact="exact"
+   >{{ item.text }}</router-link>
+@@ -10,9 +11,10 @@
+     v-else
      :href="link"
      @focusout="focusoutAction"
++    @click="activate"
      class="nav-link external"
 -    :target="isMailto(link) || isTel(link) ? null : '_blank'"
 -    :rel="isMailto(link) || isTel(link) ? null : 'noopener noreferrer'"
@@ -273,7 +319,7 @@ index 93feac7..429934b 100644
    >
      {{ item.text }}
      <OutboundLink />
-@@ -39,6 +39,29 @@ export default {
+@@ -39,6 +41,29 @@ export default {
          return Object.keys(this.$site.locales).some(rootLink => rootLink === this.link)
        }
        return this.link === '/'
@@ -303,11 +349,21 @@ index 93feac7..429934b 100644
      }
    },
  
+@@ -48,6 +73,9 @@ export default {
+     isTel,
+     focusoutAction () {
+       this.$emit('focusout')
++    },
++    activate () {
++      this.$emit('activate')
+     }
+   }
+ }
 diff --git a/node_modules/vuepress-theme-vdoing/components/NavLinks.vue b/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
-index 7be2ca3..1eaa2ec 100644
+index 7be2ca3..1bf0592 100644
 --- a/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
-@@ -1,7 +1,7 @@
+@@ -1,21 +1,24 @@
  <template>
    <nav
      class="nav-links"
@@ -316,7 +372,24 @@ index 7be2ca3..1eaa2ec 100644
    >
      <!-- user links -->
      <div
-@@ -30,6 +30,16 @@
+       class="nav-item"
+       v-for="item in userLinks"
+       :key="item.link"
++      :class="{ 'nav-item-active': isActiveNavItem(item) }"
+     >
+       <DropdownLink
+         v-if="item.type === 'links'"
+         :item="item"
++        @activate="activateNav(item)"
+       />
+       <NavLink
+         v-else
+         :item="item"
++        @activate="activateNav(item)"
+       />
+     </div>
+ 
+@@ -30,6 +33,16 @@
        {{ repoLabel }}
        <OutboundLink />
      </a>
@@ -333,12 +406,16 @@ index 7be2ca3..1eaa2ec 100644
    </nav>
  </template>
  
-@@ -41,6 +51,13 @@ import NavLink from '@theme/components/NavLink.vue'
+@@ -41,6 +54,17 @@ import NavLink from '@theme/components/NavLink.vue'
  export default {
    components: { NavLink, DropdownLink },
  
 +  props: {
 +    themeMode: {
++      type: String,
++      default: null
++    },
++    activeNavText: {
 +      type: String,
 +      default: null
 +    }
@@ -347,7 +424,7 @@ index 7be2ca3..1eaa2ec 100644
    computed: {
      userNav () {
        return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
-@@ -112,6 +129,22 @@ export default {
+@@ -112,6 +136,32 @@ export default {
        }
  
        return 'Source'
@@ -367,14 +444,24 @@ index 7be2ca3..1eaa2ec 100644
 +
 +    themeToggleLabel () {
 +      return this.themeMode === 'dark' ? '切换到浅色模式' : '切换到深色模式'
++    }
++  },
++
++  methods: {
++    activateNav (item) {
++      this.$emit('activate-nav', item.text)
++    },
++
++    isActiveNavItem (item) {
++      return this.activeNavText === item.text
      }
    }
  }
 diff --git a/node_modules/vuepress-theme-vdoing/components/Navbar.vue b/node_modules/vuepress-theme-vdoing/components/Navbar.vue
-index 2fb8bda..075f311 100644
+index 2fb8bda..8cabd08 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Navbar.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Navbar.vue
-@@ -33,7 +33,11 @@
+@@ -33,7 +33,13 @@
        <SearchBox
          v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"
        />
@@ -382,12 +469,14 @@ index 2fb8bda..075f311 100644
 +      <NavLinks
 +        class="can-hide"
 +        :themeMode="themeMode"
++        :activeNavText="activeNavText"
++        @activate-nav="$emit('activate-nav', $event)"
 +        @toggle-theme-mode="$emit('toggle-theme-mode', $event)"
 +      />
      </div>
    </header>
  </template>
-@@ -47,6 +51,13 @@ import NavLinks from '@theme/components/NavLinks.vue'
+@@ -47,6 +53,17 @@ import NavLinks from '@theme/components/NavLinks.vue'
  export default {
    components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
  
@@ -395,6 +484,10 @@ index 2fb8bda..075f311 100644
 +    themeMode: {
 +      type: String,
 +      required: true
++    },
++    activeNavText: {
++      type: String,
++      default: null
 +    }
 +  },
 +
@@ -446,10 +539,10 @@ index 5e5c9c0..f97615d 100644
        display block
        .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after
 diff --git a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-index 3821782..0e710e7 100644
+index 3821782..2db2496 100644
 --- a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
 +++ b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-@@ -5,7 +5,12 @@
+@@ -5,7 +5,14 @@
      @touchstart="onTouchStart"
      @touchend="onTouchEnd"
    >
@@ -457,13 +550,15 @@ index 3821782..0e710e7 100644
 +    <Navbar
 +      v-if="shouldShowNavbar"
 +      :themeMode="themeMode"
++      :activeNavText="activeNavText"
++      @activate-nav="setActiveNav"
 +      @toggle-sidebar="toggleSidebar"
 +      @toggle-theme-mode="toggleThemeMode"
 +    />
  
      <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
  
-@@ -21,12 +26,14 @@
+@@ -21,12 +28,14 @@
      >
        <template #top v-if="sidebarSlotTop">
          <div
@@ -478,7 +573,7 @@ index 3821782..0e710e7 100644
            class="sidebar-slot sidebar-slot-bottom"
            v-html="sidebarSlotBottom"
          ></div>
-@@ -36,7 +43,7 @@
+@@ -36,7 +45,7 @@
      </Sidebar>
  
      <!-- 首页 -->
@@ -487,7 +582,7 @@ index 3821782..0e710e7 100644
  
      <!-- 分类页 -->
      <CategoriesPage v-else-if="$page.frontmatter.categoriesPage" />
-@@ -67,7 +74,7 @@
+@@ -67,7 +76,7 @@
  
      <Footer />
  
@@ -496,9 +591,19 @@ index 3821782..0e710e7 100644
  
      <BodyBgImg v-if="$themeConfig.bodyBgImg" />
  
-@@ -217,7 +224,10 @@ export default {
+@@ -122,6 +131,7 @@ export default {
+       isSidebarOpen: true,
+       showSidebar: false,
+       themeMode: 'light',
++      activeNavText: null,
+       showWindowLB: true,
+       showWindowRB: true
+     }
+@@ -216,8 +226,12 @@ export default {
+   },
    beforeMount() {
      this.isSidebarOpenOfclientWidth()
++    this.activeNavText = storage.get('activeNavText') || this.getActiveNavTextByRoute()
      const mode = storage.get('mode') // 不放在created是因为vuepress不能在created访问浏览器api，如window
 -    if (!mode || mode === 'auto') { // 当未切换过模式，或模式处于'跟随系统'时
 +    if (mode === 'read') {
@@ -508,7 +613,32 @@ index 3821782..0e710e7 100644
        this._autoMode()
      } else {
        this.themeMode = mode
-@@ -304,6 +314,11 @@ export default {
+@@ -296,6 +310,24 @@ export default {
+       this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
+       this.$emit('toggle-sidebar', this.isSidebarOpen)
+     },
++    setActiveNav(text) {
++      this.activeNavText = text
++      storage.set('activeNavText', text)
++    },
++    getActiveNavTextByRoute() {
++      const navItems = this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
++      const routePath = this.normalizeNavPath(this.$route.path)
++      const activeItem = navItems.find(item => this.navItemContainsPath(item, routePath))
++      return activeItem ? activeItem.text : null
++    },
++    navItemContainsPath(item, routePath) {
++      if (!item) return false
++      if (item.link && this.normalizeNavPath(item.link) === routePath) return true
++      return (item.items || []).some(child => this.navItemContainsPath(child, routePath))
++    },
++    normalizeNavPath(path) {
++      return (path || '').replace(/#.*$/, '').replace(/\.(md|html)$/, '')
++    },
+     _autoMode() {
+       if (window.matchMedia('(prefers-color-scheme: dark)').matches) { // 系统处于深色模式
+         this.themeMode = 'dark'
+@@ -304,6 +336,11 @@ export default {
        }
      },
      toggleThemeMode(key) {
