@@ -33,7 +33,12 @@ export default ({
       giteeLink.target = '_blank'
       giteeLink.rel = 'noopener noreferrer'
       giteeLink.textContent = ' Gitee '
-      navLinks.appendChild(giteeLink)
+      const themeSwitch = navLinks.querySelector('.nav-theme-switch')
+      if (themeSwitch) {
+        navLinks.insertBefore(giteeLink, themeSwitch)
+      } else {
+        navLinks.appendChild(giteeLink)
+      }
     }
 
     router.afterEach(() => {

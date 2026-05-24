@@ -1,3 +1,120 @@
+diff --git a/node_modules/vuepress-theme-vdoing/components/Buttons.vue b/node_modules/vuepress-theme-vdoing/components/Buttons.vue
+index da2fbb4..184ecc9 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Buttons.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Buttons.vue
+@@ -14,40 +14,11 @@
+       v-show="showCommentBut"
+       @click="scrollToComment"
+     />
+-    <div
+-      title="主题模式"
+-      class="button blur theme-mode-but iconfont icon-zhuti"
+-      @mouseenter="showModeBox = true"
+-      @mouseleave="showModeBox = false"
+-      @click="showModeBox = true"
+-    >
+-      <transition name="mode">
+-        <ul
+-          class="select-box"
+-          ref="modeBox"
+-          v-show="showModeBox"
+-          @click.stop
+-          @touchstart.stop
+-        >
+-          <li
+-            v-for="item in modeList"
+-            :key="item.KEY"
+-            class="iconfont"
+-            :class="[item.icon, { active: item.KEY === currentMode }]"
+-            @click="toggleMode(item.KEY)"
+-          >
+-            {{ item.name }}
+-          </li>
+-        </ul>
+-      </transition>
+-    </div>
+   </div>
+ </template>
+ 
+ <script>
+ import debounce from 'lodash.debounce'
+-import storage from 'good-storage' // 本地存储
+-const MOBILE_DESKTOP_BREAKPOINT = 719 // refer to config.styl
+ 
+ export default {
+   data () {
+@@ -56,30 +27,6 @@ export default {
+       scrollTop: null,
+       showCommentBut: false,
+       commentTop: null,
+-      currentMode: null,
+-      showModeBox: false,
+-      modeList: [
+-        {
+-          name: '跟随系统',
+-          icon: 'icon-zidong',
+-          KEY: 'auto'
+-        },
+-        {
+-          name: '浅色模式',
+-          icon: 'icon-rijianmoshi',
+-          KEY: 'light'
+-        },
+-        {
+-          name: '深色模式',
+-          icon: 'icon-yejianmoshi',
+-          KEY: 'dark'
+-        },
+-        {
+-          name: '阅读模式',
+-          icon: 'icon-yuedu',
+-          KEY: 'read'
+-        }
+-      ],
+       _scrollTimer: null,
+       _textareaEl: null,
+       _recordScrollTop: null,
+@@ -89,8 +36,6 @@ export default {
+     }
+   },
+   mounted () {
+-    this.currentMode = storage.get('mode') || 'auto'
+-
+     this.scrollTop = this.getScrollTop()
+     window.addEventListener('scroll', debounce(() => {
+       this.scrollTop = this.getScrollTop()
+@@ -100,20 +45,6 @@ export default {
+       this.getCommentTop()
+     })
+ 
+-    // 小屏时选择主题模式后关闭选择框
+-    if (document.documentElement.clientWidth < MOBILE_DESKTOP_BREAKPOINT) {
+-      const modeBox = this.$refs.modeBox
+-      modeBox.onclick = () => {
+-        this.showModeBox = false
+-      }
+-      window.addEventListener('scroll', debounce(() => {
+-        if (this.showModeBox) {
+-          this.showModeBox = false
+-        }
+-      }, 100))
+-    }
+-
+-
+     // 移动端对类似:hover效果的处理
+     const buttons = document.querySelectorAll('.buttons .button')
+     for (let i = 0; i < buttons.length; i++) {
+@@ -135,10 +66,6 @@ export default {
+     }
+   },
+   methods: {
+-    toggleMode (key) {
+-      this.currentMode = key
+-      this.$emit('toggle-theme-mode', key)
+-    },
+     getScrollTop () {
+       return window.pageYOffset
+         || document.documentElement.scrollTop
 diff --git a/node_modules/vuepress-theme-vdoing/components/Footer.vue b/node_modules/vuepress-theme-vdoing/components/Footer.vue
 index 1b5e5c0..54e28b5 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Footer.vue
@@ -27,7 +144,7 @@ index 1b5e5c0..54e28b5 100644
    padding-left 1.5rem
  </style>
 diff --git a/node_modules/vuepress-theme-vdoing/components/Home.vue b/node_modules/vuepress-theme-vdoing/components/Home.vue
-index c22d81b..283ff93 100644
+index d316ee0..1499b13 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Home.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Home.vue
 @@ -6,6 +6,7 @@
@@ -66,7 +183,7 @@ index c22d81b..283ff93 100644
            <div
              class="feature"
              v-for="(feature, index) in homeData.features"
-@@ -162,7 +167,6 @@
+@@ -159,7 +164,6 @@
      </MainLayout>
    </div>
  </template>
@@ -74,7 +191,7 @@ index c22d81b..283ff93 100644
  <script>
  import NavLink from "@theme/components/NavLink";
  import BScroll from "@better-scroll/core"
-@@ -182,7 +186,7 @@ BScroll.use(Slide)
+@@ -179,7 +183,7 @@ BScroll.use(Slide)
  export default {
    data() {
      return {
@@ -83,7 +200,7 @@ index c22d81b..283ff93 100644
  
        slide: null,
        currentPageIndex: 0,
-@@ -194,8 +198,30 @@ export default {
+@@ -191,7 +195,26 @@ export default {
        currentPage: 1// 当前页
      }
    },
@@ -103,29 +220,24 @@ index c22d81b..283ff93 100644
 +        return "/video/bg-dark.mov"
 +      }else if (this.themeMode === 'light'){
 +        return "/video/bg-light.mov"
-+      }else if (this.themeMode === 'read'){
-+        return "/video/bg-read.mov"
 +      }else{
 +        return null;
 +      }
 +    },
      homeData() {
-+      console.log('this.$page.frontmatter', this.$page.frontmatter)
        return {
          ...this.$page.frontmatter
-       }
-@@ -203,6 +229,10 @@ export default {
+@@ -200,6 +223,9 @@ export default {
      hasFeatures() {
        return !!(this.homeData.features && this.homeData.features.length)
      },
 +    hasActions() {
-+      console.log('hasActions', this.homeData.actions)
 +      return !!(this.homeData.actions && this.homeData.actions.length)
 +    },
      homeSidebarB() {
        const { htmlModules } = this.$themeConfig
        return htmlModules ? htmlModules.homeSidebarB : ''
-@@ -233,12 +263,6 @@ export default {
+@@ -230,12 +256,6 @@ export default {
          return `background: url(${this.$withBase(bannerBg)}) center center / cover no-repeat`
        }
  
@@ -138,7 +250,7 @@ index c22d81b..283ff93 100644
      }
    },
    components: { NavLink, MainLayout, PostList, UpdateArticle, BloggerBar, CategoriesBar, TagsBar, Pagination },
-@@ -249,6 +273,7 @@ export default {
+@@ -246,6 +266,7 @@ export default {
      this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
    },
    mounted() {
@@ -146,16 +258,6 @@ index c22d81b..283ff93 100644
      if (this.$route.query.p) {
        this.currentPage = Number(this.$route.query.p)
      }
-@@ -274,6 +299,9 @@ export default {
-     this.slide && this.slide.destroy()
-   },
-   watch: {
-+    themeMode(){
-+      console.log(this.themeMode)
-+    },
-     '$route.query.p'() {
-       if (!this.$route.query.p) {
-         this.currentPage = 1
 diff --git a/node_modules/vuepress-theme-vdoing/components/NavLink.vue b/node_modules/vuepress-theme-vdoing/components/NavLink.vue
 index 93feac7..429934b 100644
 --- a/node_modules/vuepress-theme-vdoing/components/NavLink.vue
@@ -201,6 +303,104 @@ index 93feac7..429934b 100644
      }
    },
  
+diff --git a/node_modules/vuepress-theme-vdoing/components/NavLinks.vue b/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
+index 7be2ca3..1eaa2ec 100644
+--- a/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
++++ b/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
+@@ -1,7 +1,7 @@
+ <template>
+   <nav
+     class="nav-links"
+-    v-if="userLinks.length || repoLink"
++    v-if="userLinks.length || repoLink || canToggleTheme"
+   >
+     <!-- user links -->
+     <div
+@@ -30,6 +30,16 @@
+       {{ repoLabel }}
+       <OutboundLink />
+     </a>
++
++    <button
++      v-if="canToggleTheme"
++      type="button"
++      class="nav-theme-switch iconfont"
++      :class="themeModeIcon"
++      :title="themeToggleLabel"
++      :aria-label="themeToggleLabel"
++      @click="$emit('toggle-theme-mode', nextThemeMode)"
++    />
+   </nav>
+ </template>
+ 
+@@ -41,6 +51,13 @@ import NavLink from '@theme/components/NavLink.vue'
+ export default {
+   components: { NavLink, DropdownLink },
+ 
++  props: {
++    themeMode: {
++      type: String,
++      default: null
++    }
++  },
++
+   computed: {
+     userNav () {
+       return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
+@@ -112,6 +129,22 @@ export default {
+       }
+ 
+       return 'Source'
++    },
++
++    canToggleTheme () {
++      return this.themeMode === 'light' || this.themeMode === 'dark'
++    },
++
++    nextThemeMode () {
++      return this.themeMode === 'dark' ? 'light' : 'dark'
++    },
++
++    themeModeIcon () {
++      return this.themeMode === 'dark' ? 'icon-yejianmoshi' : 'icon-rijianmoshi'
++    },
++
++    themeToggleLabel () {
++      return this.themeMode === 'dark' ? '切换到浅色模式' : '切换到深色模式'
+     }
+   }
+ }
+diff --git a/node_modules/vuepress-theme-vdoing/components/Navbar.vue b/node_modules/vuepress-theme-vdoing/components/Navbar.vue
+index 2fb8bda..075f311 100644
+--- a/node_modules/vuepress-theme-vdoing/components/Navbar.vue
++++ b/node_modules/vuepress-theme-vdoing/components/Navbar.vue
+@@ -33,7 +33,11 @@
+       <SearchBox
+         v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"
+       />
+-      <NavLinks class="can-hide" />
++      <NavLinks
++        class="can-hide"
++        :themeMode="themeMode"
++        @toggle-theme-mode="$emit('toggle-theme-mode', $event)"
++      />
+     </div>
+   </header>
+ </template>
+@@ -47,6 +51,13 @@ import NavLinks from '@theme/components/NavLinks.vue'
+ export default {
+   components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
+ 
++  props: {
++    themeMode: {
++      type: String,
++      required: true
++    }
++  },
++
+   data () {
+     return {
+       linksWrapMaxWidth: null
 diff --git a/node_modules/vuepress-theme-vdoing/components/Sidebar.vue b/node_modules/vuepress-theme-vdoing/components/Sidebar.vue
 index 5e5c9c0..f97615d 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Sidebar.vue
@@ -246,10 +446,24 @@ index 5e5c9c0..f97615d 100644
        display block
        .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after
 diff --git a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-index 62dda70..eb723c9 100644
+index 3821782..0e710e7 100644
 --- a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
 +++ b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-@@ -21,12 +21,14 @@
+@@ -5,7 +5,12 @@
+     @touchstart="onTouchStart"
+     @touchend="onTouchEnd"
+   >
+-    <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar" />
++    <Navbar
++      v-if="shouldShowNavbar"
++      :themeMode="themeMode"
++      @toggle-sidebar="toggleSidebar"
++      @toggle-theme-mode="toggleThemeMode"
++    />
+ 
+     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
+ 
+@@ -21,12 +26,14 @@
      >
        <template #top v-if="sidebarSlotTop">
          <div
@@ -264,7 +478,7 @@ index 62dda70..eb723c9 100644
            class="sidebar-slot sidebar-slot-bottom"
            v-html="sidebarSlotBottom"
          ></div>
-@@ -36,7 +38,7 @@
+@@ -36,7 +43,7 @@
      </Sidebar>
  
      <!-- 首页 -->
@@ -273,3 +487,36 @@ index 62dda70..eb723c9 100644
  
      <!-- 分类页 -->
      <CategoriesPage v-else-if="$page.frontmatter.categoriesPage" />
+@@ -67,7 +74,7 @@
+ 
+     <Footer />
+ 
+-    <Buttons ref="buttons" @toggle-theme-mode="toggleThemeMode" />
++    <Buttons ref="buttons" />
+ 
+     <BodyBgImg v-if="$themeConfig.bodyBgImg" />
+ 
+@@ -217,7 +224,10 @@ export default {
+   beforeMount() {
+     this.isSidebarOpenOfclientWidth()
+     const mode = storage.get('mode') // 不放在created是因为vuepress不能在created访问浏览器api，如window
+-    if (!mode || mode === 'auto') { // 当未切换过模式，或模式处于'跟随系统'时
++    if (mode === 'read') {
++      this._autoMode()
++      storage.set('mode', 'auto')
++    } else if (!mode || mode === 'auto') { // 当未切换过模式，或模式处于'跟随系统'时
+       this._autoMode()
+     } else {
+       this.themeMode = mode
+@@ -304,6 +314,11 @@ export default {
+       }
+     },
+     toggleThemeMode(key) {
++      if (key === 'read') {
++        this._autoMode()
++        storage.set('mode', 'auto')
++        return
++      }
+       if (key === 'auto') {
+         this._autoMode()
+       } else {
