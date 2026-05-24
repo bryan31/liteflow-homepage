@@ -780,8 +780,8 @@ table
 
 .theme-mode-light .home-wrapper .banner,
 .theme-mode-dark .home-wrapper .banner {
-  height: 850px;
-  min-height: auto!important;
+  height: auto!important;
+  min-height: 850px!important;
 }
 
 .home-wrapper .banner .video-background {
@@ -791,7 +791,25 @@ table
 @media (max-width 719px)
   .theme-mode-light .home-wrapper .banner,
   .theme-mode-dark .home-wrapper .banner
-    height 760px
+    min-height 760px!important
+
+.home-wrapper .banner .banner-conent
+  .features
+    display grid !important
+    grid-template-columns repeat(3, minmax(0, 1fr))
+    column-gap 2.5rem
+    row-gap 2rem
+    align-items start
+    justify-content initial !important
+  .feature
+    max-width none !important
+    min-width 0
+
+@media (max-width 1025px)
+  .home-wrapper .banner .banner-conent
+    .features
+      column-gap 1.5rem
+      row-gap 1.5rem
 
 // 评论区颜色重置
 .gt-container
