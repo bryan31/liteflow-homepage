@@ -575,14 +575,6 @@ $dropdownRadius = 12px
 }
 
 // Hero: 自定义 HTML 渲染（logo + LiteFlow + tagline + 打字机）
-@keyframes shimmer
-  0%
-    background-position 0% 50%
-  50%
-    background-position 100% 50%
-  100%
-    background-position 0% 50%
-
 @keyframes cursorBlink
   50%
     opacity 0
@@ -595,26 +587,37 @@ $dropdownRadius = 12px
   display flex
   justify-content center
   align-items center
-  gap 16px
+  gap 36px
   margin-bottom 1.5rem
 
 .hero-custom-logo
-  height 96px
-  width auto
-  filter drop-shadow(0 6px 20px rgba(255, 72, 81, 0.2))
-  transition filter 0.3s ease, transform 0.3s ease
+  height 108px
+  width 108px
+  min-width 108px
+  border-radius 30px
+  object-fit cover
+  filter none
+
+.hero-brand-copy
+  display flex
+  flex-direction column
+  align-items flex-start
+  justify-content space-between
+  height 108px
 
 .hero-custom-title
-  font-size 4rem
-  font-weight 800
+  font-size 3.675rem
+  font-weight 700
   letter-spacing -0.03em
   line-height 1
-  background linear-gradient(135deg, #FF5D34, #FF3466, #FF8A5C, #FF3466, #FF5D34)
-  background-size 300% 300%
-  animation shimmer 4s ease infinite
-  -webkit-background-clip text
-  -webkit-text-fill-color transparent
-  background-clip text
+  color var(--textColor)
+
+.hero-custom-subtitle
+  font-size 2.162rem
+  font-weight 400
+  line-height 1
+  letter-spacing 0.05em
+  color #999
 
 .hero-custom-tagline
   margin 0 auto 1.2rem !important
@@ -639,34 +642,46 @@ $dropdownRadius = 12px
 
 .tw-cursor
   display inline-block
-  width 2px
-  height 1.4em
+  width 0.55em
+  height 1.15em
   background #FF3466
-  margin-left 2px
+  margin-left 6px
+  border-radius 2px
   vertical-align text-bottom
+  transform translateY(0.12em)
   animation cursorBlink 0.8s step-end infinite
-
-.hero-custom:hover .hero-custom-logo
-  transform translateY(-2px)
-  filter drop-shadow(0 8px 24px rgba(255, 72, 81, 0.35))
 
 @media (max-width 1025px)
   .hero-brand
-    gap 12px
+    gap 29px
   .hero-custom-logo
-    height 80px
+    height 88px
+    width 88px
+    min-width 88px
+    border-radius 24px
+  .hero-brand-copy
+    height 88px
   .hero-custom-title
-    font-size 3.2rem
+    font-size 2.994rem
+  .hero-custom-subtitle
+    font-size 1.761rem
 
 @media (max-width 419px)
   .hero-custom
     margin-top 3rem
   .hero-brand
-    gap 8px
+    gap 23px
   .hero-custom-logo
-    height 64px
+    height 70px
+    width 70px
+    min-width 70px
+    border-radius 19px
+  .hero-brand-copy
+    height 70px
   .hero-custom-title
-    font-size 2.4rem
+    font-size 2.381rem
+  .hero-custom-subtitle
+    font-size 1.401rem
   .hero-custom-tagline
     font-size 1.1rem !important
   .hero-custom-typewriter
@@ -695,11 +710,18 @@ table
 .theme-mode-dark .home-wrapper .banner,
 .theme-mode-read .home-wrapper .banner {
   height: 850px;
+  min-height: auto!important;
 }
 
 .home-wrapper .banner .video-background {
   display: none !important;
 }
+
+@media (max-width 719px)
+  .theme-mode-light .home-wrapper .banner,
+  .theme-mode-dark .home-wrapper .banner,
+  .theme-mode-read .home-wrapper .banner
+    height 760px
 
 // 评论区颜色重置
 .gt-container
@@ -776,9 +798,5 @@ body .vuepress-plugin-demo-block__wrapper
 .features
   .feature a p
     text-align: left
-
-.home-wrapper .banner {
-  min-height: 1200px!important
-}
 
 // logo 发光效果已在 .hero-custom-logo 中内联处理

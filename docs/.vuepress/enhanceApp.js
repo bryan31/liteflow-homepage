@@ -146,6 +146,7 @@ export default ({
             'Re-Act 驱动，智能体即组件',
             '5 分钟上手，复杂流程轻松搞定',
             '热刷新规则，零停机实时生效',
+            'SpringBoot 2.X 到 SpringBoot 4.X，全覆盖',
             '从 JDK8 到 JDK25，全版本覆盖'
           ]
           let pi = 0, ci = 0, del = false
