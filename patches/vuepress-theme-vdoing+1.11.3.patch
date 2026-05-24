@@ -539,7 +539,7 @@ index 5e5c9c0..f97615d 100644
        display block
        .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after
 diff --git a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-index 3821782..2db2496 100644
+index 3821782..1cfd0ab 100644
 --- a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
 +++ b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
 @@ -5,7 +5,14 @@
@@ -603,7 +603,7 @@ index 3821782..2db2496 100644
    },
    beforeMount() {
      this.isSidebarOpenOfclientWidth()
-+    this.activeNavText = storage.get('activeNavText') || this.getActiveNavTextByRoute()
++    this.syncActiveNavWithRoute()
      const mode = storage.get('mode') // 不放在created是因为vuepress不能在created访问浏览器api，如window
 -    if (!mode || mode === 'auto') { // 当未切换过模式，或模式处于'跟随系统'时
 +    if (mode === 'read') {
@@ -613,13 +613,30 @@ index 3821782..2db2496 100644
        this._autoMode()
      } else {
        this.themeMode = mode
-@@ -296,6 +310,24 @@ export default {
+@@ -247,6 +261,7 @@ export default {
+     this.showSidebar = true
+     this.$router.afterEach(() => {
+       this.isSidebarOpenOfclientWidth()
++      this.syncActiveNavWithRoute()
+     })
+ 
+     // 向下滚动收起导航栏
+@@ -296,6 +311,33 @@ export default {
        this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
        this.$emit('toggle-sidebar', this.isSidebarOpen)
      },
 +    setActiveNav(text) {
 +      this.activeNavText = text
 +      storage.set('activeNavText', text)
++    },
++    syncActiveNavWithRoute() {
++      const activeNavText = this.getActiveNavTextByRoute()
++      this.activeNavText = activeNavText
++      if (activeNavText) {
++        storage.set('activeNavText', activeNavText)
++      } else {
++        storage.remove('activeNavText')
++      }
 +    },
 +    getActiveNavTextByRoute() {
 +      const navItems = this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
@@ -638,7 +655,7 @@ index 3821782..2db2496 100644
      _autoMode() {
        if (window.matchMedia('(prefers-color-scheme: dark)').matches) { // 系统处于深色模式
          this.themeMode = 'dark'
-@@ -304,6 +336,11 @@ export default {
+@@ -304,6 +346,11 @@ export default {
        }
      },
      toggleThemeMode(key) {
