@@ -61,7 +61,6 @@ function noise3D(xin, yin, zin) {
 const TAU = Math.PI * 2
 const rand = n => Math.random() * n
 const lerp = (a, b, t) => (1 - t) * a + t * b
-const clamp = (n, min, max) => Math.max(min, Math.min(max, n))
 function fadeInOut(t, m) {
   const hm = m * 0.5
   return Math.abs((t + hm) % m - hm) / hm
@@ -93,20 +92,13 @@ const PARTICLE_COUNT = 700
 const PROP_COUNT     = 9   // x, y, vx, vy, life, ttl, speed, radius, hue
 const PROPS_LEN      = PARTICLE_COUNT * PROP_COUNT
 
-const BASE_TTL    = 120
-const RANGE_TTL   = 120
-const BASE_SPEED  = 1.2
-const RANGE_SPEED = 3.4
+const BASE_TTL    = 50
+const RANGE_TTL   = 150
+const BASE_SPEED  = 0.1
+const RANGE_SPEED = 2
 const BASE_RADIUS = 1
 const RANGE_RADIUS = 4
-const RESPAWN_Y_JITTER = 12
-const EMITTER_BOTTOM_OFFSET = 24
-const EMITTER_MIN_SPREAD = 180
-const EMITTER_MAX_SPREAD = 360
-const UPWARD_BIAS = 1.45
-const OUTWARD_BIAS = 0.45
-const HORIZONTAL_NOISE = 0.85
-const VERTICAL_NOISE = 0.35
+const RANGE_Y     = 100   // max px offset from banner vertical center on respawn
 
 const X_OFF       = 0.00125
 const Y_OFF       = 0.00125
@@ -122,49 +114,11 @@ const LIGHT_MAX_ALPHA = 0.35
 //   [i+0]=x  [i+1]=y  [i+2]=vx  [i+3]=vy
 //   [i+4]=life  [i+5]=ttl  [i+6]=speed  [i+7]=radius  [i+8]=hue
 
-function computeEmitterY(H, bannerRect = { top: 0 }, viewportHeight = window.innerHeight) {
-  const firstScreenBottom = clamp(viewportHeight - Math.max(bannerRect.top || 0, 0), 0, H)
-  return Math.round(Math.max(0, firstScreenBottom - EMITTER_BOTTOM_OFFSET))
-}
-
-function computeEmitterSpread(W) {
-  return clamp(W * 0.24, EMITTER_MIN_SPREAD, EMITTER_MAX_SPREAD)
-}
-
-function createRespawnState(W, emitterY, random = Math.random) {
-  const emitterX = W * 0.5
-  const spread = computeEmitterSpread(W)
-  return {
-    x: emitterX + (random() - 0.5) * spread,
-    y: emitterY + (random() - 0.5) * 2 * RESPAWN_Y_JITTER
-  }
-}
-
-function computeFlowVector(particle, W, emitterX, tick, noiseFn = noise3D) {
-  const angle = noiseFn(particle.x * X_OFF, particle.y * Y_OFF, tick * Z_OFF) * NOISE_STEPS * TAU
-  const outward = W > 0 ? clamp((particle.x - emitterX) / (W * 0.45), -1, 1) : 0
-  const targetVx = Math.cos(angle) * HORIZONTAL_NOISE + outward * OUTWARD_BIAS
-  const targetVy = Math.sin(angle) * VERTICAL_NOISE - UPWARD_BIAS
-  const vx = lerp(particle.vx, targetVx, 0.35)
-  const vy = lerp(particle.vy, targetVy, 0.35)
-
-  return {
-    vx,
-    vy,
-    x2: particle.x + vx * particle.speed,
-    y2: particle.y + vy * particle.speed * 1.45
-  }
-}
-
-const __test__ = { computeEmitterY, createRespawnState, computeFlowVector }
-
-function initParticle(props, i, W, emitterY) {
-  const start = createRespawnState(W, emitterY)
-  const emitterX = W * 0.5
-  props[i]   = start.x                                         // x
-  props[i+1] = start.y                                         // y
-  props[i+2] = clamp((start.x - emitterX) / computeEmitterSpread(W), -0.35, 0.35) // vx
-  props[i+3] = -0.8 - rand(0.4)                                // vy
+function initParticle(props, i, W, centerY) {
+  props[i]   = rand(W)                                         // x
+  props[i+1] = centerY + (Math.random() - 0.5) * 2 * RANGE_Y  // y
+  props[i+2] = 0                                               // vx
+  props[i+3] = 0                                               // vy
   props[i+4] = 0                                               // life
   props[i+5] = BASE_TTL + rand(RANGE_TTL)                      // ttl
   props[i+6] = BASE_SPEED + rand(RANGE_SPEED)                  // speed
@@ -172,9 +126,9 @@ function initParticle(props, i, W, emitterY) {
   props[i+8] = getAccentHue() + rand(HUE_RANGE)                // hue
 }
 
-function initParticles(props, W, emitterY) {
+function initParticles(props, W, centerY) {
   for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
-    initParticle(props, i, W, emitterY)
+    initParticle(props, i, W, centerY)
   }
 }
 
@@ -192,7 +146,7 @@ function drawParticle(ctx, x, y, x2, y2, life, ttl, radius, hue, dark) {
   ctx.restore()
 }
 
-function updateParticle(props, i, ctxA, W, H, emitterY, emitterX, dark, tick) {
+function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   const x     = props[i]
   const y     = props[i+1]
   let   vx    = props[i+2]
@@ -203,11 +157,11 @@ function updateParticle(props, i, ctxA, W, H, emitterY, emitterX, dark, tick) {
   const radius = props[i+7]
   const hue   = props[i+8]
 
-  const next = computeFlowVector({ x, y, vx, vy, speed }, W, emitterX, tick)
-  vx = next.vx
-  vy = next.vy
-  const x2 = next.x2
-  const y2 = next.y2
+  const angle = noise3D(x * X_OFF, y * Y_OFF, tick * Z_OFF) * NOISE_STEPS * TAU
+  vx = lerp(vx, Math.cos(angle), 0.5)
+  vy = lerp(vy, Math.sin(angle), 0.5)
+  const x2 = x + vx * speed
+  const y2 = y + vy * speed
 
   drawParticle(ctxA, x, y, x2, y2, life, ttl, radius, hue, dark)
 
@@ -217,14 +171,14 @@ function updateParticle(props, i, ctxA, W, H, emitterY, emitterX, dark, tick) {
   props[i+3] = vy
   props[i+4] = life + 1
 
-  if (x2 < 0 || x2 > W || y2 < -60 || y2 > H || life >= ttl) {
-    initParticle(props, i, W, emitterY)
+  if (x2 < 0 || x2 > W || y2 < 0 || y2 > H || life >= ttl) {
+    initParticle(props, i, W, centerY)
   }
 }
 
-function drawParticles(props, ctxA, W, H, emitterY, emitterX, dark, tick) {
+function drawParticles(props, ctxA, W, H, centerY, dark, tick) {
   for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
-    updateParticle(props, i, ctxA, W, H, emitterY, emitterX, dark, tick)
+    updateParticle(props, i, ctxA, W, H, centerY, dark, tick)
   }
 }
 
@@ -249,12 +203,7 @@ function resizeCanvases(canvasA, canvasB, bannerEl) {
   const H = bannerEl.offsetHeight
   canvasA.width  = W; canvasA.height = H
   canvasB.width  = W; canvasB.height = H
-  return {
-    W,
-    H,
-    emitterY: computeEmitterY(H, bannerEl.getBoundingClientRect()),
-    emitterX: W * 0.5
-  }
+  return { W, H, centerY: H / 2 }
 }
 
 // ─── 6. Render pipeline ───────────────────────────────────────────────────
@@ -288,10 +237,10 @@ function renderFrame(ctxB, canvasA, W, H, dark) {
 
 // ─── 7. Main draw loop ────────────────────────────────────────────────────
 function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
-  let { W, H, emitterY, emitterX } = resizeCanvases(canvasA, canvasB, bannerEl)
+  let { W, H, centerY } = resizeCanvases(canvasA, canvasB, bannerEl)
   let dark = isDarkTheme()
   const props = new Float32Array(PROPS_LEN)
-  initParticles(props, W, emitterY)
+  initParticles(props, W, centerY)
 
   let tick = 0
   let rafId = null
@@ -304,7 +253,7 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
     ctxA.clearRect(0, 0, W, H)
 
     // Step 2: draw all particles onto canvas A
-    drawParticles(props, ctxA, W, H, emitterY, emitterX, dark, tick)
+    drawParticles(props, ctxA, W, H, centerY, dark, tick)
 
     // Steps 3–6: composite canvas A onto canvas B with bloom
     renderFrame(ctxB, canvasA, W, H, dark)
@@ -317,8 +266,8 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
     clearTimeout(resizeTimer)
     resizeTimer = setTimeout(() => {
       const dims = resizeCanvases(canvasA, canvasB, bannerEl)
-      W = dims.W; H = dims.H; emitterY = dims.emitterY; emitterX = dims.emitterX
-      initParticles(props, W, emitterY)
+      W = dims.W; H = dims.H; centerY = dims.centerY
+      initParticles(props, W, centerY)
     }, 150)
   }
   window.addEventListener('resize', debouncedResize)
