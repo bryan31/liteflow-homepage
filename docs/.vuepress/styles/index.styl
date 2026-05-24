@@ -134,6 +134,19 @@ $dropdownRadius = 12px
   &:hover
     color #eee
 
+.theme-mode-dark .nav-links .dropdown-wrapper .dropdown-title
+  color #bbb
+  .title, .link-title
+    color inherit !important
+  .arrow
+    border-top-color #bbb !important
+
+.theme-mode-dark .nav-links .dropdown-wrapper:not(:has(.router-link-active)):hover .dropdown-title,
+.theme-mode-dark .nav-links .dropdown-wrapper:not(:has(.router-link-active)).open .dropdown-title
+  color #eee
+  .arrow
+    border-top-color #eee !important
+
 .theme-mode-dark .navbar .site-name::after
   color #666
 
