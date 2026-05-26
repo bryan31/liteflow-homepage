@@ -360,7 +360,7 @@ index 93feac7..e38c15a 100644
    }
  }
 diff --git a/node_modules/vuepress-theme-vdoing/components/NavLinks.vue b/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
-index 7be2ca3..1bf0592 100644
+index 7be2ca3..248cea5 100644
 --- a/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/NavLinks.vue
 @@ -1,21 +1,24 @@
@@ -380,12 +380,12 @@ index 7be2ca3..1bf0592 100644
        <DropdownLink
          v-if="item.type === 'links'"
          :item="item"
-+        @activate="activateNav(item)"
++        @activate="$emit('item-activate', item.text)"
        />
        <NavLink
          v-else
          :item="item"
-+        @activate="activateNav(item)"
++        @activate="$emit('item-activate', item.text)"
        />
      </div>
  
@@ -424,7 +424,7 @@ index 7be2ca3..1bf0592 100644
    computed: {
      userNav () {
        return this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
-@@ -112,6 +136,32 @@ export default {
+@@ -112,6 +136,28 @@ export default {
        }
  
        return 'Source'
@@ -448,17 +448,13 @@ index 7be2ca3..1bf0592 100644
 +  },
 +
 +  methods: {
-+    activateNav (item) {
-+      this.$emit('activate-nav', item.text)
-+    },
-+
 +    isActiveNavItem (item) {
 +      return this.activeNavText === item.text
      }
    }
  }
 diff --git a/node_modules/vuepress-theme-vdoing/components/Navbar.vue b/node_modules/vuepress-theme-vdoing/components/Navbar.vue
-index 2fb8bda..8cabd08 100644
+index 2fb8bda..e07c60d 100644
 --- a/node_modules/vuepress-theme-vdoing/components/Navbar.vue
 +++ b/node_modules/vuepress-theme-vdoing/components/Navbar.vue
 @@ -33,7 +33,13 @@
@@ -470,8 +466,8 @@ index 2fb8bda..8cabd08 100644
 +        class="can-hide"
 +        :themeMode="themeMode"
 +        :activeNavText="activeNavText"
-+        @activate-nav="$emit('activate-nav', $event)"
 +        @toggle-theme-mode="$emit('toggle-theme-mode', $event)"
++        @item-activate="$emit('item-activate', $event)"
 +      />
      </div>
    </header>
@@ -539,7 +535,7 @@ index 5e5c9c0..f97615d 100644
        display block
        .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active::after
 diff --git a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
-index 3821782..1cfd0ab 100644
+index 3821782..5214803 100644
 --- a/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
 +++ b/node_modules/vuepress-theme-vdoing/layouts/Layout.vue
 @@ -5,7 +5,14 @@
@@ -551,9 +547,9 @@ index 3821782..1cfd0ab 100644
 +      v-if="shouldShowNavbar"
 +      :themeMode="themeMode"
 +      :activeNavText="activeNavText"
-+      @activate-nav="setActiveNav"
 +      @toggle-sidebar="toggleSidebar"
 +      @toggle-theme-mode="toggleThemeMode"
++      @item-activate="setActiveNav"
 +    />
  
      <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
@@ -599,10 +595,22 @@ index 3821782..1cfd0ab 100644
        showWindowLB: true,
        showWindowRB: true
      }
-@@ -216,8 +226,12 @@ export default {
+@@ -171,7 +181,6 @@ export default {
+         || this.$themeLocaleConfig.nav
+       )
+     },
+-
+     shouldShowSidebar() {
+       const { frontmatter } = this.$page
+       return (
+@@ -216,8 +225,16 @@ export default {
    },
    beforeMount() {
      this.isSidebarOpenOfclientWidth()
++    const storedActiveNav = storage.get('activeNavText')
++    if (storedActiveNav) {
++      this.activeNavText = storedActiveNav
++    }
 +    this.syncActiveNavWithRoute()
      const mode = storage.get('mode') // 不放在created是因为vuepress不能在created访问浏览器api，如window
 -    if (!mode || mode === 'auto') { // 当未切换过模式，或模式处于'跟随系统'时
@@ -613,7 +621,7 @@ index 3821782..1cfd0ab 100644
        this._autoMode()
      } else {
        this.themeMode = mode
-@@ -247,6 +261,7 @@ export default {
+@@ -247,6 +264,7 @@ export default {
      this.showSidebar = true
      this.$router.afterEach(() => {
        this.isSidebarOpenOfclientWidth()
@@ -621,27 +629,32 @@ index 3821782..1cfd0ab 100644
      })
  
      // 向下滚动收起导航栏
-@@ -296,6 +311,33 @@ export default {
+@@ -296,6 +314,53 @@ export default {
        this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
        this.$emit('toggle-sidebar', this.isSidebarOpen)
      },
 +    setActiveNav(text) {
++      if (!text) return
 +      this.activeNavText = text
 +      storage.set('activeNavText', text)
 +    },
 +    syncActiveNavWithRoute() {
-+      const activeNavText = this.getActiveNavTextByRoute()
-+      this.activeNavText = activeNavText
-+      if (activeNavText) {
-+        storage.set('activeNavText', activeNavText)
-+      } else {
-+        storage.remove('activeNavText')
++      const matched = this.getActiveNavTextByRoute()
++      if (matched) {
++        this.activeNavText = matched
++        storage.set('activeNavText', matched)
 +      }
++      // sticky: 路由变化未命中任何 nav 项时，保留上一次激活的高亮
 +    },
 +    getActiveNavTextByRoute() {
++      const tryDecode = (s) => { try { return decodeURIComponent(s) } catch (e) { return s } }
 +      const navItems = this.$themeLocaleConfig.nav || this.$site.themeConfig.nav || []
-+      const routePath = this.normalizeNavPath(this.$route.path)
-+      const activeItem = navItems.find(item => this.navItemContainsPath(item, routePath))
++      const routePath = this.normalizeNavPath(tryDecode(this.$route.path))
++      const regularPath = tryDecode((this.$page && this.$page.regularPath) || '')
++      let activeItem = navItems.find(item => this.navItemContainsPath(item, routePath))
++      if (!activeItem) {
++        activeItem = navItems.find(item => this.navItemMatchesRegular(item, regularPath))
++      }
 +      return activeItem ? activeItem.text : null
 +    },
 +    navItemContainsPath(item, routePath) {
@@ -649,13 +662,28 @@ index 3821782..1cfd0ab 100644
 +      if (item.link && this.normalizeNavPath(item.link) === routePath) return true
 +      return (item.items || []).some(child => this.navItemContainsPath(child, routePath))
 +    },
++    navItemMatchesRegular(item, regularPath) {
++      if (!item || !regularPath) return false
++      const patterns = [].concat(item.match || [])
++      for (const pattern of patterns) {
++        if (!pattern) continue
++        try {
++          if (new RegExp(pattern).test(regularPath)) return true
++        } catch (e) { /* ignore bad pattern */ }
++      }
++      return (item.items || []).some(child => this.navItemMatchesRegular(child, regularPath))
++    },
 +    normalizeNavPath(path) {
-+      return (path || '').replace(/#.*$/, '').replace(/\.(md|html)$/, '')
++      const normalized = (path || '/')
++        .replace(/[?#].*$/, '')
++        .replace(/\.(md|html)$/, '')
++      if (!normalized || normalized === '/') return '/'
++      return normalized.endsWith('/') ? normalized : `${normalized}/`
 +    },
      _autoMode() {
        if (window.matchMedia('(prefers-color-scheme: dark)').matches) { // 系统处于深色模式
          this.themeMode = 'dark'
-@@ -304,6 +346,11 @@ export default {
+@@ -304,6 +369,11 @@ export default {
        }
      },
      toggleThemeMode(key) {

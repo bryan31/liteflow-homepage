@@ -21,3 +21,4 @@ urls.txt
 /docs/superpowers/
 .superpowers/
 .playwright-mcp/
+.codegraph
