@@ -106,6 +106,9 @@ const NOISE_STEPS = 8
 const HUE_RANGE       = 30   // ±15° spread around accent hue
 const LIGHT_MAX_ALPHA = 0.35
 
+const REF_FRAME_MS = 1000 / 60   // animation is tuned for 60fps; dt normalizes to this
+const MAX_DT_SCALE = 3           // cap catch-up after the tab was backgrounded
+
 // ─── 4. Particle helpers ──────────────────────────────────────────────────
 // particleProps is a Float32Array of length PROPS_LEN.
 // Each particle occupies PROP_COUNT consecutive slots:
@@ -144,7 +147,7 @@ function drawParticle(ctx, x, y, x2, y2, life, fadeInFrames, radius, hue, dark) 
   ctx.restore()
 }
 
-function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
+function updateParticle(props, i, ctxA, W, H, centerY, dark, tick, dtScale, smooth) {
   const x     = props[i]
   const y     = props[i+1]
   let   vx    = props[i+2]
@@ -156,10 +159,11 @@ function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   const hue   = props[i+8]
 
   const angle = noise3D(x * X_OFF, y * Y_OFF, tick * Z_OFF) * NOISE_STEPS * TAU
-  vx = lerp(vx, Math.cos(angle), 0.5)
-  vy = lerp(vy, Math.sin(angle), 0.5)
-  const x2 = x + vx * speed
-  const y2 = y + vy * speed
+  // `smooth` is the original 0.5 per-frame lerp, corrected for frame time
+  vx = lerp(vx, Math.cos(angle), smooth)
+  vy = lerp(vy, Math.sin(angle), smooth)
+  const x2 = x + vx * speed * dtScale
+  const y2 = y + vy * speed * dtScale
 
   drawParticle(ctxA, x, y, x2, y2, life, fadeInFrames, radius, hue, dark)
 
@@ -167,7 +171,7 @@ function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   props[i+1] = y2
   props[i+2] = vx
   props[i+3] = vy
-  props[i+4] = Math.min(life + 1, fadeInFrames)
+  props[i+4] = Math.min(life + dtScale, fadeInFrames)
 
   if (
     x2 < -OFFSCREEN_MARGIN ||
@@ -179,9 +183,11 @@ function updateParticle(props, i, ctxA, W, H, centerY, dark, tick) {
   }
 }
 
-function drawParticles(props, ctxA, W, H, centerY, dark, tick) {
+function drawParticles(props, ctxA, W, H, centerY, dark, tick, dtScale) {
+  // exponential velocity smoothing corrected for frame time: at dtScale=1 this is 0.5
+  const smooth = 1 - Math.pow(0.5, dtScale)
   for (let i = 0; i < PROPS_LEN; i += PROP_COUNT) {
-    updateParticle(props, i, ctxA, W, H, centerY, dark, tick)
+    updateParticle(props, i, ctxA, W, H, centerY, dark, tick, dtScale, smooth)
   }
 }
 
@@ -253,17 +259,29 @@ function startLoop(ctxA, ctxB, canvasA, canvasB, bannerEl) {
   initParticles(props, W, centerY)
 
   let tick = 0
+  let lastTime = null
   let rafId = null
 
-  function loop() {
-    tick = (tick + 1) % 1000000
+  function loop(now) {
+    // Frame-rate independence: scale motion by elapsed time, normalized so that
+    // dtScale === 1 at 60fps. Without this the animation runs proportionally
+    // faster on high-refresh-rate displays (e.g. 120Hz ProMotion).
+    let dtScale = 1
+    if (lastTime !== null) {
+      dtScale = (now - lastTime) / REF_FRAME_MS
+      if (dtScale > MAX_DT_SCALE) dtScale = MAX_DT_SCALE
+      else if (dtScale < 0) dtScale = 0
+    }
+    lastTime = now
+
+    tick = (tick + dtScale) % 1000000
     dark = isDarkTheme()
 
     // Step 1: clear offscreen canvas A
     ctxA.clearRect(0, 0, W, H)
 
     // Step 2: draw all particles onto canvas A
-    drawParticles(props, ctxA, W, H, centerY, dark, tick)
+    drawParticles(props, ctxA, W, H, centerY, dark, tick, dtScale)
 
     // Steps 3–6: composite canvas A onto canvas B with bloom
     renderFrame(ctxB, canvasA, W, H, dark)
