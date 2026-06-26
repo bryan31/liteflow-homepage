@@ -18,7 +18,7 @@ module.exports = [
       {
         text: "What's New",
         items: [
-          { text: "What' s New In LiteFlow v2.15.3?", link: "/pages/8ff028/" },
+          { text: "What' s New In LiteFlow v2.16.0?", link: "/pages/8ff029/" },
         ],
       },
       {
