@@ -49,6 +49,11 @@ module.exports = [
   },
   { text: "AI Agent", link: "/pages/agent-overview/", match: "^/06\\.AI" },
   {
+    text: "AI Skill",
+    link: "/pages/how2use-liteflow/",
+    match: "^/how2use-liteflow",
+  },
+  {
     text: "IDEA 插件",
     link: "/pages/liteflow-helper/",
     match: "^/liteflow-helper",
