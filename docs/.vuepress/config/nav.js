@@ -14,10 +14,11 @@ module.exports = [
       "^/专题解释",
     ],
     items: [
-      { text: "v2.16.0 (当前版本)", link: "/pages/5816c5/" },
+      { text: "v2.16.1 (当前版本)", link: "/pages/5816c5/" },
       {
         text: "What's New",
         items: [
+          { text: "What' s New In LiteFlow v2.16.1?", link: "/pages/8ff02a/" },
           { text: "What' s New In LiteFlow v2.16.0?", link: "/pages/8ff029/" },
         ],
       },

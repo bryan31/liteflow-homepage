@@ -29,6 +29,7 @@ module.exports = {
   </div>
   <div class="pin-adv">
     <a href="https://www.suconnect.com?hmsr=LiteFlow&hmpl=&hmcu=LiteFlow&hmkw=&hmci=" target="_blank" rel="noopener noreferrer"><img style="width:45%;border-radius: 3px;" src="/img/donate/suzhong-banner-2.jpg"></a>
+    <a href="https://sx.org/?c=lite" target="_blank" rel="noopener noreferrer"><img style="width:45%;border-radius: 3px;" src="/img/donate/sx-banner-2.png"></a>
   </div>
   <style>
       .pin-adv{
@@ -82,7 +83,7 @@ module.exports = {
         display: block;
       }
   </style>
-  `
+  `,
   // windowRB: `
   //   <div class="wwads-cn wwads-vertical windowRB" data-id="136" style="max-width:160px;
   //   min-width: auto;min-height:auto;"></div>
@@ -95,7 +96,7 @@ module.exports = {
   //     }
   //   </style>
   // `
-}
+};
 
 
 // module.exports = {

@@ -3,7 +3,7 @@ home: true
 heroImage: false
 heroText: false
 tagline: false
-slogan: '<div class="hero-custom"><div class="hero-brand"><img src="/img/logo.png" alt="LiteFlow" class="hero-custom-logo" /><span class="hero-brand-copy"><span class="hero-custom-title">LiteFlow<span class="hero-custom-version">v2.16.0</span></span><span class="hero-custom-subtitle">RULES AS CODE</span></span></div><div class="hero-custom-typewriter"><span class="tw-text"></span><span class="tw-cursor"></span></div></div>'
+slogan: '<div class="hero-custom"><div class="hero-brand"><img src="/img/logo.png" alt="LiteFlow" class="hero-custom-logo" /><span class="hero-brand-copy"><span class="hero-custom-title">LiteFlow<span class="hero-custom-version">v2.16.1</span></span><span class="hero-custom-subtitle">RULES AS CODE</span></span></div><div class="hero-custom-typewriter"><span class="tw-text"></span><span class="tw-cursor"></span></div></div>'
 actions:
   - actionText: ⛵️ 进入编排文档
     actionLink: /pages/5816c5/
@@ -27,7 +27,9 @@ features: # 可选的
   - title: 🍃 平滑热刷
     details: 无论是编排规则，还是逻辑组件，全部可热更替，实时更改，无需重启。
   - title: 🛖 规则存储
-    details: 支持把规则和脚本存在任何关系型数据库，并且支持大部分的注册中心，支持zk，nacos，etcd，apollo，redis。
+    details: 全新的Rule-DB模式，让存储成为规则的权威源，多节点秒级收敛，热规则按需缓存。支持MySQL，PostgreSQL，MongoDB，Redis，ZK，Etcd，Nacos。
+  - title: 📈 指标可观测
+    details: 内置Micrometer埋点，chain和组件的QPS、耗时、错误率一键接入Prometheus和Grafana，开箱可用的仪表盘。
   - title: ⭐️ 支持度广
     details: JDK8~JDK25，Springboot 2.X ~ Springboot 4.X，统统支持。非Spring也给予了支持。
   - title: 🍱 高级特性
@@ -59,7 +61,7 @@ postList: none
   link: https://fastbee.cn/
   bgColor: '#f4dec8'
   textColor: '#000000'
-  expired: '2026-03-07'
+  expired: '2027-07-12'
 - name: 速众低代码开发平台
   desc: Java+Vue3+大模型 100%开源
   avatar: /img/donate/suzhong.gif
@@ -74,6 +76,13 @@ postList: none
   bgColor: '#836EFF'
   textColor: '#FFFFFF'
   expired: '2027-03-22'
+- name: SX.ORG
+  desc: 解锁 DeepSeek，OpenAi 与 Claude 稳定访问
+  avatar: /img/donate/sx.png
+  link: https://sx.org/?c=lite
+  bgColor: '#E4FF03'
+  textColor: '#000000'
+  expired: '2027-07-19'
 
 ```
 :::
@@ -126,7 +135,7 @@ postList: none
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.16.0</version>
+    <version>2.16.1</version>
 </dependency>
 ```
 
