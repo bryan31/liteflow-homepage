@@ -3,7 +3,7 @@ home: true
 heroImage: false
 heroText: false
 tagline: false
-slogan: '<div class="hero-custom"><div class="hero-brand"><img src="/img/logo.png" alt="LiteFlow" class="hero-custom-logo" /><span class="hero-brand-copy"><span class="hero-custom-title">LiteFlow<span class="hero-custom-version">v2.16.1</span></span><span class="hero-custom-subtitle">RULES AS CODE</span></span></div><div class="hero-custom-typewriter"><span class="tw-text"></span><span class="tw-cursor"></span></div></div>'
+slogan: '<div class="hero-custom"><div class="hero-brand"><img src="/img/logo.png" alt="LiteFlow" class="hero-custom-logo" /><span class="hero-brand-copy"><span class="hero-custom-title">LiteFlow<span class="hero-custom-version">v2.16.2</span></span><span class="hero-custom-subtitle">RULES AS CODE</span></span></div><div class="hero-custom-typewriter"><span class="tw-text"></span><span class="tw-cursor"></span></div></div>'
 actions:
   - actionText: ⛵️ 进入编排文档
     actionLink: /pages/5816c5/
@@ -21,7 +21,7 @@ features: # 可选的
   - title: 🧩 皆为组件
     details: 拥有独特的设计理念，所有逻辑皆为组件。上下文隔离，组件单一职责，组件可以复用且互相解耦。
   - title: 🤖 AI Agent 编排
-    details: 将 Re-Act Agent 封装为标准组件，可与普通业务节点通过 EL 规则自由编排，让大模型智能体真正融入你的业务流程。
+    details: 将 AI Agent 与业务组件一起编排，支持会话存储、Skills、MCP、Docker 沙箱和人工确认，让模型通过工具完成业务任务。
   - title: 📑 脚本支持
     details: 除了java，你还可以用多达8种脚本语言来书写你的逻辑：Java，Groovy，Kotlin，Js，Python，Lua，QLExpress，Aviator。
   - title: 🍃 平滑热刷

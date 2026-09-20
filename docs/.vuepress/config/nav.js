@@ -14,10 +14,11 @@ module.exports = [
       "^/专题解释",
     ],
     items: [
-      { text: "v2.16.1 (当前版本)", link: "/pages/5816c5/" },
+      { text: "v2.16.2 (当前版本)", link: "/pages/5816c5/" },
       {
         text: "What's New",
         items: [
+          { text: "What' s New In LiteFlow v2.16.2?", link: "/pages/8ff02b/" },
           { text: "What' s New In LiteFlow v2.16.1?", link: "/pages/8ff02a/" },
           { text: "What' s New In LiteFlow v2.16.0?", link: "/pages/8ff029/" },
         ],
@@ -37,6 +38,7 @@ module.exports = [
       {
         text: "升级指南",
         items: [
+          { text: "2.16.2 Agent 升级说明", link: "/pages/agent-upgrade-2-16-2/" },
           { text: "2.13.0升级指南", link: "/pages/88c2f5/" },
           { text: "2.12.4升级指南", link: "/pages/88c2f1/" },
           { text: "2.12.0升级指南", link: "/pages/88c2f2/" },
