@@ -21,7 +21,7 @@ features: # 可选的
   - title: 🧩 皆为组件
     details: 拥有独特的设计理念，所有逻辑皆为组件。上下文隔离，组件单一职责，组件可以复用且互相解耦。
   - title: 🤖 AI Agent 编排
-    details: 将 AI Agent 与业务组件一起编排，支持会话存储、Skills、MCP、Docker 沙箱和人工确认，让模型通过工具完成业务任务。
+    details: 将 AI Agent 与业务组件一起编排，用 Jev 按自然语言选择分支，支持会话存储、Skills、MCP、Docker 沙箱和人工确认。
   - title: 📑 脚本支持
     details: 除了java，你还可以用多达8种脚本语言来书写你的逻辑：Java，Groovy，Kotlin，Js，Python，Lua，QLExpress，Aviator。
   - title: 🍃 平滑热刷
@@ -135,9 +135,11 @@ postList: none
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.16.1</version>
+    <version>2.16.2</version>
 </dependency>
 ```
+
+2.16.2 新增 [Jev 智能选择组件](/pages/agent-jev-switch/)，并完善 Agent 沙箱、会话存储与多任务协作。详见 [What's New](/pages/8ff02b/) 和[更新记录](/pages/88c2d1/)。
 
 :::tip 新版本稳定吗？
 

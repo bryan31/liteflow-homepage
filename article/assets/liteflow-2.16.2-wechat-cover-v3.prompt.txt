@@ -1,0 +1,29 @@
+Generator: built-in image_gen, reference-image edit
+Reference: liteflow-2.16.2-wechat-cover-v2.png
+
+Refine the TYPOGRAPHY ONLY of this existing LiteFlow WeChat cover. The user wants the typography to feel extraordinarily comfortable, balanced, airy, and professionally typeset. Preserve the panoramic ~2.35:1 canvas, the exact warm ivory background, every coral 3D cube, its icons, connector curves, ivory frame, lighting, shadows and the right-hand illustration's size and position. Remove the current oversized heavy four-line typography and re-typeset the same content in a markedly more refined editorial layout.
+
+Keep these exact words and numerals, with no additional text:
+"LiteFlow"
+"2.16.2"
+"Jev"
+"智能分流"
+"Agent"
+"全面升级"
+
+NEW TYPE COMPOSITION:
+Use the left half of the cover as a clean, quiet text panel with generous empty space above and below. Text left edge is around 8% of canvas width. Keep all text before roughly 50% of canvas width, without colliding with the illustration.
+Make the ENTIRE text group vertically centered around 49% of canvas height. The group should occupy only about 32–36% of the full canvas height, rather than filling almost the whole left side.
+
+First row: "LiteFlow" and "2.16.2" ON THE SAME BASELINE. "LiteFlow" is the dominant headline, around 115–125 px tall on a 1923-pixel-wide canvas, clean refined Swiss / modern grotesk sans serif, semibold 600, near-black #252525. The version "2.16.2" follows to the right, with an ample 30–40 px optical gap, around 52–58% of the headline's font size, medium weight, solid coral red #F15D4A. This is one harmonious brand-and-version lockup, not two competing giant headlines. Precise spacing, no condensed letters, no giant black bold mass, no text shadows.
+
+Leave a generous roughly 58–68 px vertical space below the main headline before the feature group.
+
+Feature group: TWO subtle, equally weighted aligned rows.
+Row one: "Jev" in the left English label column, then "智能分流" in a second column.
+Row two: "Agent" in the SAME left English label column, then "全面升级" in the SAME Chinese column.
+Both English labels start at the main headline's left edge. Both Chinese phrases start at exactly the same x coordinate, comfortably beyond the full width of "Agent", with a 28–36 px gap after that label column. This careful two-column alignment is important: do NOT simply run each English word into its Chinese phrase.
+Use consistent 40–46 px font sizing for these four pieces, clean regular-to-medium weight 400–450 (much lighter than the original), dark warm gray #55524E, matching optical scale between Latin and Chinese. Chinese should look like elegant PingFang SC or Noto Sans SC. Baseline-to-baseline spacing between the two feature rows should be around 66–72 px. The two rows are part of one quiet secondary typographic group.
+The English words and Chinese phrases must remain easily readable and correctly spelled. Do not use pills, badges, boxes, dividers, bullets, outlines, decorative rules, or additional icons. No extra slogans or microcopy.
+
+Overall: exceptionally comfortable visual rhythm, controlled hierarchy, generous breathing room, precise optical alignment, warm understated product-launch cover. The illustration remains vivid; the typography should feel calm and editorial. Do not alter the illustration or palette.
