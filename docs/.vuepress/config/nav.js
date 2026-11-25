@@ -14,7 +14,7 @@ module.exports = [
       "^/专题解释",
     ],
     items: [
-      { text: "v2.16.2 (当前版本)", link: "/pages/5816c5/" },
+      { text: "v2.16.3 (当前版本)", link: "/pages/5816c5/" },
       {
         text: "What's New",
         items: [

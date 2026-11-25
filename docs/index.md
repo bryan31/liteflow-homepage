@@ -3,7 +3,7 @@ home: true
 heroImage: false
 heroText: false
 tagline: false
-slogan: '<div class="hero-custom"><div class="hero-brand"><img src="/img/logo.png" alt="LiteFlow" class="hero-custom-logo" /><span class="hero-brand-copy"><span class="hero-custom-title">LiteFlow<span class="hero-custom-version">v2.16.2</span></span><span class="hero-custom-subtitle">RULES AS CODE</span></span></div><div class="hero-custom-typewriter"><span class="tw-text"></span><span class="tw-cursor"></span></div></div>'
+slogan: '<div class="hero-custom"><div class="hero-brand"><img src="/img/logo.png" alt="LiteFlow" class="hero-custom-logo" /><span class="hero-brand-copy"><span class="hero-custom-title">LiteFlow<span class="hero-custom-version">v2.16.3</span></span><span class="hero-custom-subtitle">RULES AS CODE</span></span></div><div class="hero-custom-typewriter"><span class="tw-text"></span><span class="tw-cursor"></span></div></div>'
 actions:
   - actionText: ⛵️ 进入编排文档
     actionLink: /pages/5816c5/
@@ -135,11 +135,11 @@ postList: none
 <dependency>
     <groupId>com.yomahub</groupId>
     <artifactId>liteflow-spring-boot-starter</artifactId>
-    <version>2.16.2</version>
+    <version>2.16.3</version>
 </dependency>
 ```
 
-2.16.2 新增 [Jev 智能选择组件](/pages/agent-jev-switch/)，并完善 Agent 沙箱、会话存储与多任务协作。详见 [What's New](/pages/8ff02b/) 和[更新记录](/pages/88c2d1/)。
+2.16.3 新增 [Jev 布尔判断组件](/pages/agent-jev-boolean/)，Jev 智能选择新增本地自托管的 [laya](https://github.com/NandhaKishorM/laya) 入口，小模型本地运行、无需 API Key。详见[更新记录](/pages/88c2d1/)。
 
 :::tip 新版本稳定吗？
 
