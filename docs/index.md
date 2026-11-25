@@ -17,7 +17,7 @@ actions:
 bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
 features: # 可选的
   - title: 🧬 强大的EL
-    details: 简单低学习成本的EL，丰富的关键字，能完成任意模式的逻辑编排。小身材，大能量。
+    details: 简单低学习成本的EL，丰富的关键字，能完成各种模式的逻辑编排。小身材，大能量。
   - title: 🧩 皆为组件
     details: 拥有独特的设计理念，所有逻辑皆为组件。上下文隔离，组件单一职责，组件可以复用且互相解耦。
   - title: 🤖 AI Agent 编排
@@ -35,7 +35,7 @@ features: # 可选的
   - title: 🍱 高级特性
     details: 超多的高级特性，每一个都能贴合你的业务，利用高级特性让你的复杂场景瞬间变得简单且灵动。
   - title: 🪁 可靠性强
-    details: 对系统的额外消耗极小，性能强悍。多达2000个测试用例保障了LiteFlow的质量。
+    details: 对系统的额外消耗较小，性能强悍。多达2000个测试用例保障了LiteFlow的质量。
 
 # 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: none
@@ -147,14 +147,14 @@ postList: none
 
 并且我们会跑超大量的并发压力测试，以上所有的通过后，我们才会谨慎的提交代码覆盖主分支进行发版。
 
-你大可不必担心新版本不稳定的情况，况且，我们有良好的社区群。基本上有问必答，如出现bug，基本上隔天必解决。
+你大可不必担心新版本不稳定的情况，况且，我们有良好的社区群。社区问题一般都能得到及时回复，如出现bug，我们也会尽快修复。
 
 所以，请放心的使用！
 :::
 
 <br/>
 
-另外LiteFlow通过了[墨菲安全](https://www.murphysec.com)的检测，为0风险框架！
+另外LiteFlow通过了[墨菲安全](https://www.murphysec.com)的安全检测。
 
 <a href="https://www.murphysec.com/dr/pSdSchoCUEdpkadxPy" alt="OSCS Status"><img class="no-zoom" src="https://www.oscs1024.com/platform/badge/dromara/liteFlow.git.svg?size=large"/></a>
 
@@ -162,7 +162,7 @@ postList: none
 
 ## 🎉 致谢
 
-LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群5000多人，Gitee上6k Stars，Github上2.8k Stars，感谢各位支持者的一路同行，我们会努力把国产的规则引擎做到极致。
+LiteFlow自从2020年开源以来，获得了很多人的支持。目前社区群5000多人，Gitee上6k Stars，Github上2.8k Stars，感谢各位支持者的一路同行，我们会继续努力，把国产规则引擎做得更好。
 
 LiteFlow在[2021](https://www.oschina.net/project/top_cn_2021)获得“OSC 年度最受欢迎中国开源软件”殊荣。
 

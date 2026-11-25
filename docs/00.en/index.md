@@ -169,7 +169,7 @@ So please rest assured to use it.
 
 <br/>
 
-In addition, LiteFlow has passed the test of [墨菲安全](https://www.murphysec.com), with a zero risk framework!
+In addition, LiteFlow has passed the test of [墨菲安全](https://www.murphysec.com), with no risks found in the scan.
 
 <a href="https://www.murphysec.com/dr/pSdSchoCUEdpkadxPy" alt="OSCS Status"><img class="no-zoom" src="https://www.oscs1024.com/platform/badge/dromara/liteFlow.git.svg?size=large"/></a>
 

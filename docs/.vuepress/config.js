@@ -10,6 +10,9 @@ module.exports = {
   themeConfig,
   plugins,
 
+  // 只构建站点内容；docs/superpowers 是本地设计稿（已 gitignore），不应发布为页面
+  patterns: ['**/*.md', '**/*.vue', '!superpowers/**'],
+
   markdown: {
     lineNumbers: false,
     extractHeaders: ['h2', 'h3', 'h4', 'h5', 'h6'], // 提取标题到侧边栏的级别，默认['h2', 'h3']
